@@ -13,3 +13,4 @@ Isaac Sim / Isaac Lab 강의를 따라 실습하면서 결과물과 배운 내�
 | 강좌 | 내용 | 기록 |
 |---|---|---|
 | 03 | 갈릴레오 자유낙하 실험 | [실험 조건·결과·영상·배운 점](03-galileo/README.md) · [코드](03-galileo/03_galileo_experiment.py) |
+| 04 | 시뮬레이션 루프와 탄성 비교 · 강체 리셋 수정 | [실험 결과·수정 이유·영상](04-simulation-loop/README.md) · [수정된 코드](04-simulation-loop/04_simulation_loop.py) |
