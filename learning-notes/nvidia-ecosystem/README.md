@@ -1,48 +1,48 @@
-# 공식 이미지로 보는 NVIDIA 생태계 · ACT
+# 공식 이미지로 보는 NVIDIA 생태계
 
 학습일: 2026-10-13
 
-NVIDIA 공식 이미지와 기술 설명을 바탕으로 정리한 **5쪽 PDF 학습 자료**입니다.
-전체 구성도와 한국어 설명은 학습용으로 재구성했고, 공식 이미지의 출처와 버전을 PDF에 표시했습니다.
-
-## 자료 보기
+NVIDIA 공식 이미지와 기술 설명을 활용한 4쪽 학습 자료입니다.
+**PDF를 다운로드하지 않아도 아래에서 전체 내용을 이미지로 바로 볼 수 있습니다.** 이미지를 클릭하면 크게 볼 수 있습니다.
+전체 구성도와 한국어 해설은 학습용으로 재구성했고, 공식 이미지의 출처와 버전을 표시했습니다.
 
 - [PDF 보기 / 다운로드](physical-ai-ecosystem.pdf)
-- [이미지 출처와 ACT 참고 문서 목록](sources.json)
+- [공식 이미지 출처 목록](sources.json)
 
-## PDF 구성
+## 1. NVIDIA 생태계 전체 구성도
 
-| 페이지 | 내용 |
-|---|---|
-| 1 | NVIDIA 생태계 전체 구성도 |
-| 2 | Omniverse·Isaac Sim·Isaac Lab·Mimic |
-| 3 | Cosmos와 GR00T N1 계열의 역할 및 공식 구조도 |
-| 4 | GR00T Dreams 공식 참조 아키텍처 해설 |
-| 5 | ACT 모방학습과 실제 로봇 활용 근거 |
+**Omniverse → Isaac Sim → Isaac Lab**은 시뮬레이션 기반과 학습 환경의 관계입니다.
+**Mimic·Cosmos·Dreams**는 학습 데이터 확보에 활용하고, **GR00T N1 계열**은 로봇 행동 정책을 제공합니다.
+각 도구를 목적에 맞게 선택해서 조합합니다.
 
-## ACT는 실제 현장에서 많이 쓰이나?
+![NVIDIA 생태계 전체 구성도](images/page-01.png)
 
-**실제 로봇의 모방학습 연구·실증에서 활용되는 알고리즘이라고 설명할 근거는 있습니다.**
-원본 ACT 공개 구현은 실물 로봇의 학습과 평가를 지원하며,
-LeRobot 공식 문서는 빠른 학습, 낮은 계산 요구량과 성능을 이유로 ACT를 입문 시 첫 모델로 추천합니다.
+## 2. 시뮬레이션 기반과 Mimic
 
-다만 실제 로봇으로 실험하는 것과 제조 공장의 양산 라인에서 광범위하게 운용하는 것은 다릅니다.
-이번에 확인한 자료는 ACT의 실물 로봇 활용과 실용적인 학습 도구로서의 위치를 뒷받침하지만,
-제조업 전체의 도입 규모나 주류 여부를 입증하지는 않습니다.
+Isaac Sim은 로봇·설비·물리·센서를 실행하는 환경이고,
+Isaac Lab은 학습 환경·병렬 실행·데이터 수집·평가를 구성하는 프레임워크입니다.
+Mimic은 소수의 성공 시연을 다른 객체 위치나 조건에 맞게 증강합니다.
 
-학습 기록에는 다음처럼 표현합니다.
+![Omniverse, Isaac Sim, Isaac Lab과 Mimic](images/page-02.png)
 
-> ACT는 실제 로봇 조작의 모방학습 연구·실증과 공개 개발 생태계에서 활용되는 알고리즘이며,
-> 특정 작업의 시연 기반 정책을 학습할 때 실용적인 출발점이다.
-> 제조 공장의 광범위한 양산 적용 여부는 별도 도입 사례와 운영 자료로 확인해야 한다.
+## 3. Cosmos와 GR00T
 
-근거:
+Cosmos는 세계의 영상을 생성·예측·변환·추론하고,
+GR00T는 영상·언어·로봇 상태로부터 행동을 예측합니다.
+생성 영상의 현실감과 물리 계산의 정확성은 각각 검증해야 합니다.
+인용한 구조도는 Cosmos-Transfer1 및 GR00T N1.5 브랜치의 이미지입니다.
 
-- [ACT 원본 공개 구현](https://github.com/tonyzhaozh/act)
-- [LeRobot ACT 공식 문서](https://github.com/huggingface/lerobot/blob/main/docs/source/act.mdx)
-- [LeRobot 프로젝트와 실제 로봇 학습·실행 워크플로우](https://github.com/huggingface/lerobot)
+![Cosmos와 GR00T 공식 아키텍처 및 해설](images/page-03.png)
 
-## 주요 NVIDIA 출처
+## 4. GR00T Dreams
+
+공식 참조 아키텍처에는 실제 영상으로 Cosmos를 추가 학습하는 경로와,
+생성 영상의 품질 필터·행동 추정·VLA 추가 학습 경로가 함께 표시되어 있습니다.
+특정 새 작업의 직접 시연 부담을 줄일 수 있지만, 로봇에 맞춘 모델 준비와 평가가 필요합니다.
+
+![GR00T Dreams 공식 참조 아키텍처와 해설](images/page-04.png)
+
+## 주요 출처
 
 - [Omniverse Kit App Template](https://github.com/NVIDIA-Omniverse/kit-app-template)
 - [Isaac Sim](https://github.com/isaac-sim/IsaacSim)

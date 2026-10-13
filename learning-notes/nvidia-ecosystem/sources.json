@@ -27,9 +27,5 @@
       "dreams-architecture.png"
     ]
   },
-  "act_references": [
-    "https://github.com/tonyzhaozh/act",
-    "https://github.com/huggingface/lerobot/blob/main/docs/source/act.mdx"
-  ],
-  "note": "공식 이미지는 원본 그대로 포함. 전체 구성도와 ACT/ACT-2 설명 도식은 학습용 재구성."
+  "note": "NVIDIA 공식 이미지는 원본 비율로 인용. 전체 구성도와 한국어 해설은 학습용 재구성."
 }
