@@ -60,3 +60,4 @@ source ~/isaac/env_isaaclab/bin/activate
 | 05 | Franka Panda 로봇 배치 · 랜덤 관절 입력 · 상태 읽기와 리셋 | [실습 결과·영상·배운 점](05-spawn-robot/README.md) · [코드](05-spawn-robot/05_spawn_robot.py) |
 | 06 | 관절 위치 제어 · 중력 보상 · 손끝 위치 마커 비교 | [세 실습 결과·영상·코드](06-robot-joint-control/README.md) |
 | 07 | InteractiveScene · 환경 자동 복제 · 4개/16개 환경 비교 | [실습 결과·환경 자동 배치·코드](07-scene-design/README.md) |
+| 08 | 다중 로봇 · 초기 자세 설정 · 특정 환경 선택 제어 | [실습 결과·선택 제어·코드](08-multi-robot/README.md) |
