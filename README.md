@@ -51,6 +51,19 @@ source ~/isaac/env_isaaclab/bin/activate
 - [NVIDIA 생태계](learning-notes/nvidia-ecosystem/README.md): 전체 구성도 및 자료
 - [PD·PID 제어와 중력 보상](learning-notes/pd-pid-gravity-compensation/README.md): 각 제어 항의 역할, PD의 정상상태 오차, 중력 보상과 06번 실습의 연결
 
+지금까지의 핵심 개념은 아래에서 주제별로 볼 수 있습니다. 각 실습 페이지의 이론 설명도 유지합니다.
+
+| 핵심 개념 | 핵심 내용 | 개념 정리 |
+|---|---|---|
+| 물리 설정 · 03~04 | 형상에 강체·충돌·질량·관성·마찰·반발 속성을 더해 운동을 구성 | [물리 설정](learning-notes/robotics-core-concepts/README.md#physics) |
+| 루프·리셋 · 04·07 | 명령 전달 → 물리 진행 → 상태 갱신, 자세와 속도를 함께 초기화 | [시간과 리셋](learning-notes/robotics-core-concepts/README.md#loop-reset) |
+| Articulation · 05~06 | 관절로 연결된 링크의 상태와 구동 명령 관리 | [로봇 관절 구조](learning-notes/robotics-core-concepts/README.md#articulation) |
+| 다중 환경 · 07~08 | 환경 자동 복제·배치, `env_ids`로 특정 환경 선택 제어 | [다중 환경](learning-notes/robotics-core-concepts/README.md#parallel-envs) |
+| 센서 · 09~10 | RGB·Depth 영상과 광선 교차점의 의미·좌표계 구분 | [카메라와 RayCaster](learning-notes/robotics-core-concepts/README.md#sensors) |
+| 토크·접촉 힘 · 11 | 같은 토크에서도 레버 길이에 따라 전달 힘이 달라짐 | [레버와 ContactSensor](learning-notes/robotics-core-concepts/README.md#torque-contact) |
+| URDF·USD · 11 | 링크·관절·물리 속성을 기술하고 시뮬레이션 자산으로 변환 | [모델 형식](learning-notes/robotics-core-concepts/README.md#urdf) |
+| 정기구학 · 12 | 관절 상태 → 말단의 위치·방향, 좌표계와 TCP 고려 | [정기구학 개념](learning-notes/forward-kinematics/README.md) |
+
 ## 실습 기록
 
 | 강좌 | 내용 | 기록 |
@@ -64,3 +77,4 @@ source ~/isaac/env_isaaclab/bin/activate
 | 09 | RGB·Depth 카메라 · 실시간 표시 · 레일 카메라 궤도 촬영 | [실습 결과·카메라 데이터·코드](09-camera-sensor/README.md) |
 | 10 | RayCaster · 격자 광선 · 계단 높이 단면 스캔 | [실습 결과·측정 원리·코드](10-ray-caster/README.md) |
 | 11 | 토크·레버·접촉 힘 비교 · URDF 모델 구성 | [실습 결과·URDF 설명·코드·모델](11-torque-lever-contact/README.md) |
+| 12 | 정기구학 · 관절 구성별 말단 위치·방향 · 좌표 프레임 표시 | [실습 결과·정기구학 설명·코드](12-forward-kinematics/README.md) |
