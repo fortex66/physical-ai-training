@@ -13,10 +13,9 @@
 - [이 저장소에서 실습 코드 보기](03_galileo_experiment.py)
 - 코드 출처: [PinkWink 원본 튜토리얼](https://github.com/PinkWink/isaacsim_tutorials/blob/14f85fc6edece7cbb1faa50aa9fe3adef205e87a/03_galileo_experiment/03_galileo_experiment.py)
 - 확인한 원본 저장소 커밋: `14f85fc6edece7cbb1faa50aa9fe3adef205e87a`
-  - 위 버전의 코드를 수정 없이 이 폴더에 포함했다. 실습 PC에서 실행한 코드의 커밋은 별도로 확인하지 않았다.
-- PC 사양과 실행 환경: [메인 README의 공통 실습 환경](../README.md#공통-실습-환경)
+  - 위 버전의 코드를 수정 없이 이 폴더에 포함했다.
 
-공통 실행 준비로 가상환경을 활성화한 뒤 아래 명령을 실행한다. 실제 설치 경로에 맞게 조정한다.
+아래 명령으로 실행한다. 저장소 경로는 실제 위치에 맞게 조정한다.
 
 ```bash
 cd <physical-ai-training 저장소 경로>/03-galileo
