@@ -62,3 +62,4 @@ source ~/isaac/env_isaaclab/bin/activate
 | 07 | InteractiveScene · 환경 자동 복제 · 4개/16개 환경 비교 | [실습 결과·환경 자동 배치·코드](07-scene-design/README.md) |
 | 08 | 다중 로봇 · 초기 자세 설정 · 특정 환경 선택 제어 | [실습 결과·선택 제어·코드](08-multi-robot/README.md) |
 | 09 | RGB·Depth 카메라 · 실시간 표시 · 레일 카메라 궤도 촬영 | [실습 결과·카메라 데이터·코드](09-camera-sensor/README.md) |
+| 10 | RayCaster · 격자 광선 · 계단 높이 단면 스캔 | [실습 결과·측정 원리·코드](10-ray-caster/README.md) |
