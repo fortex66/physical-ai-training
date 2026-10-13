@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-13",
+  "sources": {
+    "kit": [
+      "NVIDIA Omniverse Kit",
+      "https://github.com/NVIDIA-Omniverse/kit-app-template",
+      "omni-kit.png"
+    ],
+    "lab": [
+      "Isaac Lab 공식 실습 이미지",
+      "https://github.com/isaac-sim/IsaacLab",
+      "isaac-lab.jpg"
+    ],
+    "transfer": [
+      "Cosmos-Transfer1 공식 구조도",
+      "https://github.com/nvidia-cosmos/cosmos-transfer1",
+      "cosmos-transfer.png"
+    ],
+    "groot": [
+      "GR00T N1.5 브랜치 공식 구조도",
+      "https://github.com/NVIDIA/Isaac-GR00T/tree/n1d5",
+      "groot-n1.5-architecture.png"
+    ],
+    "dreams": [
+      "GR00T Dreams 공식 참조 아키텍처",
+      "https://github.com/NVIDIA/GR00T-Dreams/blob/main/reference_architecture/reference_architecture.md",
+      "dreams-architecture.png"
+    ]
+  },
+  "note": "공식 이미지는 원본 그대로 포함. 전체 구성도와 ACT/ACT-2 설명 도식은 학습용 재구성."
+}
