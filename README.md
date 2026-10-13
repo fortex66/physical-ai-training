@@ -18,4 +18,4 @@ Isaac Sim / Isaac Lab 강의를 따라 실습하면서 결과물과 배운 내�
 
 ## 개념 학습
 
-- [공식 이미지로 보는 NVIDIA 생태계 · ACT · ACT-2](learning-notes/nvidia-ecosystem/README.md): 전체 구성도와 6쪽 이미지, PDF, HTML 자료
+- [공식 이미지로 보는 NVIDIA 생태계 · ACT](learning-notes/nvidia-ecosystem/README.md): 전체 구성도와 5쪽 PDF 자료
