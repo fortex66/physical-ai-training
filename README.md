@@ -65,7 +65,7 @@ python -c "import tkinter; print('tkinter 정상 설치')"
 
 ## 개념 학습
 
-- [NVIDIA 생태계](learning-notes/nvidia-ecosystem/README.md): 전체 구성도와 4쪽 자료를 다운로드 없이 바로 보기 · PDF 제공
+- [NVIDIA 생태계](learning-notes/nvidia-ecosystem/README.md): 전체 구성도 및 자료
 
 ## 실습 기록
 
