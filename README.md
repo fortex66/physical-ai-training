@@ -61,3 +61,4 @@ source ~/isaac/env_isaaclab/bin/activate
 | 06 | 관절 위치 제어 · 중력 보상 · 손끝 위치 마커 비교 | [세 실습 결과·영상·코드](06-robot-joint-control/README.md) |
 | 07 | InteractiveScene · 환경 자동 복제 · 4개/16개 환경 비교 | [실습 결과·환경 자동 배치·코드](07-scene-design/README.md) |
 | 08 | 다중 로봇 · 초기 자세 설정 · 특정 환경 선택 제어 | [실습 결과·선택 제어·코드](08-multi-robot/README.md) |
+| 09 | RGB·Depth 카메라 · 실시간 표시 · 레일 카메라 궤도 촬영 | [실습 결과·카메라 데이터·코드](09-camera-sensor/README.md) |
