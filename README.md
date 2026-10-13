@@ -63,6 +63,8 @@ source ~/isaac/env_isaaclab/bin/activate
 | 토크·접촉 힘 · 11 | 같은 토크에서도 레버 길이에 따라 전달 힘이 달라짐 | [레버와 ContactSensor](learning-notes/robotics-core-concepts/README.md#torque-contact) |
 | URDF·USD · 11 | 링크·관절·물리 속성을 기술하고 시뮬레이션 자산으로 변환 | [모델 형식](learning-notes/robotics-core-concepts/README.md#urdf) |
 | 정기구학 · 12 | 관절 상태 → 말단의 위치·방향, 좌표계와 TCP 고려 | [정기구학 개념](learning-notes/forward-kinematics/README.md) |
+| 역기구학 · 13 | 말단 목표 → 관절 목표, Jacobian과 DLS로 반복 계산 | [IK·Jacobian·DLS](learning-notes/inverse-kinematics/README.md) |
+| 상태 머신 · 14 | 단계별 IK 목표·그리퍼 명령·전환 조건으로 작업 순서 구성 | [상태 머신·Pick & Place](learning-notes/state-machine-pick-and-place/README.md) |
 
 ## 실습 기록
 
@@ -78,3 +80,5 @@ source ~/isaac/env_isaaclab/bin/activate
 | 10 | RayCaster · 격자 광선 · 계단 높이 단면 스캔 | [실습 결과·측정 원리·코드](10-ray-caster/README.md) |
 | 11 | 토크·레버·접촉 힘 비교 · URDF 모델 구성 | [실습 결과·URDF 설명·코드·모델](11-torque-lever-contact/README.md) |
 | 12 | 정기구학 · 관절 구성별 말단 위치·방향 · 좌표 프레임 표시 | [실습 결과·정기구학 설명·코드](12-forward-kinematics/README.md) |
+| 13 | 미분 역기구학 · Jacobian·DLS · 목표 포즈 추종 | [실습 결과·오차 비교·코드](13-differential-ik/README.md) |
+| 14 | IK + 상태 머신 · 그리퍼 제어 · Pick & Place | [실습 결과·7단계 작업·코드](14-pick-and-place/README.md) |
