@@ -66,6 +66,7 @@ python -c "import tkinter; print('tkinter 정상 설치')"
 ## 개념 학습
 
 - [NVIDIA 생태계](learning-notes/nvidia-ecosystem/README.md): 전체 구성도 및 자료
+- [PD·PID 제어와 중력 보상](learning-notes/pd-pid-gravity-compensation/README.md): 각 제어 항의 역할, PD의 정상상태 오차, 중력 보상과 06번 실습의 연결
 
 ## 실습 기록
 

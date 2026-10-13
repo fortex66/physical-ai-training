@@ -5,6 +5,8 @@
 Franka Panda 로봇팔에 사인파 목표 각도를 입력하고, 목표값과 실제값의 차이를 관찰했다.
 기본 위치 제어 → 중력 보상 비교 → 손끝 위치 마커 비교의 세 단계로 진행했다.
 
+관련 개념: [PD·PID 제어와 중력 보상](../learning-notes/pd-pid-gravity-compensation/README.md)
+
 ## 실행 준비와 코드
 
 - PC 사양·소프트웨어 환경·가상환경 활성화·그래프 표시 준비: [메인 README의 공통 실습 환경](../README.md#공통-실습-환경)
