@@ -10,7 +10,7 @@ Isaac Sim / Isaac Lab 강의를 따라 실습하면서 결과물과 배운 내�
 
 ## 개념 학습
 
-- [공식 이미지로 보는 NVIDIA 생태계](learning-notes/nvidia-ecosystem/README.md): 전체 구성도와 4쪽 자료를 다운로드 없이 바로 보기 · PDF 제공
+- [NVIDIA 생태계](learning-notes/nvidia-ecosystem/README.md): 전체 구성도와 4쪽 자료를 다운로드 없이 바로 보기 · PDF 제공
 
 ## 실습 기록
 
