@@ -76,3 +76,4 @@ python -c "import tkinter; print('tkinter 정상 설치')"
 | 04 | 시뮬레이션 루프와 탄성 비교 · 강체 리셋 수정 | [실험 결과·수정 이유·영상](04-simulation-loop/README.md) · [수정된 코드](04-simulation-loop/04_simulation_loop.py) |
 | 05 | Franka Panda 로봇 배치 · 랜덤 관절 입력 · 상태 읽기와 리셋 | [실습 결과·영상·배운 점](05-spawn-robot/README.md) · [코드](05-spawn-robot/05_spawn_robot.py) |
 | 06 | 관절 위치 제어 · 중력 보상 · 손끝 위치 마커 비교 | [세 실습 결과·영상·코드](06-robot-joint-control/README.md) |
+| 07 | InteractiveScene · 환경 자동 복제 · 4개/16개 환경 비교 | [실습 결과·강의 내용 검증·코드](07-scene-design/README.md) |
