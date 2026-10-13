@@ -7,22 +7,18 @@
 질량이 다른 두 공을 같은 높이에서 동시에 떨어뜨려 낙하 시간을 비교한다.
 공기 저항을 모델링하지 않은 조건에서 질량에 관계없이 같은 중력 가속도로 떨어지는지 확인한다.
 
-## 참고 자료와 실행 환경
+## 참고 자료와 실행 방법
 
 - 강좌: PinkLAB 「강좌 03 - 03_galileo_experiment」
 - [이 저장소에서 실습 코드 보기](03_galileo_experiment.py)
 - 코드 출처: [PinkWink 원본 튜토리얼](https://github.com/PinkWink/isaacsim_tutorials/blob/14f85fc6edece7cbb1faa50aa9fe3adef205e87a/03_galileo_experiment/03_galileo_experiment.py)
 - 확인한 원본 저장소 커밋: `14f85fc6edece7cbb1faa50aa9fe3adef205e87a`
   - 위 버전의 코드를 수정 없이 이 폴더에 포함했다. 실습 PC에서 실행한 코드의 커밋은 별도로 확인하지 않았다.
-- 실습 화면에서 확인한 Isaac Sim: **5.1.0**
-- 녹화 영상의 시작 로그에서 확인한 `isaaclab.python`: **2.3.2**
-- OS: Ubuntu (정확한 버전 미기록)
-- Python 버전: 미기록
+- PC 사양과 실행 환경: [메인 README의 공통 실습 환경](../README.md#공통-실습-환경)
 
-Isaac Lab이 설치된 환경에서 이 저장소의 코드를 실행하는 방법은 다음과 같다. 실제 설치 경로에 맞게 조정한다.
+공통 실행 준비로 가상환경을 활성화한 뒤 아래 명령을 실행한다. 실제 설치 경로에 맞게 조정한다.
 
 ```bash
-source ~/isaac/env_isaaclab/bin/activate
 cd <physical-ai-training 저장소 경로>/03-galileo
 python 03_galileo_experiment.py
 ```

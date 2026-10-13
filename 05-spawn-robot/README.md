@@ -8,21 +8,17 @@
 관절에 랜덤 effort 명령을 적용하고, 관절 상태를 읽으며 주기적으로 기본 자세로 리셋한다.
 공 하나의 강체 상태를 다룬 04번에서 여러 링크와 관절로 연결된 로봇을 다루는 단계로 넘어간다.
 
-## 코드와 실행 환경
+## 코드와 실행 방법
 
 - [이 저장소에서 실습 코드 보기](05_spawn_robot.py)
 - 출처: PinkLAB 「강좌 05 - 05_spawn_robot」
 - [PinkWink 원본 튜토리얼](https://github.com/PinkWink/isaacsim_tutorials/tree/main/05_spawn_robot)
 - 첨부한 실습 코드를 수정 없이 이 폴더에 저장했다.
-- Isaac Sim: **5.1.0** (실습 화면 기준)
-- OS: Ubuntu (정확한 버전 미기록)
-- 관절 상태 출력의 장치: `cuda:0`
-- 이번 실습의 Isaac Lab·Python 버전은 별도로 기록하지 않았다.
+- PC 사양과 실행 환경: [메인 README의 공통 실습 환경](../README.md#공통-실습-환경)
 
-Isaac Lab과 로봇 에셋을 사용할 수 있는 환경에서 실행한다. 설치 경로는 실제 PC에 맞게 조정한다.
+공통 실행 준비로 가상환경을 활성화한 뒤 아래 명령을 실행한다. 로봇 에셋을 사용할 수 있어야 하며, 설치 경로는 실제 PC에 맞게 조정한다.
 
 ```bash
-source ~/isaac/env_isaaclab/bin/activate
 cd <physical-ai-training 저장소 경로>/05-spawn-robot
 python 05_spawn_robot.py
 ```

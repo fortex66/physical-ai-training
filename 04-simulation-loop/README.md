@@ -8,20 +8,17 @@
 물리 시간 간격, 시뮬레이션 루프, 위치 측정과 에피소드 리셋을 익힌다.
 원본 강의 코드로 발생한 리셋 문제를 수정하고, 공들이 반복해서 낙하하는 결과를 기록했다.
 
-## 코드와 실행 환경
+## 코드와 실행 방법
 
 - [수정된 실습 코드](04_simulation_loop.py)
 - 출처: PinkLAB 「강좌 04 - 04_simulation_loop 탄성 실험」
 - [PinkWink 원본 튜토리얼](https://github.com/PinkWink/isaacsim_tutorials/tree/main/04_simulation_loop)
 - 이 폴더의 Python 파일은 실습에서 정상 동작을 확인한 수정본을 그대로 저장했다. 비교를 위해 주석 처리한 기존 리셋 코드도 포함한다.
-- Isaac Sim: **5.1.0** (실습 화면 기준)
-- OS: Ubuntu (정확한 버전 미기록)
-- 이번 실습의 Isaac Lab·Python 버전은 별도로 기록하지 않았다.
+- PC 사양과 실행 환경: [메인 README의 공통 실습 환경](../README.md#공통-실습-환경)
 
-Isaac Lab 환경이 준비된 PC에서 설치 경로에 맞게 실행한다.
+공통 실행 준비로 가상환경을 활성화한 뒤 아래 명령을 실행한다. 설치 경로는 실제 PC에 맞게 조정한다.
 
 ```bash
-source ~/isaac/env_isaaclab/bin/activate
 cd <physical-ai-training 저장소 경로>/04-simulation-loop
 python 04_simulation_loop.py
 ```
