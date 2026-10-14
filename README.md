@@ -67,6 +67,7 @@ source ~/isaac/env_isaaclab/bin/activate
 | 상태 머신 · 14 | 단계별 IK 목표·그리퍼 명령·전환 조건으로 작업 순서 구성 | [상태 머신·Pick & Place](learning-notes/state-machine-pick-and-place/README.md) |
 | 차동 구동 · 15 | 선속도·각속도 명령을 좌우 바퀴 각속도로 변환 | [차동 구동·유니사이클](learning-notes/differential-drive/README.md) |
 | 오도메트리 · 16 | 바퀴 회전량으로 위치·방향 추정, 실제 위치와 오차 비교 | [오도메트리·비홀로노믹 주행](learning-notes/wheel-odometry/README.md) |
+| Waypoint 제어 · 17 | 목표 거리·방향 오차로 속도 보정, 도달 시 다음 목표 선택 | [P 제어·내비게이션](learning-notes/waypoint-navigation/README.md) |
 
 ## 실습 기록
 
@@ -86,3 +87,4 @@ source ~/isaac/env_isaaclab/bin/activate
 | 14 | IK + 상태 머신 · 그리퍼 제어 · Pick & Place | [실습 결과·7단계 작업·코드](14-pick-and-place/README.md) |
 | 15 | JetBot 배치 · 차동 구동 · 전진·회전·원호 주행 | [실습 결과·바퀴 속도 변환·코드](15-spawn-mobile-robot/README.md) |
 | 16 | JetBot 경로 패턴 · 바퀴 오도메트리 · 위치 오차 비교 | [실습 결과·위치 추정·코드](16-mobile-base-control/README.md) |
+| 17 | JetBot Waypoint 내비게이션 · P 제어 · 사각형 순환 | [실습 결과·피드백 제어·코드](17-mobile-navigation/README.md) |
