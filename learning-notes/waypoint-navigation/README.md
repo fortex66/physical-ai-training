@@ -25,13 +25,10 @@ $$
 d=\sqrt{(x_g-x)^2+(y_g-y)^2}
 $$
 
-$$
-\theta_g=\operatorname{atan2}(y_g-y,x_g-x)
-$$
-
-$$
-e_\theta=\operatorname{atan2}(\sin(\theta_g-\theta),\cos(\theta_g-\theta))
-$$
+```text
+목표 방향 θg = atan2(yg - y, xg - x)
+방향 오차 eθ = atan2(sin(θg - θ), cos(θg - θ))
+```
 
 각도 오차를 ±π 범위로 정규화해 짧은 회전 방향을 사용한다.
 현재 179°, 목표 -179°일 때 오차는 -358°가 아니라 +2°로 해석한다.

@@ -88,9 +88,12 @@ Waypoint는 환경 기준으로 `(2, 0) → (2, 2) → (0, 2) → (0, 0)`이다.
 현재 위치 `(x, y)`와 목표 `(xg, yg)`로 다음 값을 구한다.
 
 $$
-d=\sqrt{(x_g-x)^2+(y_g-y)^2},\qquad
-\theta_g=\operatorname{atan2}(y_g-y,x_g-x)
+d=\sqrt{(x_g-x)^2+(y_g-y)^2}
 $$
+
+```text
+목표 방향 θg = atan2(yg - y, xg - x)
+```
 
 `atan2`는 x·y 차이의 부호를 함께 사용해 사분면에 맞는 방향을 계산한다.
 현재 yaw는 로봇 루트 쿼터니언에서 읽는다.
