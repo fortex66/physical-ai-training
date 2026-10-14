@@ -8,39 +8,11 @@
 보상을 출력하지만 신경망 가중치를 업데이트하지는 않는다.
 Policy·Critic·PPO를 학습시키는 단계는 이후 24번 등의 학습 실행기에 해당한다.
 
-## Mermaid로 보는 코드 구성과 실행 순서
+## Graphviz로 보는 코드 구성과 실행 순서
 
-```mermaid
-flowchart TD
-    CFG["CartpoleEnvCfg: Scene·Actions·Observations·Rewards·Terminations·Events"] --> CREATE["main: ManagerBasedRLEnv 생성"]
-    CREATE --> RESET["env.reset: 첫 관측 받기"]
-    RESET --> RANDOM["torch.randn: 관측과 무관한 랜덤 행동"]
-    RANDOM --> STEP["env.step: 행동 처리·물리 진행·종료·보상·리셋"]
-    STEP --> RESULT["반환: obs, rew, terminated, truncated, info"]
-    RESULT --> LOG["보상 누적·에피소드 수·현재 step 평균 보상 기록"]
-    LOG --> LIMIT{"2000 환경 step인가?"}
-    LIMIT -->|아니오| RANDOM
-    LIMIT -->|예| CLOSE["env.close: 데모 종료"]
-    NOTE["20장에는 Actor·Critic 생성과 PPO 가중치 업데이트가 없음"] -.-> RANDOM
-```
+![20장 코드 실행 구조](../learning-notes/reinforcement-learning/diagrams/03-lesson20-structure.png)
 
-```mermaid
-flowchart TD
-    INPUT["env.step(action): 행동 1회 입력"] --> PROCESS["Action Manager: 카트 effort 목표로 변환·scale 100"]
-    PROCESS --> PHYS1["물리 step 1: 행동 적용 → PhysX 진행 → 씬 상태 갱신"]
-    PHYS1 --> PHYS2["물리 step 2: 같은 행동 → PhysX 진행 → 씬 상태 갱신"]
-    PHYS2 --> COUNTER["환경·에피소드 카운터 증가"]
-    COUNTER --> TERM["종료 계산: 카트 경계 이탈 / 에피소드 5초 상한"]
-    TERM --> REWARD["보상 계산: 각 항의 값 × 가중치 × 환경 dt의 합"]
-    REWARD --> DONE{"완료한 환경이 있는가?"}
-    DONE -->|예| RESET["해당 환경만 초기 상태로 리셋·Event 실행"]
-    DONE -->|아니오| OBS["관측 계산"]
-    RESET --> OBS
-    OBS --> RETURN["관측·보상·종료 플래그·info 반환"]
-    RETURN --> NEXT["다음 행동: 20장은 다시 랜덤 샘플"]
-    TIME["물리 dt=1/120초 · decimation=2 · 환경 dt=1/60초"] -.-> PHYS1
-    TIME -.-> PHYS2
-```
+![환경 step과 물리 처리 순서](../learning-notes/reinforcement-learning/diagrams/04-environment-step.png)
 
 환경 step 한 번은 같은 행동으로 물리 step을 두 번 진행한 뒤 결과를 반환한다.
 신경망을 업데이트하는 학습 iteration과 다르다.

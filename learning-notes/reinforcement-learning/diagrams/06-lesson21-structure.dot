@@ -1,0 +1,17 @@
+digraph G {
+graph [bgcolor="#ffffff", pad="0.45", nodesep="0.55", ranksep="0.65", fontname="Noto Sans CJK KR", fontsize=26, fontcolor="#172b45", labelloc=t, splines=polyline];
+node [shape=box, style="rounded,filled", fontname="Noto Sans CJK KR", fontsize=18, fontcolor="#172b45", color="#ccd6e2", fillcolor="#f4f7fb", penwidth=1.4, margin="0.24,0.18"];
+edge [color="#8798ac", penwidth=1.6, arrowsize=0.75, fontname="Noto Sans CJK KR", fontsize=13, fontcolor="#52647c"];
+label="21장 코드 흐름 · 커스텀 관측과 보상";
+rankdir=TB;
+obs [label="관측 설정\n기본 4 + sin/cos 2 + 정규화 1",fillcolor="#eaf2ff"];
+rew [label="보상 설정\n생존·종료·직립·중앙\n행동 크기·각속도",fillcolor="#fff4df"];
+init [label="01  환경 생성·리셋",fillcolor="#e9f6f0"];
+random [label="02  랜덤 행동\n관측을 행동 결정에 사용하지 않음"];
+step [label="03  env.step\n물리 2회·보상·종료·자동 리셋",fillcolor="#e9f6f0"];
+log [label="04  관측 7개·보상 반환\n에피소드 총점·항별 마지막 값 기록"];
+endrun [label="05  1000 환경 step에서 종료\nPolicy·Critic·PPO 학습 없음",fillcolor="#fff4df"];
+{rank=same;obs;rew} obs -> init; rew -> init; init -> random -> step -> log -> endrun;
+log -> random [style=dashed,label="상한 전: 다음 step",constraint=false];
+
+}

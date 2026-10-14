@@ -3,44 +3,13 @@
 **강화학습은 행동의 결과를 경험하고, 앞으로 얻을 누적 보상이 커지도록 행동 선택 방식을 개선하는 과정이다.**
 보상 숫자를 계산하는 것만으로 학습이 일어나지는 않는다. 경험으로 정책을 바꾸는 학습 알고리즘이 필요하다.
 
-## Mermaid로 전체 구조 보기
+## Graphviz로 전체 구조 보기
 
 [전체 강화학습·모델·20장 실행·물리 step 구성도](diagrams/README.md)를 함께 볼 수 있다.
 
-```mermaid
-flowchart TD
-    CONFIG["사용자 설정: 환경·관측·행동·보상·종료 + 신경망·학습 설정"] --> ENV["Isaac Lab 환경 + Isaac Sim 물리"]
-    CONFIG --> ACTOR["Actor / Policy: 관측으로 행동 선택"]
-    OBS["현재 관측"] --> ACTOR
-    OBS --> CRITIC["Critic: 앞으로 얻을 보상 추정"]
-    ACTOR -->|행동| ENV
-    ENV -->|다음 관측| OBS
-    ENV -->|보상·종료·다음 관측| BUFFER["Rollout: 경험을 일정량 수집"]
-    ACTOR -->|행동·확률 정보| BUFFER
-    CRITIC -->|가치 추정| BUFFER
-    BUFFER --> PPO["PPO: 경험으로 정책과 가치망 업데이트"]
-    PPO -->|가중치 수정| ACTOR
-    PPO -->|가중치 수정| CRITIC
-    PPO --> SAVE["체크포인트 저장 → 나중에 정책 로드·제어"]
-    classDef env fill:#eaf6ef,stroke:#24725d,color:#172b45;
-    classDef model fill:#f2ecfb,stroke:#7043a1,color:#172b45;
-    classDef learn fill:#fff4df,stroke:#ab6610,color:#172b45;
-    class ENV env;
-    class ACTOR,CRITIC model;
-    class BUFFER,PPO learn;
-```
+![강화학습 전체 흐름](diagrams/01-training-overview.png)
 
-```mermaid
-flowchart LR
-    subgraph ACTOR["Actor: 행동 선택 · 24장 Cartpole 예시"]
-        AIN["관측 4개"] --> A1["은닉층 1: 32 뉴런·ELU"] --> A2["은닉층 2: 32 뉴런·ELU"] --> AOUT["행동 분포 → 카트 행동 1개 선택"]
-    end
-    subgraph CRITIC["Critic: 가치 추정 · 같은 관측 사용 예시"]
-        CIN["관측 4개"] --> C1["은닉층 1: 32 뉴런·ELU"] --> C2["은닉층 2: 32 뉴런·ELU"] --> COUT["앞으로의 보상 추정 V: 숫자 1개"]
-    end
-    PPO["PPO 학습"] -.->|가중치 수정| A1
-    PPO -.->|가중치 수정| C1
-```
+![Actor·Critic 모델 구조](diagrams/02-actor-critic-model.png)
 
 위 신경망 구조는 24장 예시다. 20·21장은 아직 랜덤 행동 환경 테스트이며 PPO가 연결되지 않았다.
 
@@ -265,11 +234,7 @@ Isaac Lab v2.3.2 보상 매니저는 가중합에 환경 시간 간격을 곱한
 가우시안 중앙 보상은 중심에서 최대이며 sigma가 허용 위치 범위의 넓이를 조절한다.
 ‘energy’라는 이름을 붙여도 raw action 제곱합이면 실제 에너지 측정이 아닌 행동 크기 억제 항이다.
 
-```mermaid
-flowchart LR
-    FUNC["보상 함수 원시 값"] --> WEIGHT["가중치 적용"] --> DT["환경 dt 적용"] --> REWARD["환경 step 보상"] --> EPISODE["에피소드 누적"]
-    WEIGHT -.-> LOG["21번 항별 로그: 마지막 값·dt 적용 전"]
-```
+![보상 로그와 누적값의 관계](diagrams/05-reward-accounting.png)
 
 총점만 보면 어떤 항이 영향을 줬는지 알기 어렵다.
 항별 값을 보되 원시 값, 가중 값, step 기여와 에피소드 누적을 구분한다.

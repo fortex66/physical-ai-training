@@ -26,35 +26,13 @@ python 21_observation_reward.py --num_envs 8
 python 21_observation_reward.py --headless
 ```
 
-## Mermaid로 보는 코드 구조
+## Graphviz로 보는 코드 구조
 
-```mermaid
-flowchart TD
-    CFG["CartpoleCustomEnvCfg"] --> ENV["ManagerBasedRLEnv 생성·리셋"]
-    OBS["ObservationsCfg: 기본 4개 + sin/cos 2개 + 정규화 위치 1개"] --> CFG
-    REW["RewardsCfg: 생존·종료·직립·중앙·행동 크기·각속도"] --> CFG
-    ENV --> RANDOM["랜덤 행동 torch.randn: 관측과 무관"]
-    RANDOM --> STEP["env.step: 물리 2회·보상·종료·자동 리셋"]
-    STEP --> RESULT["7차원 관측·보상·종료 플래그 반환"]
-    RESULT --> LOG["에피소드 누적 보상·마지막 step 항별 값 출력"]
-    LOG --> LIMIT{"1000 환경 step인가?"}
-    LIMIT -->|아니오| RANDOM
-    LIMIT -->|예| CLOSE["환경 종료"]
-```
+![21장 커스텀 관측·보상 실행 구조](../learning-notes/reinforcement-learning/diagrams/06-lesson21-structure.png)
 
 ## 관측 구성 — 정보와 표현을 구분하기
 
-```mermaid
-flowchart LR
-    STATE["Cartpole 관절 위치·속도"] --> POS["joint_pos_rel: 2개"]
-    STATE --> VEL["joint_vel_rel: 2개"]
-    STATE --> ANGLE["막대 각도 → sin·cos: 2개"]
-    STATE --> NORM["카트 위치 / 3 → clip: 1개"]
-    POS --> CONCAT["연결 → policy 관측 N × 7"]
-    VEL --> CONCAT
-    ANGLE --> CONCAT
-    NORM --> CONCAT
-```
+![21장 관측 7차원 구성](../learning-notes/reinforcement-learning/diagrams/07-observation-schema.png)
 
 | 항목 | 크기 | 의미 |
 |---|---|---|
@@ -73,19 +51,7 @@ flowchart LR
 
 ## 보상 구성 — 학습 목표의 표현
 
-```mermaid
-flowchart TD
-    STATE["현재 상태·종료 여부·입력 행동"] --> ALIVE["생존·종료: +1 / -2 가중치"]
-    STATE --> UPRIGHT["직립: cos 각도 × 2"]
-    STATE --> CENTER["중앙: 가우시안 값 × 0.5"]
-    STATE --> ACTION["입력 행동 제곱합 × -0.001"]
-    STATE --> VEL["막대 각속도 절댓값 × -0.005"]
-    ALIVE --> SUM["가중합 × 환경 dt 1/60초 → 반환 보상"]
-    UPRIGHT --> SUM
-    CENTER --> SUM
-    ACTION --> SUM
-    VEL --> SUM
-```
+![21장 보상 항과 가중치](../learning-notes/reinforcement-learning/diagrams/08-reward-schema.png)
 
 | 항 | 의미 | 해석할 점 |
 |---|---|---|

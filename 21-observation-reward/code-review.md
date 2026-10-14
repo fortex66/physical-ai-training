@@ -35,10 +35,7 @@ cart_pos_norm = ObsTerm(
 
 Isaac Lab v2.3.2의 일반 처리 순서는 다음과 같다.
 
-```mermaid
-flowchart LR
-    FUNC["관측 함수 + params"] --> MOD["선택적 modifier"] --> NOISE["선택적 noise"] --> CLIP["선택적 clip"] --> SCALE["선택적 scale"] --> GROUP["그룹 연결"]
-```
+![관측 전처리 순서](../learning-notes/reinforcement-learning/diagrams/09-observation-processing.png)
 
 이 코드에는 noise와 ObsTerm.scale 설정이 없고 `enable_corruption=False`다.
 강의에서 옵션을 소개하는 것과 현재 코드에 옵션이 적용됐다는 것은 다르다.

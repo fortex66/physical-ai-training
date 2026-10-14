@@ -1,0 +1,10 @@
+digraph G {
+graph [bgcolor="#ffffff", pad="0.45", nodesep="0.55", ranksep="0.65", fontname="Noto Sans CJK KR", fontsize=26, fontcolor="#172b45", labelloc=t, splines=polyline];
+node [shape=box, style="rounded,filled", fontname="Noto Sans CJK KR", fontsize=18, fontcolor="#172b45", color="#ccd6e2", fillcolor="#f4f7fb", penwidth=1.4, margin="0.24,0.18"];
+edge [color="#8798ac", penwidth=1.6, arrowsize=0.75, fontname="Noto Sans CJK KR", fontsize=13, fontcolor="#52647c"];
+label="관측 처리 순서 · Isaac Lab v2.3.2";
+rankdir=LR;
+a [label="관측 함수\n+ params"]; b [label="선택적\nmodifier"]; c [label="선택적\nnoise"]; d [label="선택적\nclip"]; e [label="선택적\nscale"]; f [label="그룹 연결",fillcolor="#e9f6f0"];
+a -> b -> c -> d -> e -> f;
+
+}
