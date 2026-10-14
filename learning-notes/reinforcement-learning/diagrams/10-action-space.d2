@@ -1,0 +1,30 @@
+direction: right
+classes: {
+  box: {
+    width: 190
+    height: 90
+    style: {font-size: 24; font-color: "#172B45"; fill: "#FFFFFF"; stroke: "#CBD5E1"; stroke-width: 1; border-radius: 10}
+  }
+  focus: {
+    width: 190
+    height: 90
+    style: {font-size: 24; font-color: "#173C86"; fill: "#EFF5FF"; stroke: "#5D81D9"; stroke-width: 2; border-radius: 10}
+  }
+}
+*.class: box
+*.style.font-size: 24
+(* -> *)[*].style.stroke: "#64748B"
+(* -> *)[*].style.stroke-width: 2
+input: "입력 행동\n예: 0.5"
+process: "scale · offset\n단위 변환"
+effort: "힘 명령\n50 N" {class: focus}
+position: "위치 목표\n1 m" {class: focus}
+velocity: "속도 목표\n2.5 m/s" {class: focus}
+robot: "actuator\n물리 운동"
+input -> process
+process -> effort
+process -> position
+process -> velocity
+effort -> robot
+position -> robot
+velocity -> robot

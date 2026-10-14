@@ -219,6 +219,15 @@ Critic은 앞으로의 보상을 추정해 정책 학습의 비교 기준을 제
 
 [강화학습 개념 업데이트](../reinforcement-learning/README.md) · [21번 실습](../../21-observation-reward/README.md) · [21번 리뷰](../../21-observation-reward/code-review.md)
 
+## 18. 액션 공간과 actuator
+
+같은 정책 출력도 액션 종류에 따라 힘·위치·속도 명령으로 해석된다.
+ActionTerm의 scale·offset은 명령 변환이며 actuator 게인이나 범위 제한을 대신하지 않는다.
+목표 위치·속도는 즉시 상태 변경이 아니며 실제 추종은 게인·힘 제한·물리에 달려 있다.
+기본 Cartpole의 stiffness=0인 상태에서는 position 모드만 바꿔도 위치 추종이 되지 않는다.
+
+[액션 공간 개념](../reinforcement-learning/README.md#11-액션-공간--정책-출력을-로봇-명령으로-해석하기) · [22번 실습](../../22-action-space/README.md) · [22번 리뷰](../../22-action-space/code-review.md)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

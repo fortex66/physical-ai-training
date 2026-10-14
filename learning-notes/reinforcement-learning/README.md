@@ -243,12 +243,43 @@ Isaac Lab v2.3.2의 `_step_reward`는 이름과 달리 dt 적용 전 가중 값�
 보상 변경 효과를 확인하려면 랜덤 데모뿐 아니라 정책 학습·평가를 같은 조건에서 비교해야 한다.
 학습 보상 자체가 달라진 실험에서는 총점 크기만으로 우열을 판단하지 않는다.
 
+## 11. 액션 공간 — 정책 출력을 로봇 명령으로 해석하기
+
+정책은 숫자를 출력하지만 그 숫자가 무엇을 뜻하는지는 환경의 액션 설계가 정한다.
+‘0.5만큼 행동한다’ 대신 ‘50 N으로 민다’, ‘1 m를 목표로 한다’, ‘2.5 m/s를 목표로 한다’처럼 해석해야 한다.
+
+![정책 출력에서 실제 구동까지](diagrams/10-action-space.png)
+
+| 단계 | 역할 | 이번 22장 예 |
+|---|---|---|
+| 정책 또는 테스트 입력 | 행동 값 선택 | 사인파·균등 난수 · 신경망 없음 |
+| ActionTerm | 대상 관절·명령 종류·scale/offset 지정 | 카트 하나에 힘/위치/속도 명령 |
+| actuator | 목표와 현재 상태로 구동 힘 결정 | 위치 stiffness·속도 damping·힘 제한 |
+| 물리 엔진 | 힘과 중력·접촉으로 다음 상태 계산 | 두 물리 step 후 새 관측·보상 반환 |
+
+위치·속도 제어는 로봇을 목표값으로 순간 이동시키지 않는다. 추종은 게인·질량·힘 제한 등에 달려 있다.
+위치 제어를 선택해도 stiffness=0이면 위치 오차에 반응하지 않는다. 기본 Cartpole을 그대로 사용한 22번이 이 경우다.
+힘 명령도 actuator의 감쇠와 함께 작용할 수 있으므로 ‘effort면 게인 무시’를 보편 법칙으로 해석하지 않는다.
+
+`scale`은 값의 크기를 바꾸고 `offset`은 기준을 옮긴다. 둘 다 범위 제한 장치는 아니다.
+입력 제한, 처리된 명령의 clip, actuator의 힘 제한, 관절 위치 제한을 구분한다.
+회전 관절과 직선 관절은 동일한 ActionCfg를 쓰더라도 명령 단위가 다르다.
+
+**어떤 액션 방식이 좋은지는 작업과 실제 구동 인터페이스에 달려 있다.**
+위치 명령을 받는 로봇에 정책을 배포하려면 학습 당시 위치 제어기의 응답도 맞춰야 한다.
+관측·액션 차원이 같더라도 모드·scale·offset·관절 순서를 바꾸면 기존 가중치가 의도한 동작과 달라질 수 있다.
+정책 체크포인트와 환경 설정을 함께 보관한다.
+
+22번은 액션 인터페이스 테스트이고 PPO 학습이 아니다. 무작위 행동의 점수는 학습 성능과 구분한다.
+
 ## 연결된 실습과 자료
 
 - [20번 결과·코드](../../20-base-env/README.md)
 - [20번 코드 리뷰](../../20-base-env/code-review.md)
 - [21번 커스텀 관측·보상](../../21-observation-reward/README.md)
 - [21번 코드 리뷰](../../21-observation-reward/code-review.md)
+- [22번 액션 공간](../../22-action-space/README.md)
+- [22번 코드 리뷰](../../22-action-space/code-review.md)
 - [RSL-RL](https://github.com/leggedrobotics/rsl_rl)
 - [Isaac Lab v2.3.2 환경 step 구현](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/envs/manager_based_rl_env.py)
 - [Isaac Lab v2.3.2 보상 매니저](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/managers/reward_manager.py)

@@ -28,7 +28,7 @@ def main():
     ET.register_namespace('', ns[1:-1])
     for source in sorted(root.glob('*.d2')):
         svg = source.with_suffix('.svg')
-        result = subprocess.run([d2, '--layout=elk', '--pad=24', str(source), str(svg)], capture_output=True, text=True)
+        result = subprocess.run([d2, '--layout=elk', '--pad=18', '--elk-nodeNodeBetweenLayers=45', '--elk-edgeNodeBetweenLayers=25', str(source), str(svg)], capture_output=True, text=True)
         if result.returncode:
             raise SystemExit(result.stderr)
         tree = ET.parse(svg)
@@ -42,7 +42,7 @@ def main():
         tree.write(svg, encoding='unicode', xml_declaration=False)
         source.with_suffix('.png').write_bytes(resvg_py.svg_to_bytes(
             svg_path=str(svg), font_files=[str(font)], font_family='Training Diagram Sans', background='#ffffff'))
-    print('D2 구성도 9개 SVG·PNG 생성 완료')
+    print('D2 구성도 SVG·PNG 생성 완료')
 
 
 if __name__ == '__main__':

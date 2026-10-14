@@ -1,4 +1,4 @@
-# D2로 보는 강화학습과 20장 실행 구조
+# D2로 보는 강화학습과 20~22장 실행 구조
 
 20장은 환경을 테스트하며, 정책 가중치를 학습하는 코드는 아직 없다.
 흰 배경·진한 글자·파란 강조색을 사용한 D2 구성도로 실제 학습 구조와 현재 실행 구조를 구분한다.
@@ -70,11 +70,18 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 
 ![함수·modifier·noise·clip·scale·그룹 연결](09-observation-processing.png)
 
+## 10. 액션 공간과 구동 연결
+
+![입력 행동을 힘·위치·속도 명령으로 변환](10-action-space.png)
+
+세 가지 중 선택한 모드의 명령을 전달한다. 목표값과 실제 상태는 같지 않으며 actuator 게인과 힘 제한을 함께 확인한다.
+[22장 실습·영상](../../../22-action-space/README.md) · [22장 코드 리뷰](../../../22-action-space/code-review.md)
+
 ## 사용 도구와 편집 가능한 원본
 
 [D2](https://github.com/d2lang/d2)의 ELK 레이아웃으로 생성했다.
 색은 진한 글자와 파란 강조색 중심으로 줄이고, 설명은 본문으로 옮겨 도형 안에는 핵심 단계만 표시했다.
-한글 폰트를 포함한 SVG와 문서 표시용 PNG를 함께 제공한다. D2 소스로 내용과 배치를 수정할 수 있다.
+도형 높이·글자·단계 간격을 줄여 전체 크기를 다듬었다. 한글 폰트를 포함한 SVG와 문서 표시용 PNG를 함께 제공한다. D2 소스로 내용과 배치를 수정할 수 있다.
 
 | 구성도 | 확대용 SVG | D2 소스 |
 |---|---|---|
@@ -87,6 +94,7 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 | 21장 관측 7차원 구성 | [SVG](07-observation-schema.svg) | [D2](07-observation-schema.d2) |
 | 21장 보상 항과 가중치 | [SVG](08-reward-schema.svg) | [D2](08-reward-schema.d2) |
 | 관측 전처리 순서 | [SVG](09-observation-processing.svg) | [D2](09-observation-processing.d2) |
+| 액션 공간과 구동 연결 | [SVG](10-action-space.svg) | [D2](10-action-space.d2) |
 
 다시 생성하려면 D2 v0.9.0과 Python의 `fonttools`, `resvg-py`가 필요하다.
 
