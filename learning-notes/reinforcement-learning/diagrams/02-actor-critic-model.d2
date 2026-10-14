@@ -1,0 +1,27 @@
+direction: down
+classes: {
+  box: {
+    width: 240
+    height: 110
+    style: {font-size: 28; font-color: "#172B45"; fill: "#FFFFFF"; stroke: "#CBD5E1"; stroke-width: 1; border-radius: 10}
+  }
+  focus: {
+    width: 240
+    height: 110
+    style: {font-size: 28; font-color: "#173C86"; fill: "#EFF5FF"; stroke: "#5D81D9"; stroke-width: 2; border-radius: 10}
+  }
+}
+*.class: box
+*.style.font-size: 28
+(* -> *)[*].style.stroke: "#64748B"
+(* -> *)[*].style.stroke-width: 2
+direction: right
+obs: "관측\n4개"
+a1: "Actor 은닉층\n32 뉴런" {class: focus}
+a2: "Actor 은닉층\n32 뉴런" {class: focus}
+aout: "행동 분포\n행동 1개 선택" {class: focus}
+c1: "Critic 은닉층\n32 뉴런"
+c2: "Critic 은닉층\n32 뉴런"
+cout: "예상 가치\n숫자 1개"
+obs -> a1 -> a2 -> aout
+obs -> c1 -> c2 -> cout

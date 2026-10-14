@@ -1,8 +1,8 @@
-# Graphviz로 보는 강화학습과 20장 실행 구조
+# D2로 보는 강화학습과 20장 실행 구조
 
 20장은 환경을 테스트하며, 정책 가중치를 학습하는 코드는 아직 없다.
-번호·색상·여백을 통일한 Graphviz 구성도로 실제 학습 구조와 현재 실행 구조를 구분한다.
-GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 DOT 소스도 제공한다.
+흰 배경·진한 글자·파란 강조색을 사용한 D2 구성도로 실제 학습 구조와 현재 실행 구조를 구분한다.
+GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소스도 제공한다.
 
 ## 1. 전체 강화학습 구조
 
@@ -72,26 +72,29 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 DOT �
 
 ## 사용 도구와 편집 가능한 원본
 
-[Graphviz](https://graphviz.org/)의 DOT 레이아웃 엔진으로 생성했다.
-단계 번호와 색상을 입력·모델·환경·평가 흐름을 구분하는 보조 표시로 사용했다.
-PNG는 문서 표시용, SVG는 확대용, DOT는 구성도 수정용이다.
+[D2](https://github.com/d2lang/d2)의 ELK 레이아웃으로 생성했다.
+색은 진한 글자와 파란 강조색 중심으로 줄이고, 설명은 본문으로 옮겨 도형 안에는 핵심 단계만 표시했다.
+한글 폰트를 포함한 SVG와 문서 표시용 PNG를 함께 제공한다. D2 소스로 내용과 배치를 수정할 수 있다.
 
-| 구성도 | 확대용 SVG | Graphviz 소스 |
+| 구성도 | 확대용 SVG | D2 소스 |
 |---|---|---|
-| 강화학습 전체 흐름 | [SVG](01-training-overview.svg) | [DOT](01-training-overview.dot) |
-| Actor·Critic 모델 구조 | [SVG](02-actor-critic-model.svg) | [DOT](02-actor-critic-model.dot) |
-| 20장 코드 실행 구조 | [SVG](03-lesson20-structure.svg) | [DOT](03-lesson20-structure.dot) |
-| 환경 step과 물리 처리 순서 | [SVG](04-environment-step.svg) | [DOT](04-environment-step.dot) |
-| 보상 로그와 누적값의 관계 | [SVG](05-reward-accounting.svg) | [DOT](05-reward-accounting.dot) |
-| 21장 커스텀 관측·보상 실행 구조 | [SVG](06-lesson21-structure.svg) | [DOT](06-lesson21-structure.dot) |
-| 21장 관측 7차원 구성 | [SVG](07-observation-schema.svg) | [DOT](07-observation-schema.dot) |
-| 21장 보상 항과 가중치 | [SVG](08-reward-schema.svg) | [DOT](08-reward-schema.dot) |
-| 관측 전처리 순서 | [SVG](09-observation-processing.svg) | [DOT](09-observation-processing.dot) |
+| 강화학습 전체 흐름 | [SVG](01-training-overview.svg) | [D2](01-training-overview.d2) |
+| Actor·Critic 모델 구조 | [SVG](02-actor-critic-model.svg) | [D2](02-actor-critic-model.d2) |
+| 20장 코드 실행 구조 | [SVG](03-lesson20-structure.svg) | [D2](03-lesson20-structure.d2) |
+| 환경 step과 물리 처리 순서 | [SVG](04-environment-step.svg) | [D2](04-environment-step.d2) |
+| 보상 로그와 누적값의 관계 | [SVG](05-reward-accounting.svg) | [D2](05-reward-accounting.d2) |
+| 21장 커스텀 관측·보상 실행 구조 | [SVG](06-lesson21-structure.svg) | [D2](06-lesson21-structure.d2) |
+| 21장 관측 7차원 구성 | [SVG](07-observation-schema.svg) | [D2](07-observation-schema.d2) |
+| 21장 보상 항과 가중치 | [SVG](08-reward-schema.svg) | [D2](08-reward-schema.d2) |
+| 관측 전처리 순서 | [SVG](09-observation-processing.svg) | [D2](09-observation-processing.d2) |
 
-다시 생성하려면 Graphviz와 Noto Sans CJK 폰트를 설치한 환경에서 다음을 실행한다.
+다시 생성하려면 D2 v0.9.0과 Python의 `fonttools`, `resvg-py`가 필요하다.
 
 ```bash
-python learning-notes/reinforcement-learning/diagrams/render_graphviz.py
+python learning-notes/reinforcement-learning/diagrams/render_d2.py
 ```
+
+폰트는 [Noto Sans KR](https://github.com/google/fonts/tree/main/ofl/notosanskr) 기반의 서브셋이다.
+수정본은 Training Diagram Sans 이름으로 제공하며 [SIL Open Font License](fonts/OFL.txt)를 적용한다.
 
 [21장 실습](../../../21-observation-reward/README.md) · [21장 코드 리뷰](../../../21-observation-reward/code-review.md)

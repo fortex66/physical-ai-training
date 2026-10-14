@@ -1,0 +1,26 @@
+direction: down
+classes: {
+  box: {
+    width: 320
+    height: 110
+    style: {font-size: 28; font-color: "#172B45"; fill: "#FFFFFF"; stroke: "#CBD5E1"; stroke-width: 1; border-radius: 10}
+  }
+  focus: {
+    width: 320
+    height: 110
+    style: {font-size: 28; font-color: "#173C86"; fill: "#EFF5FF"; stroke: "#5D81D9"; stroke-width: 2; border-radius: 10}
+  }
+}
+*.class: box
+*.style.font-size: 28
+(* -> *)[*].style.stroke: "#64748B"
+(* -> *)[*].style.stroke-width: 2
+config: "환경 정의\n관측 · 보상 등"
+start: 환경 생성 · 리셋
+random: "랜덤 행동\ntorch.randn" {class: focus}
+step: "env.step\n물리 · 보상 · 리셋"
+result: "관측 · 보상\n종료 정보 반환"
+log: 로그 기록
+stop: "2000 환경 step\n실행 종료"
+config -> start -> random -> step -> result -> log -> stop
+log -> random: 다음 step {style.stroke-dash: 4}

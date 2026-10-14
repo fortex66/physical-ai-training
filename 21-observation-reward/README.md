@@ -26,7 +26,7 @@ python 21_observation_reward.py --num_envs 8
 python 21_observation_reward.py --headless
 ```
 
-## Graphviz로 보는 코드 구조
+## D2로 보는 코드 구조
 
 ![21장 커스텀 관측·보상 실행 구조](../learning-notes/reinforcement-learning/diagrams/06-lesson21-structure.png)
 

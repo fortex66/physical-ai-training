@@ -1,0 +1,28 @@
+direction: down
+classes: {
+  box: {
+    width: 320
+    height: 110
+    style: {font-size: 28; font-color: "#172B45"; fill: "#FFFFFF"; stroke: "#CBD5E1"; stroke-width: 1; border-radius: 10}
+  }
+  focus: {
+    width: 320
+    height: 110
+    style: {font-size: 28; font-color: "#173C86"; fill: "#EFF5FF"; stroke: "#5D81D9"; stroke-width: 2; border-radius: 10}
+  }
+}
+*.class: box
+*.style.font-size: 28
+(* -> *)[*].style.stroke: "#64748B"
+(* -> *)[*].style.stroke-width: 2
+obs: "관측 설정\n기본 4 + 추가 3"
+reward: "보상 설정\n6개 항"
+init: 환경 생성 · 리셋
+random: "랜덤 행동\n관측과 무관" {class: focus}
+step: "env.step\n물리 · 보상 · 리셋"
+log: "관측 7개 · 총 보상\n항별 값 기록"
+stop: "1000 환경 step\n실행 종료"
+obs -> init
+reward -> init
+init -> random -> step -> log -> stop
+log -> random: 다음 step {style.stroke-dash: 4}

@@ -1,0 +1,30 @@
+direction: down
+classes: {
+  box: {
+    width: 240
+    height: 110
+    style: {font-size: 28; font-color: "#172B45"; fill: "#FFFFFF"; stroke: "#CBD5E1"; stroke-width: 1; border-radius: 10}
+  }
+  focus: {
+    width: 240
+    height: 110
+    style: {font-size: 28; font-color: "#173C86"; fill: "#EFF5FF"; stroke: "#5D81D9"; stroke-width: 2; border-radius: 10}
+  }
+}
+*.class: box
+*.style.font-size: 28
+(* -> *)[*].style.stroke: "#64748B"
+(* -> *)[*].style.stroke-width: 2
+direction: right
+state: 상태 · 행동
+alive: "생존 / 종료\n+1 / -2"
+upright: "직립\ncos × 2" {class: focus}
+center: "중앙\n가우시안 × 0.5"
+action: "행동 크기\n제곱합 × -0.001"
+vel: "막대 각속도\n절댓값 × -0.005"
+out: "가중합 × dt\n반환 보상"
+state -> alive -> out
+state -> upright -> out
+state -> center -> out
+state -> action -> out
+state -> vel -> out

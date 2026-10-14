@@ -8,7 +8,7 @@
 보상을 출력하지만 신경망 가중치를 업데이트하지는 않는다.
 Policy·Critic·PPO를 학습시키는 단계는 이후 24번 등의 학습 실행기에 해당한다.
 
-## Graphviz로 보는 코드 구성과 실행 순서
+## D2로 보는 코드 구성과 실행 순서
 
 ![20장 코드 실행 구조](../learning-notes/reinforcement-learning/diagrams/03-lesson20-structure.png)
 

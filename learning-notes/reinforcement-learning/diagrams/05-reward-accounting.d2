@@ -1,0 +1,24 @@
+direction: down
+classes: {
+  box: {
+    width: 210
+    height: 110
+    style: {font-size: 28; font-color: "#172B45"; fill: "#FFFFFF"; stroke: "#CBD5E1"; stroke-width: 1; border-radius: 10}
+  }
+  focus: {
+    width: 210
+    height: 110
+    style: {font-size: 28; font-color: "#173C86"; fill: "#EFF5FF"; stroke: "#5D81D9"; stroke-width: 2; border-radius: 10}
+  }
+}
+*.class: box
+*.style.font-size: 28
+(* -> *)[*].style.stroke: "#64748B"
+(* -> *)[*].style.stroke-width: 2
+direction: right
+raw: 함수 값
+weight: "가중치 적용\n항별 로그" {class: focus}
+time: 환경 dt 적용
+rew: step 보상
+sum: "에피소드\n누적"
+raw -> weight -> time -> rew -> sum
