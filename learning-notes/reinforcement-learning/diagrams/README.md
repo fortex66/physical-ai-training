@@ -1,4 +1,4 @@
-# D2로 보는 강화학습과 20~23장 실행 구조
+# D2로 보는 강화학습과 20~24장 실행 구조
 
 20장은 환경을 테스트하며, 정책 가중치를 학습하는 코드는 아직 없다.
 흰 배경·진한 글자·파란 강조색을 사용한 D2 구성도로 실제 학습 구조와 현재 실행 구조를 구분한다.
@@ -84,6 +84,16 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 완료 에피소드를 기록하고 실행 종료 시 평균·최대·최소 보상을 출력한다. 아직 학습 가중치는 없다.
 [23장 실습·영상](../../../23-custom-env-complete/README.md) · [23장 코드 리뷰](../../../23-custom-env-complete/code-review.md)
 
+## 12. 24장 실제 PPO 학습 반복
+
+![환경과 학습기를 연결해 경험 수집·업데이트 반복](12-lesson24-training.png)
+
+[24장 학습 결과·원본 로그·모델](../../../24-train-cartpole/README.md) · [코드 리뷰](../../../24-train-cartpole/code-review.md)
+
+## 13. PPO 목표와 가중치 업데이트
+
+![경험·GAE·정책/가치 손실·optimizer](13-ppo-update.png)
+
 ## 사용 도구와 편집 가능한 원본
 
 [D2](https://github.com/d2lang/d2)의 ELK 레이아웃으로 생성했다.
@@ -103,6 +113,8 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 | 관측 전처리 순서 | [SVG](09-observation-processing.svg) | [D2](09-observation-processing.d2) |
 | 액션 공간과 구동 연결 | [SVG](10-action-space.svg) | [D2](10-action-space.d2) |
 | 23장 환경 조립과 baseline | [SVG](11-lesson23-structure.svg) | [D2](11-lesson23-structure.d2) |
+| 24장 실제 PPO 학습 반복 | [SVG](12-lesson24-training.svg) | [D2](12-lesson24-training.d2) |
+| PPO 목표·가중치 업데이트 | [SVG](13-ppo-update.svg) | [D2](13-ppo-update.d2) |
 
 다시 생성하려면 D2 v0.9.0과 Python의 `fonttools`, `resvg-py`가 필요하다.
 

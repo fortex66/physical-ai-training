@@ -237,6 +237,15 @@ ActionTerm의 scale·offset은 명령 변환이며 actuator 게인이나 범위 
 
 [강화학습 개념](../reinforcement-learning/README.md) · [23번 실습](../../23-custom-env-complete/README.md) · [23번 코드 리뷰](../../23-custom-env-complete/code-review.md)
 
+## 20. PPO 실제 정책 학습
+
+현재 Actor로 경험을 모으고 GAE/return을 계산해 Actor·Critic 가중치를 함께 업데이트한다.
+환경 step·에피소드·rollout·epoch·iteration을 구분한다. 병렬 경험을 모으는 횟수와 optimizer 횟수는 같지 않다.
+PPO clip은 정책 확률비 목적에 쓰이며 액션 범위나 가중치 변화율 제한이 아니다.
+학습 지표와 체크포인트를 보관하고 별도 평가로 실제 작업 유지·실패율을 확인한다.
+
+[PPO 개념](../reinforcement-learning/README.md#ppo-training) · [24번 실습·곡선·모델](../../24-train-cartpole/README.md) · [24번 코드 리뷰](../../24-train-cartpole/code-review.md)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

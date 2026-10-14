@@ -1,0 +1,90 @@
+{
+  "source": "Uploaded TensorBoard event file; training metrics, not separate evaluation",
+  "iterations": 150,
+  "iteration_range": [
+    0,
+    149
+  ],
+  "num_envs": 1024,
+  "num_steps_per_env": 16,
+  "total_transitions": 2457600,
+  "event_wall_time_span_seconds": 88.27647852897644,
+  "metrics": {
+    "Episode_Reward/alive": {
+      "first": 0.027937501668930054,
+      "last": 1.0000020265579224
+    },
+    "Episode_Reward/terminating": {
+      "first": -0.0007916667382232845,
+      "last": 0.0
+    },
+    "Episode_Reward/pole_upright": {
+      "first": 0.04474012181162834,
+      "last": 1.995835781097412
+    },
+    "Episode_Reward/cart_center": {
+      "first": 0.013349542394280434,
+      "last": 0.49172860383987427
+    },
+    "Episode_Reward/energy": {
+      "first": -2.8643755285884254e-05,
+      "last": -4.482288204599172e-05
+    },
+    "Episode_Reward/pole_vel": {
+      "first": -0.0002869500603992492,
+      "last": -0.0014414821052923799
+    },
+    "Episode_Termination/time_out": {
+      "first": 0.0281982421875,
+      "last": 1.0
+    },
+    "Episode_Termination/cart_out_of_bounds": {
+      "first": 0.0,
+      "last": 0.0
+    },
+    "Episode_Termination/pole_too_far": {
+      "first": 0.001953125,
+      "last": 0.0
+    },
+    "Loss/value_function": {
+      "first": 0.06252862513065338,
+      "last": 0.0035749736707657576
+    },
+    "Loss/surrogate": {
+      "first": -0.008916890248656273,
+      "last": 0.014895927160978317
+    },
+    "Loss/entropy": {
+      "first": 1.4048346281051636,
+      "last": -0.8869372606277466
+    },
+    "Loss/learning_rate": {
+      "first": 0.0022499999031424522,
+      "last": 0.0019753086380660534
+    },
+    "Policy/mean_noise_std": {
+      "first": 0.9766010046005249,
+      "last": 0.09802599251270294
+    },
+    "Perf/total_fps": {
+      "first": 19993.0,
+      "last": 28958.0
+    },
+    "Perf/collection time": {
+      "first": 0.6243243217468262,
+      "last": 0.511873722076416
+    },
+    "Perf/learning_time": {
+      "first": 0.1951463222503662,
+      "last": 0.0539088249206543
+    },
+    "Train/mean_reward": {
+      "first": 0.45026588439941406,
+      "last": 17.285438537597656
+    },
+    "Train/mean_episode_length": {
+      "first": 9.735294342041016,
+      "last": 300.0
+    }
+  }
+}
