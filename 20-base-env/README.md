@@ -8,6 +8,16 @@
 보상을 출력하지만 신경망 가중치를 업데이트하지는 않는다.
 Policy·Critic·PPO를 학습시키는 단계는 이후 24번 등의 학습 실행기에 해당한다.
 
+## 그림으로 보는 20장 구성과 실행 순서
+
+![20장 설정·랜덤 행동·환경 실행·로그 구조](../learning-notes/reinforcement-learning/diagrams/03-lesson20-structure.png)
+
+![env.step 한 번의 물리 진행·보상·종료·리셋 순서](../learning-notes/reinforcement-learning/diagrams/04-environment-step.png)
+
+환경 step 한 번은 같은 행동으로 물리 step을 두 번 진행한 뒤 결과를 반환합니다.
+이는 신경망 가중치를 업데이트하는 학습 iteration과 다릅니다.
+실제 PPO 학습과 모델 구조까지는 [전체 구성도 4장](../learning-notes/reinforcement-learning/diagrams/README.md)에서 함께 볼 수 있습니다.
+
 ## 먼저 읽을 개념과 코드 리뷰
 
 - [강화학습 개념 정리](../learning-notes/reinforcement-learning/README.md): Policy·Actor·Critic·PPO, 종료 구분과 보상 설계.

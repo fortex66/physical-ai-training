@@ -70,7 +70,7 @@ source ~/isaac/env_isaaclab/bin/activate
 | Waypoint 제어 · 17 | 목표 거리·방향 오차로 속도 보정, 도달 시 다음 목표 선택 | [P 제어·내비게이션](learning-notes/waypoint-navigation/README.md) |
 | 2D LiDAR · 18 | 광선 교차점에서 거리 계산, 월드 지도와 센서 기준 스캔 비교 | [LiDAR 스캔·좌표계](learning-notes/lidar-scanning/README.md) |
 | 장애물 회피 · 19 | 장애물 거리로 목표 추적·회피 전환, 실제 우회 궤적 확인 | [반응형 회피](learning-notes/reactive-obstacle-avoidance/README.md) |
-| 강화학습 기초 · 20~29 | Policy·Actor·Critic·PPO, 보상 설계와 termination·truncation 구분 | [강화학습 개념](learning-notes/reinforcement-learning/README.md) |
+| 강화학습 기초 · 20~29 | Policy·Actor·Critic·PPO, 보상 설계와 termination·truncation 구분 | [강화학습 개념](learning-notes/reinforcement-learning/README.md) · [전체 구성도 4장](learning-notes/reinforcement-learning/diagrams/README.md) |
 
 ## 실습 기록
 
