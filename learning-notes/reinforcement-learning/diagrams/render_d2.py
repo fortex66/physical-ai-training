@@ -28,7 +28,7 @@ def main():
     ET.register_namespace('', ns[1:-1])
     for source in sorted(root.glob('*.d2')):
         svg = source.with_suffix('.svg')
-        result = subprocess.run([d2, '--layout=elk', '--pad=18', '--elk-nodeNodeBetweenLayers=45', '--elk-edgeNodeBetweenLayers=25', str(source), str(svg)], capture_output=True, text=True)
+        result = subprocess.run([d2, '--layout=elk', '--pad=16', '--elk-nodeNodeBetweenLayers=38', '--elk-edgeNodeBetweenLayers=22', str(source), str(svg)], capture_output=True, text=True)
         if result.returncode:
             raise SystemExit(result.stderr)
         tree = ET.parse(svg)

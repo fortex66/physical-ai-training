@@ -272,6 +272,30 @@ Isaac Lab v2.3.2의 `_step_reward`는 이름과 달리 dt 적용 전 가중 값�
 
 22번은 액션 인터페이스 테스트이고 PPO 학습이 아니다. 무작위 행동의 점수는 학습 성능과 구분한다.
 
+## 12. 태스크를 환경 규칙으로 바꾸고 baseline 측정하기
+
+‘막대를 세운다’는 목표만으로는 학습을 실행할 수 없다. 어떤 상태를 보고, 어떤 명령을 내리고, 얼마나 잘했는지 평가하며, 언제 다시 시작할지를 정해야 한다.
+23번은 Scene·Action·Observation·Reward·Termination·Event를 하나의 Cfg로 조립한다.
+
+![커스텀 환경 구성과 학습 전 기준 측정](diagrams/11-lesson23-structure.png)
+
+보상은 좋은 상태·행동을 선호하게 만들고, task 종료 조건은 이번 작업에서 실패로 취급할 경계를 정한다.
+둘은 같은 기능이 아니다. 막대가 기울면 감점하면서도 계속할 수 있고, 90°를 넘으면 이번 balancing 에피소드를 끝낼 수 있다.
+이 경계가 물리적 복구 불가능성을 뜻하는 것은 아니다. swing-up처럼 목표가 다르면 실패 규칙도 달라진다.
+
+**시간 제한(truncation)은 성공 판정이 아니다.** 5초를 채웠는지와 직립·중앙 유지에 성공했는지는 각각 평가한다.
+순수 시간 제한과 task 실패가 동시에 일어날 수도 있으므로 두 종료 플래그를 모두 기록한다.
+23번에는 신경망·가치 학습이 없고, timeout 설정은 이후 학습기가 처리할 정보를 제공한다.
+
+Baseline은 학습 전 행동 규칙의 성능을 재어 이후 비교할 기준을 만드는 것이다.
+23번의 랜덤 행동은 정규분포를 ±1로 clamp하며 22번 균등 난수와 다르다.
+완료 에피소드만 평균 내면 아직 끝나지 않은 긴 에피소드가 빠지고 짧게 실패한 환경의 기록이 더 많이 포함될 수 있다.
+같은 환경·초기화·seed·평가 예산에서 완결 에피소드의 보상, 유지 시간, 실패/timeout 수와 실제 작업 오차를 비교한다.
+
+병렬 환경 100개 × 500 환경 step이면 50,000개 전이를 만들 수 있지만, 학습 실행기가 없으면 가중치는 갱신되지 않는다.
+24번의 실제 연결은 7차원 관측과 1차원 행동을 가진 같은 핵심 환경 설계에 RSL-RL과 PPO 실행기를 붙이는 것이다.
+정책 입력·행동 단위·보상·종료 규칙을 학습과 평가에서 맞춰야 점수 차이를 해석할 수 있다.
+
 ## 연결된 실습과 자료
 
 - [20번 결과·코드](../../20-base-env/README.md)
@@ -280,6 +304,8 @@ Isaac Lab v2.3.2의 `_step_reward`는 이름과 달리 dt 적용 전 가중 값�
 - [21번 코드 리뷰](../../21-observation-reward/code-review.md)
 - [22번 액션 공간](../../22-action-space/README.md)
 - [22번 코드 리뷰](../../22-action-space/code-review.md)
+- [23번 커스텀 환경·baseline](../../23-custom-env-complete/README.md)
+- [23번 코드 리뷰](../../23-custom-env-complete/code-review.md)
 - [RSL-RL](https://github.com/leggedrobotics/rsl_rl)
 - [Isaac Lab v2.3.2 환경 step 구현](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/envs/manager_based_rl_env.py)
 - [Isaac Lab v2.3.2 보상 매니저](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/managers/reward_manager.py)

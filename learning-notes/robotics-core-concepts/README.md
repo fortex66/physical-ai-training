@@ -228,6 +228,15 @@ ActionTerm의 scale·offset은 명령 변환이며 actuator 게인이나 범위 
 
 [액션 공간 개념](../reinforcement-learning/README.md#11-액션-공간--정책-출력을-로봇-명령으로-해석하기) · [22번 실습](../../22-action-space/README.md) · [22번 리뷰](../../22-action-space/code-review.md)
 
+## 19. 태스크 설계와 학습 전 baseline
+
+작업 목표를 관측·행동·보상·종료·초기화로 구체화하고 랜덤 행동으로 환경을 확인한다.
+보상 감점과 에피소드 종료는 역할이 다르며, 시간 제한은 성공 판정을 대신하지 않는다.
+완료 에피소드 평균에는 진행 중인 기록이 빠지므로 유지 시간·실패 사유·작업 오차도 함께 비교한다.
+환경 병렬 수와 전이 수를 늘리는 것만으로 정책 가중치가 학습되지는 않는다.
+
+[강화학습 개념](../reinforcement-learning/README.md) · [23번 실습](../../23-custom-env-complete/README.md) · [23번 코드 리뷰](../../23-custom-env-complete/code-review.md)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

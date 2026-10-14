@@ -96,3 +96,4 @@ source ~/isaac/env_isaaclab/bin/activate
 | 20 | 강화학습 환경 기초 · Cartpole 랜덤 행동 · 관측·보상·종료·리셋 | [실습 결과](20-base-env/README.md) · [코드 리뷰](20-base-env/code-review.md) · [코드](20-base-env/20_base_env.py) |
 | 21 | 커스텀 관측·보상 · sin/cos·정규화 · 항별 보상 해석 | [실습 결과](21-observation-reward/README.md) · [코드 리뷰](21-observation-reward/code-review.md) · [코드](21-observation-reward/21_observation_reward.py) |
 | 22 | 액션 공간 · 힘/위치/속도 명령 · scale·offset·actuator 연결 | [실습 결과](22-action-space/README.md) · [코드 리뷰](22-action-space/code-review.md) · [코드](22-action-space/22_action_space.py) |
+| 23 | 커스텀 RL 환경 완성 · 막대 실패 종료 · 학습 전 baseline | [실습 결과](23-custom-env-complete/README.md) · [코드 리뷰](23-custom-env-complete/code-review.md) · [코드](23-custom-env-complete/23_custom_env_complete.py) |
