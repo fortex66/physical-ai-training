@@ -44,7 +44,9 @@ Waypoint는 환경 기준으로 `(2, 0) → (2, 2) → (0, 2) → (0, 0)`이다.
 
 ### 목표점과 경로 표시
 
-![JetBot과 네 Waypoint 및 사각형 경로](images/waypoint-path.png)
+<p align="center">
+  <img src="images/waypoint-path.png" alt="JetBot과 네 Waypoint 및 사각형 경로" width="900">
+</p>
 
 | 표시 | 의미 |
 |---|---|
@@ -57,20 +59,26 @@ Waypoint는 환경 기준으로 `(2, 0) → (2, 2) → (0, 2) → (0, 0)`이다.
 
 ### 목표점 전환
 
-![목표점 도달 후 바뀐 빨간 마커](images/target-switch.png)
+<p align="center">
+  <img src="images/target-switch.png" alt="목표점 도달 후 바뀐 빨간 마커" width="900">
+</p>
 
 목표에 가까워지면 속도가 줄고, 도달 조건을 만족하면 다음 목표로 바뀐다.
 
 ### 위치·방향 피드백
 
-![방향을 보정하며 다음 Waypoint로 이동](images/heading-feedback.png)
+<p align="center">
+  <img src="images/heading-feedback.png" alt="방향을 보정하며 다음 Waypoint로 이동" width="900">
+</p>
 
 목표 변경 직후 방향 오차가 커지면 회전 명령이 커지고 전진 명령은 줄어든다.
 정렬된 뒤에는 회전 명령이 작아지고 다음 변을 따라 이동한다.
 
 ### 반복 순환
 
-![Waypoint 도달 로그와 반복 내비게이션](images/lap-navigation.png)
+<p align="center">
+  <img src="images/lap-navigation.png" alt="Waypoint 도달 로그와 반복 내비게이션" width="900">
+</p>
 
 영상에는 `WP 3 도달! → 1바퀴 완료 (총 2바퀴)` 로그와 이후 목표 전환·주행이 이어진다.
 예를 들어 WP 0 접근 로그에서 위치 x가 약 1.44 → 1.61 → 1.78 → 1.91 m로 증가하며,

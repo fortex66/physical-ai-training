@@ -10,9 +10,15 @@ Policy·Critic·PPO를 학습시키는 단계는 이후 24번 등의 학습 실�
 
 ## D2로 보는 코드 구성과 실행 순서
 
-![20장 코드 실행 구조](../learning-notes/reinforcement-learning/diagrams/03-lesson20-structure.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/03-lesson20-structure.png" alt="20장 코드 실행 구조" width="328">
+</p>
+<p align="center"><sub>그림 3. 20장 코드 실행 구조</sub></p>
 
-![환경 step과 물리 처리 순서](../learning-notes/reinforcement-learning/diagrams/04-environment-step.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/04-environment-step.png" alt="환경 step과 물리 처리 순서" width="253">
+</p>
+<p align="center"><sub>그림 4. 환경 step과 물리 처리 순서</sub></p>
 
 환경 step 한 번은 같은 행동으로 물리 step을 두 번 진행한 뒤 결과를 반환한다.
 신경망을 업데이트하는 학습 iteration과 다르다.
@@ -110,14 +116,18 @@ Isaac Lab 보상 매니저는 각 항의 값·가중치에 **환경 시간 간�
 
 ### 병렬 Cartpole 환경
 
-![네 개 Cartpole과 환경 정보 출력](images/parallel-cartpole.png)
+<p align="center">
+  <img src="images/parallel-cartpole.png" alt="네 개 Cartpole과 환경 정보 출력" width="900">
+</p>
 
 영상에서 환경 4개와 초기 관측 크기 `(4, 4)`를 확인할 수 있다.
 각 환경에 서로 다른 초기 상태와 랜덤 힘을 적용한다.
 
 ### 두 종류의 종료
 
-![시간 제한과 경계 이탈에 따른 에피소드 종료](images/termination-truncation.png)
+<p align="center">
+  <img src="images/termination-truncation.png" alt="시간 제한과 경계 이탈에 따른 에피소드 종료" width="900">
+</p>
 
 영상의 Step 300에서는 환경들이 `terminated=False, truncated=True`로 종료한다.
 이후에는 예를 들어 Step 381의 환경 2에서 `terminated=True, truncated=False`가 나타난다.
@@ -125,14 +135,18 @@ Isaac Lab 보상 매니저는 각 항의 값·가중치에 **환경 시간 간�
 
 ### 랜덤 행동 결과
 
-![랜덤 힘에 반응하는 카트와 막대](images/random-action-results.png)
+<p align="center">
+  <img src="images/random-action-results.png" alt="랜덤 힘에 반응하는 카트와 막대" width="900">
+</p>
 
 막대가 크게 흔들리거나 기울며 보상이 음수로 출력되기도 한다.
 이는 환경 테스트 결과이며, 정책이 학습해 균형을 잡는 성능을 보여주는 영상은 아니다.
 
 ### 보상과 에피소드 로그
 
-![환경별 누적 보상과 종료 플래그](images/episode-rewards.png)
+<p align="center">
+  <img src="images/episode-rewards.png" alt="환경별 누적 보상과 종료 플래그" width="900">
+</p>
 
 로그의 ‘평균 보상’은 그 step의 환경 간 평균이고, ‘누적 보상’은 완료한 개별 에피소드의 합계다.
 둘을 같은 지표로 비교하지 않는다.

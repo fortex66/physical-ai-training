@@ -1,0 +1,29 @@
+direction: right
+classes: {
+  box: {
+    width: 180
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 180
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+target: "목표 상태\n각도 · 속도"
+state: "현재 관절 상태\n각도 · 속도"
+pd: "PD 제어\n오차 피드백" {class: focus}
+gravity: "로봇 동역학\n중력 보상"
+sum: "토크 합산\nPD + 보상"
+robot: "로봇 · 물리\n다음 상태"
+target -> pd
+state -> pd
+state -> gravity
+pd -> sum
+gravity -> sum
+sum -> robot

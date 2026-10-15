@@ -7,9 +7,15 @@
 
 [전체 강화학습·모델·20장 실행·물리 step 구성도](diagrams/README.md)를 함께 볼 수 있다.
 
-![강화학습 전체 흐름](diagrams/01-training-overview.png)
+<p align="center">
+  <img src="diagrams/01-training-overview.png" alt="강화학습 전체 흐름" width="513">
+</p>
+<p align="center"><sub>그림 1. 강화학습 전체 흐름</sub></p>
 
-![Actor·Critic 모델 구조](diagrams/02-actor-critic-model.png)
+<p align="center">
+  <img src="diagrams/02-actor-critic-model.png" alt="Actor·Critic 모델 구조" width="900">
+</p>
+<p align="center"><sub>그림 2. Actor·Critic 모델 구조</sub></p>
 
 위 신경망 구조는 24장 예시다. 20·21장은 아직 랜덤 행동 환경 테스트이며 PPO가 연결되지 않았다.
 
@@ -234,7 +240,10 @@ Isaac Lab v2.3.2 보상 매니저는 가중합에 환경 시간 간격을 곱한
 가우시안 중앙 보상은 중심에서 최대이며 sigma가 허용 위치 범위의 넓이를 조절한다.
 ‘energy’라는 이름을 붙여도 raw action 제곱합이면 실제 에너지 측정이 아닌 행동 크기 억제 항이다.
 
-![보상 로그와 누적값의 관계](diagrams/05-reward-accounting.png)
+<p align="center">
+  <img src="diagrams/05-reward-accounting.png" alt="보상 로그와 누적값의 관계" width="900">
+</p>
+<p align="center"><sub>그림 5. 보상 로그와 누적값의 관계</sub></p>
 
 총점만 보면 어떤 항이 영향을 줬는지 알기 어렵다.
 항별 값을 보되 원시 값, 가중 값, step 기여와 에피소드 누적을 구분한다.
@@ -248,7 +257,10 @@ Isaac Lab v2.3.2의 `_step_reward`는 이름과 달리 dt 적용 전 가중 값�
 정책은 숫자를 출력하지만 그 숫자가 무엇을 뜻하는지는 환경의 액션 설계가 정한다.
 ‘0.5만큼 행동한다’ 대신 ‘50 N으로 민다’, ‘1 m를 목표로 한다’, ‘2.5 m/s를 목표로 한다’처럼 해석해야 한다.
 
-![정책 출력에서 실제 구동까지](diagrams/10-action-space.png)
+<p align="center">
+  <img src="diagrams/10-action-space.png" alt="정책 출력에서 실제 구동까지" width="840">
+</p>
+<p align="center"><sub>그림 10. 정책 출력에서 실제 구동까지</sub></p>
 
 | 단계 | 역할 | 이번 22장 예 |
 |---|---|---|
@@ -277,7 +289,10 @@ Isaac Lab v2.3.2의 `_step_reward`는 이름과 달리 dt 적용 전 가중 값�
 ‘막대를 세운다’는 목표만으로는 학습을 실행할 수 없다. 어떤 상태를 보고, 어떤 명령을 내리고, 얼마나 잘했는지 평가하며, 언제 다시 시작할지를 정해야 한다.
 23번은 Scene·Action·Observation·Reward·Termination·Event를 하나의 Cfg로 조립한다.
 
-![커스텀 환경 구성과 학습 전 기준 측정](diagrams/11-lesson23-structure.png)
+<p align="center">
+  <img src="diagrams/11-lesson23-structure.png" alt="커스텀 환경 구성과 학습 전 기준 측정" width="374">
+</p>
+<p align="center"><sub>그림 11. 커스텀 환경 구성과 학습 전 기준 측정</sub></p>
 
 보상은 좋은 상태·행동을 선호하게 만들고, task 종료 조건은 이번 작업에서 실패로 취급할 경계를 정한다.
 둘은 같은 기능이 아니다. 막대가 기울면 감점하면서도 계속할 수 있고, 90°를 넘으면 이번 balancing 에피소드를 끝낼 수 있다.
@@ -304,7 +319,10 @@ Baseline은 학습 전 행동 규칙의 성능을 재어 이후 비교할 기준
 같은 관측 7개를 Actor·Critic에 넣되 Actor는 행동 분포, Critic은 미래 할인 누적 가치 하나를 출력한다.
 두 네트워크는 각각 은닉층 `[32, 32]`이며 초기 가중치는 라이브러리가 생성한다.
 
-![실제 Cartpole 학습 반복](diagrams/12-lesson24-training.png)
+<p align="center">
+  <img src="diagrams/12-lesson24-training.png" alt="실제 Cartpole 학습 반복" width="337">
+</p>
+<p align="center"><sub>그림 12. 실제 Cartpole 학습 반복</sub></p>
 
 ### Rollout과 학습의 시간은 나눠 생각한다
 
@@ -330,7 +348,10 @@ Advantage는 ‘이 행동이 현재 정책의 예상보다 얼마나 유리했�
 GAE는 `지금 보상 + 할인한 다음 가치 - 지금 가치`라는 TD 오차들을 여러 step에 걸쳐 섞는다. gamma는 미래 할인, lambda는 여러 길이의 추정 간 균형을 조절한다.
 따라서 `즉시 보상 - Critic 값`만으로 설명하면 미래 보상과 시간 단위가 빠진다.
 
-![Advantage와 두 손실이 가중치를 바꾸는 과정](diagrams/13-ppo-update.png)
+<p align="center">
+  <img src="diagrams/13-ppo-update.png" alt="Advantage와 두 손실이 가중치를 바꾸는 과정" width="900">
+</p>
+<p align="center"><sub>그림 13. Advantage와 두 손실이 가중치를 바꾸는 과정</sub></p>
 
 Actor는 양의 Advantage 행동을 더 자주, 음의 Advantage 행동을 덜 자주 고르도록 목적을 구성한다. Critic은 return target을 더 잘 예측하도록 학습한다.
 이때 신경망 역전파가 수정 방향을 계산하고 optimizer가 가중치를 바꾼다.
@@ -363,7 +384,10 @@ clip=0.2는 확률비 목적의 0.8~1.2 범위에 사용하며, 행동 ±0.2나 
 추론은 저장된 정책이 현재 관측을 행동으로 바꾸는 계산이다. 성공한 과거 경로를 그대로 재생하는 것이 아니다.
 평가는 고정한 정책의 추론을 여러 에피소드 실행하고 보상·유지 시간·실패 사유·작업 오차를 측정하는 절차다.
 
-![학습 정책과 랜덤 baseline을 분리해 평가](diagrams/14-lesson25-evaluation.png)
+<p align="center">
+  <img src="diagrams/14-lesson25-evaluation.png" alt="학습 정책과 랜덤 baseline을 분리해 평가" width="554">
+</p>
+<p align="center"><sub>그림 14. 학습 정책과 랜덤 baseline을 분리해 평가</sub></p>
 
 이번 `get_inference_policy()`는 Actor 평균 μ를 사용해 탐색 샘플링을 제거한다.
 `torch.no_grad()`는 gradient 기록을 끄며, 그것 자체가 deterministic 행동을 만드는 것은 아니다. 모델 eval 모드와 가중치 업데이트 여부도 각각 구분한다.
@@ -387,11 +411,80 @@ clip=0.2는 확률비 목적의 0.8~1.2 범위에 사용하며, 행동 ±0.2나 
 
 ## 15. 20~25에서 완성한 기초 RL 흐름
 
-![환경 설계에서 학습·저장·평가까지](diagrams/15-rl-workflow.png)
+<p align="center">
+  <img src="diagrams/15-rl-workflow.png" alt="환경 설계에서 학습·저장·평가까지" width="900">
+</p>
+<p align="center"><sub>그림 15. 환경 설계에서 학습·저장·평가까지</sub></p>
 
 20 환경 기초 → 21 관측/보상 → 22 액션 → 23 완전한 환경·baseline → 24 PPO 학습·체크포인트 → 25 고정 정책 평가까지 연결했다.
 이후 26 보행 학습·27 평가·28 지형 생성·일반화 관찰·29 도메인 랜덤화에서 같은 흐름을 더 복잡한 조건으로 확장한다.
 이번 완성은 기초 end-to-end 학습·평가 실습이며 실제 로봇 배포 성능을 보장하는 단계는 아니다.
+
+<a id="step-feedback"></a>
+
+## 16. obs·action·rew·종료 신호의 피드백 루프
+
+맞다. **관측으로 행동을 정하고 환경을 한 step 진행한 뒤, 반환된 새 관측으로 다음 행동을 정하는 과정이 반복된다.**
+동시에 보상·종료 정보는 학습 경험과 에피소드 관리에 전달된다. 모든 반환값이 Actor 입력으로 그대로 들어가는 것은 아니다.
+
+<p align="center">
+  <img src="diagrams/16-step-feedback.png" alt="관측·행동·보상·종료 신호의 시간 전개 구조" width="490">
+</p>
+<p align="center"><sub>그림 16. 관측·행동·보상·종료 신호의 시간 전개 구조</sub></p>
+
+그림은 같은 루프의 현재 step과 다음 정책 호출을 시간 순서대로 펼쳤다. θ는 정책 가중치다. r(t)는 action(t)로 만든 전이의 보상을 뜻한다.
+`info`는 그림에서 생략한 부가 정보 딕셔너리이며 timeout 정보·로그 등이 들어갈 수 있다. 경험 버퍼에는 그림에 표시한 보상·종료 정보 외에 관측·행동·가치·행동 확률 정보도 함께 저장한다.
+
+### 반환값의 역할을 나눠 읽기
+
+| 값 | 이번 step에서의 의미 | 다음에 쓰이는 곳 |
+|---|---|---|
+| `obs` | 행동을 고르기 전 현재 관측 | Actor 입력 · 학습 시 Critic 입력 |
+| `action` | 정책 또는 테스트 규칙이 고른 명령 | ActionManager → actuator → 물리 진행 |
+| `next_obs` | step 후 반환한 관측 | 다음 Actor 호출 · 가치 추정/학습의 상태 정보 |
+| `rew` | 이번 전이에 대한 환경 점수 | 누적 평가 점수 · return/Advantage 계산 |
+| `terminated` | 태스크 정의상 종료 상태 도달 | 에피소드 구분 · 가치 연결 처리 |
+| `truncated` | 시간 제한 등 외부 기준으로 중단 | 에피소드 구분 · timeout bootstrap 처리 |
+| `info` | 보조 정보 | 종료 원인·로그·wrapper의 timeout 정보 등 |
+
+**제어 피드백**은 `obs → policy → action → 물리 → next_obs`다.
+**학습 피드백**은 여러 step의 경험과 보상·가치·종료 정보 → PPO 업데이트 → 바뀐 θ로 다음 rollout을 수집하는 경로다.
+PPO는 보통 reward 하나를 받자마자 가중치를 한 번 바꾸지 않는다. 24번은 환경당 16 step을 모은 뒤 여러 mini-batch 업데이트를 한다.
+
+### 한 step을 시간 순서대로 보기
+
+1. 정책은 현재 `obs(t)`에서 `action(t)`를 계산한다.
+2. Isaac Lab은 명령을 변환하고, 24번 설정에서는 같은 행동으로 물리 step 두 번을 진행한다.
+3. 환경은 새 상태에서 종료 조건과 보상을 계산한다.
+4. 완료한 환경만 자동 리셋하고 새 입력 관측을 반환한다.
+5. 실행기는 점수·완료 정보를 기록하고, 반환 관측으로 다음 행동을 계산한다.
+
+```python
+# ManagerBasedRLEnv의 제어 흐름 설명용 · PPO 전체 구현은 아님
+obs, info = env.reset()
+while running:
+    action = policy(obs)
+    next_obs, rew, terminated, truncated, info = env.step(action)
+    done = terminated | truncated
+    # 평가: rew를 누적하고 done인 환경의 결과 기록
+    # 학습: 현재 obs·행동·보상·가치·종료 정보를 rollout에 저장
+    obs = next_obs
+    # PPO는 정해진 rollout을 모은 뒤 별도 단계에서 가중치 업데이트
+```
+
+`env.step()` 호출마다 물리 상태는 바뀌지만 정책 가중치가 매번 바뀌는 것은 아니다.
+또한 PPO의 역전파는 정책/가치 신경망의 손실에 적용하며 PhysX의 모든 물리 step을 통째로 미분해 경로를 찾는 방식이 아니다.
+
+### 자동 리셋에서 특히 주의할 점
+
+일반적인 단일 Gymnasium 환경은 완료 후 호출자가 reset해야 할 수 있다. 여기서는 Isaac Lab의 병렬 환경 내부에서 완료 환경만 자동 리셋한다.
+따라서 완료 step의 `rew`·종료 플래그는 **끝난 에피소드** 결과이고 `next_obs`는 **새 에피소드 초기 관측**일 수 있다.
+그 관측을 무조건 ‘실패 직전 상태’로 저장해 terminal value를 계산하면 잘못된 학습 목표를 만들 수 있다. timeout 처리는 wrapper·학습기 버전의 구현을 확인한다.
+
+`done = terminated | truncated`는 둘 중 하나라도 발생하면 해당 에피소드가 끝났다는 뜻이다. task 종료와 시간 제한은 동시에 참일 수도 있다.
+태스크 종료는 일반적으로 미래 가치 연결을 끊고, 순수 외부 시간 제한은 필요한 가치 bootstrap을 구분한다. 이번 RSL-RL 구현의 구체적 보정은 [24번 리뷰](../../24-train-cartpole/code-review.md#6-timeout-처리와-시작-카운터)에 정리했다.
+
+평가·추론에서도 관측-행동 루프는 똑같이 반복되지만 보상은 성능 집계에 쓰고 θ는 고정한다. 20~23의 랜덤 데모는 새 관측을 받더라도 행동 생성에 사용하지 않는다는 차이가 있다.
 
 ## 연결된 실습과 자료
 

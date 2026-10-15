@@ -56,20 +56,26 @@ RayCaster는 카메라 렌더링으로 이미지를 얻는 센서가 아니므�
 
 ### 스캐너와 계단 장면
 
-![공중 레일 스캐너와 계단 메시](images/scanner-scene.png)
+<p align="center">
+  <img src="images/scanner-scene.png" alt="공중 레일 스캐너와 계단 메시" width="900">
+</p>
 
 주황색 스캐너가 계단 위에서 이동하고, 장면에 광선 교차 위치의 디버그 표시가 나타난다.
 
 ### 높이 측정값 누적
 
-![스캐너 이동에 따라 만들어지는 계단 단면](images/profile-building.png)
+<p align="center">
+  <img src="images/profile-building.png" alt="스캐너 이동에 따라 만들어지는 계단 단면" width="900">
+</p>
 
 처음에는 측정한 구간에만 주황색 점이 나타나고,
 스캐너가 이동하면서 낮은 평지부터 높은 계단까지 측정점이 쌓인다.
 
 ### 계단 단면 비교
 
-![기준 계단 단면과 RayCaster 평균 높이](images/staircase-profile.png)
+<p align="center">
+  <img src="images/staircase-profile.png" alt="기준 계단 단면과 RayCaster 평균 높이" width="900">
+</p>
 
 | 그래프 표시 | 의미 |
 |---|---|

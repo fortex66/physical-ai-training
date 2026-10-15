@@ -28,11 +28,17 @@ python 21_observation_reward.py --headless
 
 ## D2로 보는 코드 구조
 
-![21장 커스텀 관측·보상 실행 구조](../learning-notes/reinforcement-learning/diagrams/06-lesson21-structure.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/06-lesson21-structure.png" alt="21장 커스텀 관측·보상 실행 구조" width="554">
+</p>
+<p align="center"><sub>그림 6. 21장 커스텀 관측·보상 실행 구조</sub></p>
 
 ## 관측 구성 — 정보와 표현을 구분하기
 
-![21장 관측 7차원 구성](../learning-notes/reinforcement-learning/diagrams/07-observation-schema.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/07-observation-schema.png" alt="21장 관측 7차원 구성" width="792">
+</p>
+<p align="center"><sub>그림 7. 21장 관측 7차원 구성</sub></p>
 
 | 항목 | 크기 | 의미 |
 |---|---|---|
@@ -51,7 +57,10 @@ python 21_observation_reward.py --headless
 
 ## 보상 구성 — 학습 목표의 표현
 
-![21장 보상 항과 가중치](../learning-notes/reinforcement-learning/diagrams/08-reward-schema.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/08-reward-schema.png" alt="21장 보상 항과 가중치" width="792">
+</p>
+<p align="center"><sub>그림 8. 21장 보상 항과 가중치</sub></p>
 
 | 항 | 의미 | 해석할 점 |
 |---|---|---|
@@ -85,11 +94,17 @@ python 21_observation_reward.py --headless
 
 ## 실습 결과
 
-![네 Cartpole과 7차원 관측 로그](images/observation-seven.png)
+<p align="center">
+  <img src="images/observation-seven.png" alt="네 Cartpole과 7차원 관측 로그" width="900">
+</p>
 
-![종료 step의 항별 보상 로그](images/reward-terms.png)
+<p align="center">
+  <img src="images/reward-terms.png" alt="종료 step의 항별 보상 로그" width="900">
+</p>
 
-![에피소드 누적 점수와 랜덤 행동 결과](images/episode-comparison.png)
+<p align="center">
+  <img src="images/episode-comparison.png" alt="에피소드 누적 점수와 랜덤 행동 결과" width="900">
+</p>
 
 영상에서 `관측 dim: 7`과 여섯 보상 항을 확인할 수 있다.
 환경 0의 첫 완료 에피소드는 총 보상 약 -0.23, `terminated=True`로 나타난다.

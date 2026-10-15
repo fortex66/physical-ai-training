@@ -1,0 +1,25 @@
+direction: right
+classes: {
+  box: {
+    width: 140
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 140
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+a: "APPROACH\n접근"
+b: "LOWER\n하강"
+c: "GRASP\n잡기"
+d: "LIFT\n들기"
+e: "MOVE\n이동"
+f: "RELEASE\n놓기"
+g: "RETREAT\n후퇴"
+a -> b -> c -> d -> e -> f -> g

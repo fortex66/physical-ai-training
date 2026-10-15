@@ -35,7 +35,10 @@ cart_pos_norm = ObsTerm(
 
 Isaac Lab v2.3.2의 일반 처리 순서는 다음과 같다.
 
-![관측 전처리 순서](../learning-notes/reinforcement-learning/diagrams/09-observation-processing.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/09-observation-processing.png" alt="관측 전처리 순서" width="900">
+</p>
+<p align="center"><sub>그림 9. 관측 전처리 순서</sub></p>
 
 이 코드에는 noise와 ObsTerm.scale 설정이 없고 `enable_corruption=False`다.
 강의에서 옵션을 소개하는 것과 현재 코드에 옵션이 적용됐다는 것은 다르다.

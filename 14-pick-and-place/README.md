@@ -47,17 +47,12 @@ Franka는 Isaac Lab의 로봇 설정에서 불러온다. 테이블과 큐브는 
 
 ## 7단계 상태 머신
 
-```mermaid
-flowchart LR
-    A[APPROACH 접근] --> B[LOWER 하강]
-    B --> C[GRASP 닫기]
-    C --> D[LIFT 들어올리기]
-    D --> E[MOVE 운반]
-    E --> F[RELEASE 열기]
-    F --> G[RETREAT 후퇴]
-    G --> H[로봇·큐브 리셋]
-    H --> A
-```
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/18-pick-place-states.png" alt="Pick & Place의 7단계 상태 전이" width="900">
+</p>
+<p align="center"><sub>그림 18. Pick & Place의 7단계 상태 전이</sub></p>
+
+후퇴 이후 로봇·큐브를 리셋하고 APPROACH부터 다시 진행한다.
 
 아래 값은 **`panda_hand` 목표**이며 큐브 중심이나 실제 TCP 좌표와 동일한 것으로 가정하면 안 된다.
 이 장면에서는 환경 축과 베이스 축이 정렬되어 있다.
@@ -78,13 +73,21 @@ RELEASE 단계는 높이 0.60 m에서 그리퍼를 열며, 테이블까지 다�
 
 ## 실습 결과
 
-![두 환경의 접근·그리퍼 동작 장면](images/approach-grasp.png)
+<p align="center">
+  <img src="images/approach-grasp.png" alt="두 환경의 접근·그리퍼 동작 장면" width="900">
+</p>
 
-![작업 순서에 따른 팔 이동 장면](images/transfer-sequence.png)
+<p align="center">
+  <img src="images/transfer-sequence.png" alt="작업 순서에 따른 팔 이동 장면" width="900">
+</p>
 
-![큐브 위치 변화와 놓기·후퇴 장면](images/release-retreat.png)
+<p align="center">
+  <img src="images/release-retreat.png" alt="큐브 위치 변화와 놓기·후퇴 장면" width="900">
+</p>
 
-![상태 전환과 반복 리셋 로그](images/phase-reset-log.png)
+<p align="center">
+  <img src="images/phase-reset-log.png" alt="상태 전환과 반복 리셋 로그" width="900">
+</p>
 
 영상에는 두 환경에서 팔과 그리퍼가 동작하고, 빨간 큐브 위치가 바뀌는 모습이 나타난다.
 터미널에서 7단계 순환과 `Step 620`의 에피소드 리셋을 확인할 수 있다.

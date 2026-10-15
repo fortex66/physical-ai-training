@@ -103,16 +103,12 @@ $$
 모델로 필요한 입력을 미리 계산하므로 중력 보상은 피드포워드 역할을 한다.
 토크의 부호는 각 관절의 좌표계와 API 정의에 따라 정해지며, 모든 관절에 같은 양의 값을 더하는 방식은 아니다.
 
-```mermaid
-flowchart LR
-    T[목표 각도·속도] --> P[PD 제어]
-    R[현재 각도·속도] --> P
-    R --> G[로봇 모델로 중력 보상 계산]
-    P --> S[토크 합산]
-    G --> S
-    S --> B[로봇·물리 엔진]
-    B --> R
-```
+<p align="center">
+  <img src="../reinforcement-learning/diagrams/17-pd-gravity-control.png" alt="PD 제어와 중력 보상의 합산 구조" width="880">
+</p>
+<p align="center"><sub>그림 17. PD 제어와 중력 보상의 합산 구조</sub></p>
+
+출력 토크로 다음 관절 상태가 만들어지고, 새 상태를 입력해 같은 계산을 반복한다.
 
 ## 5. PID의 I 항과 중력 보상의 차이
 
@@ -160,7 +156,9 @@ PD 게인은 사전 정의된 로봇의 구동기 설정에 있고, 이 예제�
 | 2. 중력 보상 | 보상 적용 로봇의 팔꿈치 실제값이 목표값에 더 가까워짐 |
 | 3. 손끝 마커 | 보상 적용 로봇의 손끝 위치 오차가 더 작게 나타남 |
 
-![06번 중력 보상 적용 전후 결과](../../06-robot-joint-control/images/02-gravity-compensation-result.png)
+<p align="center">
+  <img src="../../06-robot-joint-control/images/02-gravity-compensation-result.png" alt="06번 중력 보상 적용 전후 결과" width="900">
+</p>
 
 ## 7. 보상 후에도 오차가 남는 이유
 

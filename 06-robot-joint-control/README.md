@@ -57,9 +57,13 @@ cd <physical-ai-training 저장소 경로>/06-robot-joint-control
 - 위치 명령만으로 중력의 영향을 완전히 제거할 수 없음을 관찰했다.
 - 영상의 그래프에서 목표는 파란 점선, 실제값은 빨간 실선이다.
 
-![기본 위치 제어 실행 중 로봇과 그래프](images/01-position-control-running.png)
+<p align="center">
+  <img src="images/01-position-control-running.png" alt="기본 위치 제어 실행 중 로봇과 그래프" width="900">
+</p>
 
-![기본 위치 제어의 전체 구간 결과 그래프](images/01-position-control-result.png)
+<p align="center">
+  <img src="images/01-position-control-result.png" alt="기본 위치 제어의 전체 구간 결과 그래프" width="900">
+</p>
 
 [실습 1 원본 영상 보기 / 다운로드 — 약 20.8초](videos/01-position-control.webm)
 
@@ -94,9 +98,13 @@ robot_b.write_data_to_sim()
 - 오른쪽 그래프의 보상 적용 로봇은 초록 실선이 파란 목표 점선에 더 가깝다.
 - 보상 후 오차가 줄지만, 초기 과도 응답과 남아 있는 추종 오차도 관찰된다.
 
-![중력 보상 적용 전후의 실시간 비교](images/02-gravity-compensation-running.png)
+<p align="center">
+  <img src="images/02-gravity-compensation-running.png" alt="중력 보상 적용 전후의 실시간 비교" width="900">
+</p>
 
-![중력 보상 비교의 전체 구간 결과](images/02-gravity-compensation-result.png)
+<p align="center">
+  <img src="images/02-gravity-compensation-result.png" alt="중력 보상 비교의 전체 구간 결과" width="900">
+</p>
 
 [실습 2 원본 영상 보기 / 다운로드 — 약 29.9초](videos/02-gravity-compensation.webm)
 
@@ -129,9 +137,13 @@ robot_b.write_data_to_sim()
 - EE 오차 그래프에서도 초기 과도 구간 이후 초록선이 빨간선보다 낮게 나타난다.
 - 그래프의 오차 단위는 m이며, 보상 적용 후에도 오차가 완전히 0이 되는 것은 아니다.
 
-![손끝 목표·실제 마커와 실시간 오차 그래프](images/03-ee-markers-running.png)
+<p align="center">
+  <img src="images/03-ee-markers-running.png" alt="손끝 목표·실제 마커와 실시간 오차 그래프" width="900">
+</p>
 
-![손끝 위치 오차의 전체 구간 결과](images/03-ee-markers-result.png)
+<p align="center">
+  <img src="images/03-ee-markers-result.png" alt="손끝 위치 오차의 전체 구간 결과" width="900">
+</p>
 
 [실습 3 원본 영상 보기 / 다운로드 — 약 20.1초](videos/03-ee-markers.webm)
 

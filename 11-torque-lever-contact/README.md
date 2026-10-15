@@ -45,13 +45,17 @@ python 11_torque_lever_contact.py
 
 ### 두 레버와 받침대
 
-![두 레버의 토크 입력 및 접촉 장면](images/lever-scene.png)
+<p align="center">
+  <img src="images/lever-scene.png" alt="두 레버의 토크 입력 및 접촉 장면" width="900">
+</p>
 
 회전축에 토크를 가하면 빔 끝이 받침대를 누른다. 받침대는 움직이지 않도록 구성한다.
 
 ### 레버 길이에 따른 힘 비교
 
-![토크 변화에 따른 두 레버의 접촉 힘 비교](images/contact-force-comparison.png)
+<p align="center">
+  <img src="images/contact-force-comparison.png" alt="토크 변화에 따른 두 레버의 접촉 힘 비교" width="900">
+</p>
 
 | 그래프 | 의미 |
 |---|---|
@@ -62,7 +66,9 @@ python 11_torque_lever_contact.py
 
 ### 토크 한 주기와 접촉 힘
 
-![토크 주기에 따라 증가하고 감소하는 접촉 힘](images/torque-force-cycle.png)
+<p align="center">
+  <img src="images/torque-force-cycle.png" alt="토크 주기에 따라 증가하고 감소하는 접촉 힘" width="900">
+</p>
 
 영상에서 짧은 레버의 접촉 힘이 더 크게 나타나고, 두 곡선은 토크 변화에 따라 증가·감소한다.
 실선은 이론 점선에 가깝지만 완전히 일치하지는 않는다.

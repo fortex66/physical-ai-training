@@ -43,7 +43,10 @@ TensorBoard는 `http://localhost:6006`에서 확인한다. 재실행은 현재 �
 
 ## D2로 보는 실제 학습 구조
 
-![24장 환경·학습기 연결과 학습 반복](../learning-notes/reinforcement-learning/diagrams/12-lesson24-training.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/12-lesson24-training.png" alt="24장 환경·학습기 연결과 학습 반복" width="337">
+</p>
+<p align="center"><sub>그림 12. 24장 환경·학습기 연결과 학습 반복</sub></p>
 
 ```python
 # 실제 코드의 연결 지점
@@ -64,13 +67,19 @@ runner.learn(num_learning_iterations=agent_cfg.max_iterations,
 3. **PPO 업데이트:** 수집한 데이터를 4개 mini-batch로 나눠 5 epoch 동안 사용한다. Actor는 기대보다 좋은 행동의 확률을 높이고 Critic은 누적 가치 목표를 더 잘 예측하도록 학습한다.
 4. **기록·저장:** 학습 지표를 남기고 저장 주기에 따라 체크포인트를 기록한다. 바뀐 정책으로 다음 경험을 새로 수집한다.
 
-![경험에서 Advantage·손실·가중치 업데이트까지](../learning-notes/reinforcement-learning/diagrams/13-ppo-update.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/13-ppo-update.png" alt="경험에서 Advantage·손실·가중치 업데이트까지" width="900">
+</p>
+<p align="center"><sub>그림 13. 경험에서 Advantage·손실·가중치 업데이트까지</sub></p>
 
 PPO는 같은 rollout을 몇 번 재사용한 뒤 다음 정책의 경험으로 바꾸는 on-policy 방식이다. 오래된 경험을 큰 replay buffer에서 계속 꺼내는 방식과 구분한다.
 
 ## Actor와 Critic 신경망
 
-![7차원 입력을 사용하는 Actor·Critic](../learning-notes/reinforcement-learning/diagrams/02-actor-critic-model.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/02-actor-critic-model.png" alt="7차원 입력을 사용하는 Actor·Critic" width="900">
+</p>
+<p align="center"><sub>그림 2. 7차원 입력을 사용하는 Actor·Critic</sub></p>
 
 | 네트워크 | 구성 | 출력 |
 |---|---|---|
@@ -118,7 +127,9 @@ Actor 정책 손실 + Critic 가치 손실 - 탐색 entropy 보너스를 함께 
 
 ## 실제 학습 곡선 — 제공 TensorBoard 이벤트 분석
 
-![보상·에피소드 길이·탐색 표준편차·가치 손실](images/training-curves.png)
+<p align="center">
+  <img src="images/training-curves.png" alt="보상·에피소드 길이·탐색 표준편차·가치 손실" width="900">
+</p>
 
 이 그림은 제공 이벤트의 원시 scalar로 생성했다. smoothing은 적용하지 않았다. [곡선·CSV 생성 코드](analysis/render_training_curves.py)는 TensorBoard 이벤트를 다시 읽어 같은 지표를 출력한다.
 
@@ -140,11 +151,17 @@ Actor 정책 손실 + Critic 가치 손실 - 탐색 entropy 보너스를 함께 
 
 ## 영상 결과
 
-![학습 iteration 34 부근과 상태 로그](images/training-progress.png)
+<p align="center">
+  <img src="images/training-progress.png" alt="학습 iteration 34 부근과 상태 로그" width="900">
+</p>
 
-![학습 후반의 여러 Cartpole 직립 유지](images/policy-stabilizing.png)
+<p align="center">
+  <img src="images/policy-stabilizing.png" alt="학습 후반의 여러 Cartpole 직립 유지" width="900">
+</p>
 
-![최종 학습 로그와 완료·저장 경로](images/training-complete.png)
+<p align="center">
+  <img src="images/training-complete.png" alt="최종 학습 로그와 완료·저장 경로" width="900">
+</p>
 
 영상은 학습 중 GUI와 로그 기록이다. 독립적인 평가 실행 영상과 구분한다.
 

@@ -53,15 +53,21 @@ python 13_diff_ik.py --headless
 
 ## 실습 결과
 
-![현재 말단과 목표 포즈의 좌표 프레임](images/ik-target-frames.png)
+<p align="center">
+  <img src="images/ik-target-frames.png" alt="현재 말단과 목표 포즈의 좌표 프레임" width="900">
+</p>
 
 현재 말단 프레임과 목표 프레임을 각각 표시하며, 추종이 진행되면 두 마커가 가까워진다.
 
-![네 환경에서 동일한 로컬 목표 추종](images/ik-pose-tracking.png)
+<p align="center">
+  <img src="images/ik-pose-tracking.png" alt="네 환경에서 동일한 로컬 목표 추종" width="900">
+</p>
 
 네 로봇은 서로 다른 환경 원점에 배치되지만 같은 베이스 기준 목표를 추종한다.
 
-![목표 전환과 평균 위치 오차 로그](images/ik-error-log.png)
+<p align="center">
+  <img src="images/ik-error-log.png" alt="목표 전환과 평균 위치 오차 로그" width="900">
+</p>
 
 영상에 반복해서 표시되는 평균 위치 오차는 다음과 같다. 단위는 m다.
 

@@ -1,0 +1,34 @@
+direction: down
+classes: {
+  box: {
+    width: 180
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 180
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+obs: "obs(t)\n현재 관측"
+policy: "Policy θ\n행동 선택" {class: focus}
+action: "action(t)\n구동 명령"
+step: "env.step(action)\n물리 상태 진행" {class: focus}
+next: "next_obs\n다음 입력 관측"
+reward: "rew(t)\n전이의 보상"
+terminated: "terminated\n태스크 종료"
+truncated: "truncated\n시간 제한 등"
+again: "다음 Policy θ\nstep 반복"
+data: "경험 버퍼\n학습 시 저장"
+end: "종료 분류\n리셋 · 가치 처리"
+obs -> policy -> action -> step
+step -> next -> again
+step -> reward -> data
+step -> terminated -> end
+step -> truncated -> end
+end -> data: 종료 정보

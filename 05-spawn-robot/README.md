@@ -47,7 +47,9 @@ GUI 없이 실행하려면 `--headless`를 추가한다.
 
 ### 로봇 배치
 
-![영상에서 추출한 Franka Panda 로봇 장면](images/robot-scene.png)
+<p align="center">
+  <img src="images/robot-scene.png" alt="영상에서 추출한 Franka Panda 로봇 장면" width="900">
+</p>
 
 바닥 위에 로봇이 배치되고, 랜덤 관절 입력에 따라 자세가 변하는 모습을 관찰했다.
 
@@ -60,7 +62,9 @@ GUI 없이 실행하려면 `--headless`를 추가한다.
 
 ### 관절 상태와 반복 리셋
 
-![영상에서 추출한 관절 상태 텐서와 에피소드 리셋 출력](images/joint-state-reset.png)
+<p align="center">
+  <img src="images/joint-state-reset.png" alt="영상에서 추출한 관절 상태 텐서와 에피소드 리셋 출력" width="900">
+</p>
 
 첨부 사진에서는 step 2000, 2500, 3000, 3500, 4000의 리셋 로그가 보인다.
 저장한 영상에서도 step 5000, 5500, 6000, 6500, 7000 등의 리셋 로그와 관절 상태 출력을 확인할 수 있다.

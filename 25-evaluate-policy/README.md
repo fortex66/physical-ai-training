@@ -38,7 +38,10 @@ python 25_evaluate_policy.py --random --num_envs 16 --num_episodes 64
 
 ## D2로 보는 25번 실행 구조
 
-![학습 모델 평균 행동과 랜덤 행동을 각각 평가](../learning-notes/reinforcement-learning/diagrams/14-lesson25-evaluation.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/14-lesson25-evaluation.png" alt="학습 모델 평균 행동과 랜덤 행동을 각각 평가" width="554">
+</p>
+<p align="center"><sub>그림 14. 학습 모델 평균 행동과 랜덤 행동을 각각 평가</sub></p>
 
 학습 모드는 24번과 같은 Actor·Critic 구조를 만든 뒤 가중치를 한 번 로드하고 `get_inference_policy()`를 얻는다. 목표 에피소드 수에 도달하기 전에는 다음 관측으로 행동 선택을 반복한다.
 
@@ -84,9 +87,13 @@ headless/GUI와 환경 수는 실행 선택이며 학습·평가를 정의하는
 
 ### 학습 정책 — 직립 유지와 timeout
 
-![학습 모델의 네트워크·16환경·평가 시작](images/trained-running.png)
+<p align="center">
+  <img src="images/trained-running.png" alt="학습 모델의 네트워크·16환경·평가 시작" width="900">
+</p>
 
-![학습 정책 64에피소드 평가 완료](images/trained-summary.png)
+<p align="center">
+  <img src="images/trained-summary.png" alt="학습 정책 64에피소드 평가 완료" width="668">
+</p>
 
 학습 정책은 64회 모두 길이 300 step을 기록했다. 카트를 조절하며 막대를 유지한 결과이며 평균 보상도 이상적 약 17.5점에 가깝다.
 이는 이번 평가 조건의 결과다. 모든 초기 상태·외란·실제 로봇에서 성공한다는 보장은 아니다.
@@ -95,15 +102,19 @@ headless/GUI와 환경 수는 실행 선택이며 학습·평가를 정의하는
 
 ### 랜덤 정책 — 짧은 유지와 반복 실패
 
-![랜덤 행동의 막대 기울어짐과 실패 로그](images/random-running.png)
+<p align="center">
+  <img src="images/random-running.png" alt="랜덤 행동의 막대 기울어짐과 실패 로그" width="900">
+</p>
 
-![랜덤 평가 완료 · 목표 64회보다 많은 65회 집계](images/random-summary.png)
+<p align="center">
+  <img src="images/random-summary.png" alt="랜덤 평가 완료 · 목표 64회보다 많은 65회 집계" width="594">
+</p>
 
 랜덤 입력은 관측을 이용하지 않아 대부분 짧게 실패한다. 마지막 step에 여러 환경이 동시에 완료되면 내부 for 루프가 모두 추가해 목표 64회를 넘을 수 있다. 이번에는 실제 65회가 기록됐다.
 
 [랜덤 정책 원본 영상 — 약 8.45초](videos/25-2.webm)
 
-위 캡처는 각 원본 영상에서 추출했다. 영상 길이는 전체 시뮬레이션 시간·성능 지표와 구분한다.
+위 캡처는 각 원본 영상에서 추출했다. 최종 통계 캡처는 터미널 영역만 표시했다. 영상 길이는 전체 시뮬레이션 시간·성능 지표와 구분한다.
 
 ## ‘성공률 5초 생존’의 정확한 의미
 
@@ -125,7 +136,10 @@ deterministic 배포를 할 예정이면 평균 행동을 평가하고, 확률�
 
 ## 강좌 20~25 — 기초 RL 워크플로우 마무리
 
-![환경 기초부터 정책 평가까지](../learning-notes/reinforcement-learning/diagrams/15-rl-workflow.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/15-rl-workflow.png" alt="환경 기초부터 정책 평가까지" width="900">
+</p>
+<p align="center"><sub>그림 15. 환경 기초부터 정책 평가까지</sub></p>
 
 | 강좌 | 준비·실행한 것 |
 |---|---|

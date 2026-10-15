@@ -61,19 +61,27 @@ python 12_forward_kinematics.py --headless
 
 ### 기본 자세
 
-![기본 자세와 말단 포즈 로그](images/home.png)
+<p align="center">
+  <img src="images/home.png" alt="기본 자세와 말단 포즈 로그" width="900">
+</p>
 
 ### 팔 올림
 
-![팔을 높이 올렸을 때의 말단 위치와 방향](images/arm-up.png)
+<p align="center">
+  <img src="images/arm-up.png" alt="팔을 높이 올렸을 때의 말단 위치와 방향" width="900">
+</p>
 
 ### 좌회전
 
-![첫 관절을 회전한 자세와 말단 좌표](images/left-rotate.png)
+<p align="center">
+  <img src="images/left-rotate.png" alt="첫 관절을 회전한 자세와 말단 좌표" width="900">
+</p>
 
 ### 전방 도달
 
-![팔을 앞으로 뻗은 자세와 말단 포즈](images/reach-forward.png)
+<p align="center">
+  <img src="images/reach-forward.png" alt="팔을 앞으로 뻗은 자세와 말단 포즈" width="900">
+</p>
 
 [원본 녹화 영상 보기 / 다운로드 — 약 21.2초](videos/forward-kinematics.webm)
 

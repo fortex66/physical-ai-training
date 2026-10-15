@@ -45,9 +45,13 @@ python 08_multi_robot.py --num_envs 4
 
 ## 실습 결과
 
-![여러 환경에 배치된 Cartpole과 Franka](images/multi-robot-scene.png)
+<p align="center">
+  <img src="images/multi-robot-scene.png" alt="여러 환경에 배치된 Cartpole과 Franka" width="900">
+</p>
 
-![환경별 Cartpole 상태와 env 0 Franka 상태 출력](images/selective-control-states.png)
+<p align="center">
+  <img src="images/selective-control-states.png" alt="환경별 Cartpole 상태와 env 0 Franka 상태 출력" width="900">
+</p>
 
 - 네 환경에 Cartpole과 Franka가 함께 배치된다.
 - Cartpole은 환경별로 다른 자세로 움직이고, Franka의 자세도 변화한다.

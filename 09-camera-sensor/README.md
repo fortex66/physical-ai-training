@@ -197,11 +197,17 @@ camera.set_world_poses_from_view(cam_eye, cam_target)
 
 ### 영상에서 관찰한 결과
 
-![사람을 바라보는 레일 카메라와 RGB 영상](images/rail-camera-front.png)
+<p align="center">
+  <img src="images/rail-camera-front.png" alt="사람을 바라보는 레일 카메라와 RGB 영상" width="900">
+</p>
 
-![궤도 이동으로 달라진 인물 촬영 방향](images/rail-camera-side.png)
+<p align="center">
+  <img src="images/rail-camera-side.png" alt="궤도 이동으로 달라진 인물 촬영 방향" width="900">
+</p>
 
-![궤도 각도·카트 위치·RGB 데이터 출력](images/rail-camera-orbit-log.png)
+<p align="center">
+  <img src="images/rail-camera-orbit-log.png" alt="궤도 각도·카트 위치·RGB 데이터 출력" width="900">
+</p>
 
 - 카트의 원 궤도 위치가 변하고, 사람을 보는 방향도 달라진다.
 - 인물이 화면 중앙 부근에 유지되며 정면·측면 등 다양한 방향에서 촬영된다.

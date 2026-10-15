@@ -41,7 +41,10 @@ python 23_custom_env_complete.py --headless --num_envs 100
 
 ## D2로 보는 코드 실행 구조
 
-![환경 구성·랜덤 행동·종료와 기준 통계](../learning-notes/reinforcement-learning/diagrams/11-lesson23-structure.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/11-lesson23-structure.png" alt="환경 구성·랜덤 행동·종료와 기준 통계" width="374">
+</p>
+<p align="center"><sub>그림 11. 환경 구성·랜덤 행동·종료와 기준 통계</sub></p>
 
 행동 한 번마다 환경은 명령 적용 → 물리 진행 → 종료 판단 → 보상 계산 → 완료 환경 리셋 → 관측 반환을 수행한다.
 실행 루프는 반환 보상과 길이를 누적하고, 완료한 환경의 에피소드 점수를 저장한다.
@@ -97,11 +100,15 @@ python 23_custom_env_complete.py --headless --num_envs 100
 
 ## 실습 결과 — 학습 전 baseline
 
-![여러 Cartpole의 개별 실패와 반복 리셋](images/parallel-reset.png)
+<p align="center">
+  <img src="images/parallel-reset.png" alt="여러 Cartpole의 개별 실패와 반복 리셋" width="900">
+</p>
 
 영상에는 Env 94 등 환경별 종료 로그와 여러 Cartpole이 함께 보인다. 막대가 흔들리고 실패한 환경이 개별 리셋되는 랜덤 실행 결과다.
 
-![학습 전 에피소드 보상 통계](images/baseline-statistics.png)
+<p align="center">
+  <img src="images/baseline-statistics.png" alt="학습 전 에피소드 보상 통계" width="900">
+</p>
 
 | 제공 영상 최종 로그 | 값 |
 |---|---|

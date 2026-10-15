@@ -46,7 +46,9 @@ python 03_galileo_experiment.py
 
 ### 시작 장면
 
-![영상에서 추출한 실험 시작 장면](images/initial-scene.png)
+<p align="center">
+  <img src="images/initial-scene.png" alt="영상에서 추출한 실험 시작 장면" width="900">
+</p>
 
 ### 녹화 영상
 
@@ -56,7 +58,9 @@ python 03_galileo_experiment.py
 
 ### 착지 결과
 
-![영상에서 추출한 착지 결과와 터미널 출력](images/result-frame.png)
+<p align="center">
+  <img src="images/result-frame.png" alt="영상에서 추출한 착지 결과와 터미널 출력" width="900">
+</p>
 
 | 기록 | 1 kg 공 착지 시간 | 10 kg 공 착지 시간 | 시간 차이 |
 |---|---|---|---|

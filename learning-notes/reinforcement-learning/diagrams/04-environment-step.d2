@@ -3,18 +3,18 @@ classes: {
   box: {
     width: 250
     height: 78
-    style: {font-size: 21; font-color: "#172B45"; fill: "#FFFFFF"; stroke: "#CBD5E1"; stroke-width: 1; border-radius: 10}
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
   }
   focus: {
     width: 250
     height: 78
-    style: {font-size: 21; font-color: "#173C86"; fill: "#EFF5FF"; stroke: "#5D81D9"; stroke-width: 2; border-radius: 10}
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
   }
 }
 *.class: box
 *.style.font-size: 21
-(* -> *)[*].style.stroke: "#64748B"
-(* -> *)[*].style.stroke-width: 2
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
 action: "행동 처리\nscale 100"
 p1: "물리 step 1\n1/120초" {class: focus}
 p2: "물리 step 2\n같은 행동 · 1/120초" {class: focus}

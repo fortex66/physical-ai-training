@@ -93,21 +93,27 @@ def unicycle_to_wheel_vel(v, omega):
 
 ### JetBot 배치와 바퀴 관절 확인
 
-![JetBot과 좌우 바퀴 관절 출력](images/jetbot-wheel-joints.png)
+<p align="center">
+  <img src="images/jetbot-wheel-joints.png" alt="JetBot과 좌우 바퀴 관절 출력" width="900">
+</p>
 
 터미널에서 총 관절 수 2개, 왼쪽 관절 ID 0과 오른쪽 관절 ID 1을 확인할 수 있다.
 환경은 두 개 생성되며, 녹화 시점의 뷰포트에는 그중 한 로봇이 주로 보인다.
 
 ### 속도 패턴 전환
 
-![전진·후진·회전·원호 주행 명령 로그](images/wheel-speed-patterns.png)
+<p align="center">
+  <img src="images/wheel-speed-patterns.png" alt="전진·후진·회전·원호 주행 명령 로그" width="900">
+</p>
 
 좌우 속도가 같으면 직진하고, 서로 반대면 제자리 회전한다.
 원호 구간은 오른쪽 바퀴를 더 빠르게 구동해 이동과 회전을 함께 만든다.
 
 ### 원호 주행과 정지 결과
 
-![원호 이동 후 정지한 JetBot과 상태 로그](images/arc-stop-results.png)
+<p align="center">
+  <img src="images/arc-stop-results.png" alt="원호 이동 후 정지한 JetBot과 상태 로그" width="900">
+</p>
 
 영상 로그에서 전진 구간의 환경 0 위치는 x≈1.72 → 1.95 → 2.17 m로 증가하고,
 후진 구간에서는 x≈1.96 → 1.74 → 1.52 m로 감소한다.

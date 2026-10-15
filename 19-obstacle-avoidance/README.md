@@ -48,7 +48,9 @@ kinematic 장애물은 물리 접촉으로 밀려 이동하는 동적 물체와 
 
 ### 장애물과 목표 배치
 
-![네 박스 장애물과 녹색 목표](images/obstacles-goal.png)
+<p align="center">
+  <img src="images/obstacles-goal.png" alt="네 박스 장애물과 녹색 목표" width="900">
+</p>
 
 | 표시 | 의미 |
 |---|---|
@@ -62,7 +64,9 @@ kinematic 장애물은 물리 접촉으로 밀려 이동하는 동적 물체와 
 
 ### 회피 모드 전환
 
-![장애물 근처에서 감속하며 우회하는 JetBot](images/avoidance-mode.png)
+<p align="center">
+  <img src="images/avoidance-mode.png" alt="장애물 근처에서 감속하며 우회하는 JetBot" width="900">
+</p>
 
 영상 로그에서 `Step 9050`은 `obs=0.29m | AVOID`,
 `Step 9150`은 `obs=0.31m | NAV`로 나타난다.
@@ -70,14 +74,18 @@ kinematic 장애물은 물리 접촉으로 밀려 이동하는 동적 물체와 
 
 ### 실제 우회 궤적
 
-![직선 기준 경로에서 벗어나 장애물을 우회한 궤적](images/actual-trail.png)
+<p align="center">
+  <img src="images/actual-trail.png" alt="직선 기준 경로에서 벗어나 장애물을 우회한 궤적" width="900">
+</p>
 
 실제 궤적은 파란 직선에서 벗어나 장애물 주변을 돌아간다.
 영상에서 0.30 m 부근의 NAV·AVOID 전환이 반복되는 구간도 보인다.
 
 ### 목표 접근과 반복 주행
 
-![목표로 접근하는 로봇과 궤적 로그](images/goal-approach.png)
+<p align="center">
+  <img src="images/goal-approach.png" alt="목표로 접근하는 로봇과 궤적 로그" width="900">
+</p>
 
 영상 초반에는 이전 주행의 `목표 도달! (거리: 0.073m)`와 DONE 로그가 남아 있고,
 `Step 9000`에서 리셋한 뒤 새 주행 궤적이 만들어진다.

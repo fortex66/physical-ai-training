@@ -69,19 +69,27 @@ JetBot USD는 NVIDIA 자산 경로에서 불러온다. 로봇 USD 전체를 이 
 
 ### 사각형 구간과 추정 위치
 
-![직진·회전 패턴과 실제 위치·오도메트리 비교](images/square-odometry.png)
+<p align="center">
+  <img src="images/square-odometry.png" alt="직진·회전 패턴과 실제 위치·오도메트리 비교" width="900">
+</p>
 
 ### 원형 구간
 
-![원형 주행 구간의 위치 추정 로그](images/circle-odometry.png)
+<p align="center">
+  <img src="images/circle-odometry.png" alt="원형 주행 구간의 위치 추정 로그" width="900">
+</p>
 
 ### 교대 원호 구간
 
-![좌우 반원 명령과 추정 위치 변화](images/alternating-arcs.png)
+<p align="center">
+  <img src="images/alternating-arcs.png" alt="좌우 반원 명령과 추정 위치 변화" width="900">
+</p>
 
 ### 누적 오차와 정지
 
-![정지 구간의 실제·추정 위치 차이](images/odometry-reset.png)
+<p align="center">
+  <img src="images/odometry-reset.png" alt="정지 구간의 실제·추정 위치 차이" width="900">
+</p>
 
 영상에서 두 JetBot의 위치가 변화하고, 터미널에 실제 위치·추정 위치·방향·오차·누적 거리가 출력된다.
 반복되는 로그의 예시는 다음과 같다. 위치 단위는 m다.

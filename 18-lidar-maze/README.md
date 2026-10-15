@@ -67,21 +67,27 @@ LiDAR 거리로 속도를 줄이거나 경로를 수정하는 코드는 없다.
 
 ### 미로와 360° 스캔
 
-![미로 장면과 지도·극좌표 스캔](images/maze-scan.png)
+<p align="center">
+  <img src="images/maze-scan.png" alt="미로 장면과 지도·극좌표 스캔" width="900">
+</p>
 
 뷰포트의 붉은 점들은 광선 교차 위치의 디버그 표시다.
 로봇이 이동하면서 닿는 벽과 거리가 달라진다.
 
 ### 내부 장애물의 거리 변화
 
-![내부 막대와 기둥 주변의 스캔](images/pillar-scan.png)
+<p align="center">
+  <img src="images/pillar-scan.png" alt="내부 막대와 기둥 주변의 스캔" width="900">
+</p>
 
 외벽뿐 아니라 중앙 막대와 우측 상단 기둥이 광선의 교차 대상이다.
 가까운 장애물 방향에서 측정 거리가 짧아지는 모습이 나타난다.
 
 ### 월드 지도와 센서 기준 표시
 
-![로봇 방향 변화에 따른 지도와 센서 기준 스캔 비교](images/world-sensor-views.png)
+<p align="center">
+  <img src="images/world-sensor-views.png" alt="로봇 방향 변화에 따른 지도와 센서 기준 스캔 비교" width="900">
+</p>
 
 | 왼쪽 지도 | 오른쪽 극좌표 그래프 |
 |---|---|
@@ -92,7 +98,9 @@ LiDAR 거리로 속도를 줄이거나 경로를 수정하는 코드는 없다.
 
 ### 주행 중 측정 로그
 
-![Waypoint 주행과 LiDAR 측정값](images/scan-navigation.png)
+<p align="center">
+  <img src="images/scan-navigation.png" alt="Waypoint 주행과 LiDAR 측정값" width="900">
+</p>
 
 영상에는 `LiDAR hits=360/360`과 최소·평균 거리가 반복 출력된다.
 예를 들어 t=54.0초 로그의 로봇 위치는 약 (0.75, 0.73) m,

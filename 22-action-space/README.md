@@ -42,7 +42,10 @@ python 22_action_space.py --action_mode effort --num_envs 8
 
 ## D2로 보는 액션 처리 구조
 
-![액션 변환과 세 제어 명령](../learning-notes/reinforcement-learning/diagrams/10-action-space.png)
+<p align="center">
+  <img src="../learning-notes/reinforcement-learning/diagrams/10-action-space.png" alt="액션 변환과 세 제어 명령" width="840">
+</p>
+<p align="center"><sub>그림 10. 액션 변환과 세 제어 명령</sub></p>
 
 `env.step(action)`은 행동을 처리한 뒤 두 물리 step 동안 적용한다. 물리 dt는 1/120초, 환경 step은 1/60초다.
 힘을 전달하는 것과 위치·속도 목표를 전달하는 것의 차이는 [PD 제어 개념](../learning-notes/pd-pid-gravity-compensation/README.md)과 연결된다.
@@ -72,23 +75,29 @@ velocity에는 속도 오차에 반응하는 damping이 있으며, effort에도 
 
 ## 실습 결과
 
-![effort 모드와 네 환경·관측/행동 공간 로그](images/effort-initial.png)
+<p align="center">
+  <img src="images/effort-initial.png" alt="effort 모드와 네 환경·관측/행동 공간 로그" width="900">
+</p>
 
 영상은 **EFFORT 모드 · 환경 4개** 실행이다. 로그에서 처음 완료한 환경 0은 길이 38 step·보상 약 -0.17이며 이후 길이 300 step의 에피소드도 나타난다.
 관측 공간 `(4, 4)`와 행동 공간 `(4, 1)`을 확인할 수 있다.
 
-![랜덤 행동 구간과 에피소드별 누적 점수](images/effort-episodes.png)
+<p align="center">
+  <img src="images/effort-episodes.png" alt="랜덤 행동 구간과 에피소드별 누적 점수" width="900">
+</p>
 
 사인파 이후 랜덤 구간의 카트 이동·막대 흔들림과 개별 환경의 반복 리셋을 기록했다.
 제공 영상으로 position·velocity 모드의 성능 비교까지 판단하지 않는다.
 
-![1000 환경 step 종료와 완료 에피소드 18회](images/effort-final.png)
+<p align="center">
+  <img src="images/effort-final.png" alt="1000 환경 step 종료와 완료 에피소드 18회" width="668">
+</p>
 
 최종 로그는 `Step 1000`, `EFFORT 모드`, `완료 에피소드: 18`이다. 완료 수는 네 환경의 합계이며, 학습 업데이트 횟수가 아니다.
 
 [원본 영상 보기 / 다운로드 — 약 23.46초](videos/22.webm)
 
-원본 파일명: `22.webm`. 위 이미지는 제공 영상에서 추출했다.
+원본 파일명: `22.webm`. 위 이미지는 제공 영상에서 추출했으며 최종 로그는 터미널 영역만 표시했다.
 
 ## 배운 점
 

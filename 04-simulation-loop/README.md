@@ -49,7 +49,9 @@ average 결합이라면 공과 바닥 값의 평균이므로, 바닥이 1.0이�
 
 ### 반동 비교
 
-![영상에서 추출한 세 공의 반동 비교](images/bounce-comparison.png)
+<p align="center">
+  <img src="images/bounce-comparison.png" alt="영상에서 추출한 세 공의 반동 비교" width="900">
+</p>
 
 세 공의 반동이 다르고, 반발 계수가 큰 파란공은 더 오래 튀는 모습을 관찰했다.
 공이 점점 정지하는 동작과 별개로, 에피소드 리셋 후에는 다시 위쪽에서 낙하해야 한다.
@@ -63,7 +65,9 @@ average 결합이라면 공과 바닥 값의 평균이므로, 바닥이 1.0이�
 
 ### 리셋 성공 확인
 
-![영상에서 추출한 반복 리셋과 실제 상태 출력](images/reset-result.png)
+<p align="center">
+  <img src="images/reset-result.png" alt="영상에서 추출한 반복 리셋과 실제 상태 출력" width="900">
+</p>
 
 영상의 터미널에서 확인한 리셋 예시는 다음과 같다.
 

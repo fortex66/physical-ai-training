@@ -78,9 +78,13 @@ scene = InteractiveScene(scene_cfg)
 
 ## 실습 결과 1. 기본 4개 환경
 
-![4개 환경의 Cartpole과 테이블 배치](images/01-four-environments-scene.png)
+<p align="center">
+  <img src="images/01-four-environments-scene.png" alt="4개 환경의 Cartpole과 테이블 배치" width="900">
+</p>
 
-![4개 환경의 관절 상태 출력과 서로 다른 동작](images/01-four-environments-states.png)
+<p align="center">
+  <img src="images/01-four-environments-states.png" alt="4개 환경의 관절 상태 출력과 서로 다른 동작" width="900">
+</p>
 
 - Cartpole 관절 상태가 4행으로 출력된다.
 - 각 환경의 폴이 서로 다른 자세로 움직인다.
@@ -93,9 +97,13 @@ scene = InteractiveScene(scene_cfg)
 
 ## 실습 결과 2. 16개 환경
 
-![16개 환경의 자동 격자 배치](images/02-sixteen-environments-scene.png)
+<p align="center">
+  <img src="images/02-sixteen-environments-scene.png" alt="16개 환경의 자동 격자 배치" width="900">
+</p>
 
-![16개 환경의 관절 상태 출력](images/02-sixteen-environments-states.png)
+<p align="center">
+  <img src="images/02-sixteen-environments-states.png" alt="16개 환경의 관절 상태 출력" width="900">
+</p>
 
 - 관절 상태 텐서가 16행으로 늘어난다.
 - 여러 Cartpole·테이블이 격자에 배치되고 각 폴의 자세가 다르게 나타난다.

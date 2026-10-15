@@ -25,15 +25,10 @@ Pick & Place는 물체를 집어 다른 위치로 옮겨 놓는 작업이며, �
 - 전환 조건: 정해진 시간 경과 또는 집기 조건 만족.
 - 다음 상태: `LIFT`.
 
-```mermaid
-flowchart LR
-    A[접근] --> B[하강]
-    B --> C[잡기]
-    C --> D[들기]
-    D --> E[이동]
-    E --> F[놓기]
-    F --> G[후퇴]
-```
+<p align="center">
+  <img src="../reinforcement-learning/diagrams/18-pick-place-states.png" alt="Pick & Place의 7단계 상태 전이" width="900">
+</p>
+<p align="center"><sub>그림 18. Pick & Place의 7단계 상태 전이</sub></p>
 
 ## 시간 기준과 조건 기준의 차이
 
