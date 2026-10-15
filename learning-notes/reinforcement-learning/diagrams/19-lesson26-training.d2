@@ -1,0 +1,24 @@
+direction: down
+classes: {
+  box: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+registry: "등록 태스크 선택\nFlat ANYmal-B"
+cfg: "환경 Cfg 로드\n병렬 수 변경"
+make: "gym.make\nWrapper 연결"
+model: "Actor · Critic\n128 × 3층"
+learn: "PPO 학습\n24 step rollout" {class: focus}
+save: "로그 · 모델 저장\n300 iteration"
+registry -> cfg -> make -> model -> learn -> save

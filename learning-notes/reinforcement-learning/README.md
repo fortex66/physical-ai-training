@@ -486,6 +486,27 @@ while running:
 
 평가·추론에서도 관측-행동 루프는 똑같이 반복되지만 보상은 성능 집계에 쓰고 θ는 고정한다. 20~23의 랜덤 데모는 새 관측을 받더라도 행동 생성에 사용하지 않는다는 차이가 있다.
 
+<a id="locomotion"></a>
+
+## 17. 보행 학습 — 명령을 관절 협응과 지면 접촉으로 바꾸기
+
+26번은 `(vx, vy, ωz)` 명령을 보고 12개 관절 위치 목표를 함께 선택하는 정책을 학습한다.
+몸을 직접 이동시키는 명령이 아니라 actuator 토크와 발 접촉·마찰로 몸의 속도와 균형을 만든다.
+지지기에는 발이 하중을 지탱하고, 유각기에는 다음 착지를 준비한다. 고정 보행 스케줄 없이 속도 추적·안정성·구동 부담·발 공중 시간 목적에서 협응을 학습한다.
+
+<p align="center">
+  <img src="diagrams/20-locomotion-control.png" alt="보행 명령·관측에서 관절 목표와 접촉 운동까지" width="900">
+</p>
+<p align="center"><sub>그림 20. 보행 명령·관측에서 관절 목표와 접촉 운동까지</sub></p>
+
+참조 Flat 관측은 48차원, 행동은 12개 관절의 기본 자세 대비 위치 명령이다. 하위 ANYdrive LSTM actuator-net과 PPO의 MLP 정책은 별개다.
+정책에 들어가는 몸 상태와 보상·종료에 쓰이는 접촉 센서를 구분한다. 접촉 힘을 Actor 입력으로 직접 쓰는 구성은 아니다.
+
+환경 step 0.02초이므로 24 step rollout은 0.48초다. 완결 보행 주기를 여러 번 넣는다는 의미가 아니며 GAE로 이후 가치를 연결한다.
+Flat은 지형 커리큘럼과 height scan을 끈다. 학습 완료 iteration 수는 예산이며, 고정 모델의 명령 추적·외란 대응·새 지형 성능은 별도 평가한다.
+
+[보행 집중 개념](../legged-locomotion/README.md) · [26번 결과](../../26-train-locomotion/README.md) · [코드 리뷰](../../26-train-locomotion/code-review.md)
+
 ## 연결된 실습과 자료
 
 - [20번 결과·코드](../../20-base-env/README.md)
@@ -500,6 +521,8 @@ while running:
 - [24번 코드 리뷰](../../24-train-cartpole/code-review.md)
 - [25번 학습 정책 vs 랜덤 평가](../../25-evaluate-policy/README.md)
 - [25번 코드 리뷰](../../25-evaluate-policy/code-review.md)
+- [26번 ANYmal 보행 학습](../../26-train-locomotion/README.md)
+- [26번 코드 리뷰](../../26-train-locomotion/code-review.md)
 - [RSL-RL](https://github.com/leggedrobotics/rsl_rl)
 - [Isaac Lab v2.3.2 환경 step 구현](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/envs/manager_based_rl_env.py)
 - [Isaac Lab v2.3.2 보상 매니저](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/managers/reward_manager.py)

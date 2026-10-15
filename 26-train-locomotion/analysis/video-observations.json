@@ -1,0 +1,28 @@
+{
+  "source": "Manually transcribed displayed console values from supplied videos; not TensorBoard scalar export or independent evaluation",
+  "task_reference": "Isaac-Velocity-Flat-Anymal-B-v0",
+  "early": {
+    "video": "26-1.webm",
+    "iteration": 2,
+    "mean_reward": -3.61,
+    "mean_episode_length": 63.02
+  },
+  "final": {
+    "video": "26-2.webm (published as terminal crop)",
+    "iteration": 299,
+    "mean_reward": 18.93,
+    "mean_episode_length": 978.22,
+    "track_lin_vel_xy_exp": 0.8878,
+    "track_ang_vel_z_exp": 0.4171,
+    "feet_air_time": -0.0436,
+    "time_out_metric": 0.9581,
+    "base_contact_metric": 0.0419,
+    "total_timesteps": 14745600,
+    "time_elapsed_display": "00:08:02"
+  },
+  "files_not_provided": [
+    "TensorBoard event files",
+    "trained checkpoints"
+  ],
+  "privacy": "Second video is a terminal-only crop; uploaded uncropped source is not published."
+}

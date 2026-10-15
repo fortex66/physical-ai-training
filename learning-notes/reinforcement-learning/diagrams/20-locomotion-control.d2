@@ -1,0 +1,27 @@
+direction: right
+classes: {
+  box: {
+    width: 180
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 180
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+command: "속도 명령\nvx · vy · ωz"
+state: "몸 · 관절 관측\n이전 행동 포함"
+policy: "보행 Actor\n입력 48개" {class: focus}
+action: "관절 목표 12개\n기본 자세 + 0.5a"
+actuator: "Actuator-net\n구동 토크"
+physics: "지면 접촉 · 물리\n몸의 운동"
+next: "다음 몸 상태\n관측 · 보상"
+command -> policy
+state -> policy
+policy -> action -> actuator -> physics -> next

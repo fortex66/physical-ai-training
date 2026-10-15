@@ -1,4 +1,4 @@
-# D2로 보는 강화학습과 20~25장 실행 구조
+# D2로 보는 강화학습과 20~26장 실행 구조
 
 20장은 환경을 테스트하며, 정책 가중치를 학습하는 코드는 아직 없다.
 흰 배경·흑백 선·사각형·번호 캡션을 사용한 D2 구성도로 실제 학습 구조와 현재 실행 구조를 구분한다.
@@ -172,6 +172,24 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 </p>
 <p align="center"><sub>그림 18. Pick & Place 상태 전이</sub></p>
 
+## 19. 등록 보행 환경과 PPO 학습
+
+<p align="center">
+  <img src="19-lesson26-training.png" alt="등록 환경 로드·관절 제어 정책·학습" width="284">
+</p>
+<p align="center"><sub>그림 19. 등록 환경 로드·관절 제어 정책·학습</sub></p>
+
+[26번 학습 기록](../../../26-train-locomotion/README.md) · [보행 개념](../../legged-locomotion/README.md)
+
+## 20. 보행 명령과 물리 피드백
+
+<p align="center">
+  <img src="20-locomotion-control.png" alt="명령·관측·정책·구동·접촉 운동" width="900">
+</p>
+<p align="center"><sub>그림 20. 명령·관측·정책·구동·접촉 운동</sub></p>
+
+다음 몸 상태로 같은 계산을 반복한다. 마지막 관측 외에 보상·종료 정보는 환경이 계산해 학습 경험에 기록한다.
+
 ## 사용 도구와 편집 가능한 원본
 
 [D2](https://github.com/d2lang/d2)의 ELK 레이아웃으로 생성했다.
@@ -198,6 +216,8 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 | step 피드백 | [SVG](16-step-feedback.svg) | [D2](16-step-feedback.d2) |
 | PD·중력 보상 | [SVG](17-pd-gravity-control.svg) | [D2](17-pd-gravity-control.d2) |
 | Pick & Place 상태 전이 | [SVG](18-pick-place-states.svg) | [D2](18-pick-place-states.d2) |
+| 26장 등록 환경·학습 | [SVG](19-lesson26-training.svg) | [D2](19-lesson26-training.d2) |
+| 보행 명령과 접촉 제어 | [SVG](20-locomotion-control.svg) | [D2](20-locomotion-control.d2) |
 
 다시 생성하려면 D2 v0.9.0과 Python의 `fonttools`, `resvg-py`가 필요하다.
 

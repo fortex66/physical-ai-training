@@ -255,6 +255,14 @@ PPO clip은 정책 확률비 목적에 쓰이며 액션 범위나 가중치 변�
 
 [학습·추론·평가 개념](../reinforcement-learning/README.md#policy-evaluation) · [25번 두 정책 비교](../../25-evaluate-policy/README.md) · [코드 리뷰](../../25-evaluate-policy/code-review.md)
 
+## 22. 다족 보행과 접촉 기반 제어
+
+속도 명령에서 관절 위치 목표를 만들고 구동 토크·발 접촉으로 몸을 이동시킨다.
+지지기·유각기 협응, 몸의 자세와 명령 추적, 접촉·토크·행동 변화 목적을 함께 고려한다.
+사전 등록 환경·하위 actuator-net·PPO 보행 정책은 서로 다른 구성이다.
+
+[보행 개념](../legged-locomotion/README.md) · [26번 실습·두 영상](../../26-train-locomotion/README.md) · [코드 리뷰](../../26-train-locomotion/code-review.md)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

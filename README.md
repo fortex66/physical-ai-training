@@ -71,6 +71,7 @@ source ~/isaac/env_isaaclab/bin/activate
 | 2D LiDAR · 18 | 광선 교차점에서 거리 계산, 월드 지도와 센서 기준 스캔 비교 | [LiDAR 스캔·좌표계](learning-notes/lidar-scanning/README.md) |
 | 장애물 회피 · 19 | 장애물 거리로 목표 추적·회피 전환, 실제 우회 궤적 확인 | [반응형 회피](learning-notes/reactive-obstacle-avoidance/README.md) |
 | 강화학습 기초 · 20~29 | Policy·Critic·PPO, step 피드백·관측·보상·액션·종료 구분 | [강화학습 개념](learning-notes/reinforcement-learning/README.md) · [step 피드백](learning-notes/reinforcement-learning/README.md#step-feedback) · [구성도 모음](learning-notes/reinforcement-learning/diagrams/README.md) |
+| 다족 보행 · 26 | 지지·유각기, 속도 명령·관절 제어·접촉·보상 | [보행 개념](learning-notes/legged-locomotion/README.md) |
 
 ## 실습 기록
 
@@ -99,5 +100,6 @@ source ~/isaac/env_isaaclab/bin/activate
 | 23 | 커스텀 RL 환경 완성 · 막대 실패 종료 · 학습 전 baseline | [실습 결과](23-custom-env-complete/README.md) · [코드 리뷰](23-custom-env-complete/code-review.md) · [코드](23-custom-env-complete/23_custom_env_complete.py) |
 | 24 | Cartpole PPO 학습 · Actor·Critic·GAE · 실제 곡선·체크포인트 | [실습 결과·학습 구조](24-train-cartpole/README.md) · [코드 리뷰](24-train-cartpole/code-review.md) · [코드](24-train-cartpole/24_train_cartpole.py) |
 | 25 | 학습 정책 vs 랜덤 평가 · deterministic 추론 · RL 워크플로우 마무리 | [실습 결과·비교](25-evaluate-policy/README.md) · [코드 리뷰](25-evaluate-policy/code-review.md) · [코드](25-evaluate-policy/25_evaluate_policy.py) |
+| 26 | ANYmal 보행 PPO · 속도 추적·지지/유각기·관절 목표·접촉 보상 | [실습 결과·보행 개념](26-train-locomotion/README.md) · [코드 리뷰](26-train-locomotion/code-review.md) · [코드](26-train-locomotion/26_train_locomotion.py) |
 
 [학습 기록 작성 기준](CONTRIBUTING.md)
