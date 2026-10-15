@@ -246,6 +246,15 @@ PPO clip은 정책 확률비 목적에 쓰이며 액션 범위나 가중치 변�
 
 [PPO 개념](../reinforcement-learning/README.md#ppo-training) · [24번 실습·곡선·모델](../../24-train-cartpole/README.md) · [24번 코드 리뷰](../../24-train-cartpole/code-review.md)
 
+## 21. 고정 정책 평가와 모델 선택
+
+학습은 현재 정책으로 탐색하며 가중치를 바꾸고, 추론은 저장된 정책이 현재 관측에서 행동을 계산한다.
+25번은 평균 행동으로 추론하지만 확률적 추론도 가능하다. no_grad와 탐색 샘플링 제거는 다른 기능이다.
+최신 체크포인트를 자동 선택하는 것과 성능이 가장 좋은 모델을 고르는 것은 다르다.
+성공률은 시간·실패 조건·실제 에피소드 수를 명시하고 여러 초기 상태에서 평가한다.
+
+[학습·추론·평가 개념](../reinforcement-learning/README.md#policy-evaluation) · [25번 두 정책 비교](../../25-evaluate-policy/README.md) · [코드 리뷰](../../25-evaluate-policy/code-review.md)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

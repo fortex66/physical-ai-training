@@ -1,0 +1,30 @@
+{
+  "source": "Manually transcribed final console summaries in uploaded videos; displayed rounded values, not raw episode data",
+  "criterion": "episode_length >= 290 steps; not strict five-second survival",
+  "results": [
+    {
+      "mode": "trained",
+      "video": "25.webm",
+      "num_envs": 16,
+      "requested_episodes": 64,
+      "completed_episodes": 64,
+      "mean_reward": 17.28,
+      "mean_length_steps": 300.0,
+      "max_reward": 17.48,
+      "min_reward": 16.58,
+      "length_threshold_success_percent": 100.0
+    },
+    {
+      "mode": "random",
+      "video": "25-2.webm",
+      "num_envs": 16,
+      "requested_episodes": 64,
+      "completed_episodes": 65,
+      "mean_reward": 1.61,
+      "mean_length_steps": 34.7,
+      "max_reward": 4.42,
+      "min_reward": 0.39,
+      "length_threshold_success_percent": 0.0
+    }
+  ]
+}

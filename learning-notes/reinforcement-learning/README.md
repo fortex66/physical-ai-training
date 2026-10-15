@@ -355,6 +355,44 @@ clip=0.2는 확률비 목적의 0.8~1.2 범위에 사용하며, 행동 ±0.2나 
 
 이번 실제 로그는 평균 보상 0.45→17.29, 길이 9.7→300 step으로 향상됐다. 세부 곡선·원본 로그·모델은 [24번 기록](../../24-train-cartpole/README.md)에 있다.
 
+<a id="policy-evaluation"></a>
+
+## 14. 학습·추론·평가 — 학습한 것은 경로가 아니라 정책이다
+
+학습 중 PPO는 현재 정책의 분포에서 행동을 샘플링하고, 경험으로 정책 가중치를 바꾼다. 처음부터 끝까지 관측과 무관한 완전 랜덤 탐색을 하는 것은 아니다.
+추론은 저장된 정책이 현재 관측을 행동으로 바꾸는 계산이다. 성공한 과거 경로를 그대로 재생하는 것이 아니다.
+평가는 고정한 정책의 추론을 여러 에피소드 실행하고 보상·유지 시간·실패 사유·작업 오차를 측정하는 절차다.
+
+![학습 정책과 랜덤 baseline을 분리해 평가](diagrams/14-lesson25-evaluation.png)
+
+이번 `get_inference_policy()`는 Actor 평균 μ를 사용해 탐색 샘플링을 제거한다.
+`torch.no_grad()`는 gradient 기록을 끄며, 그것 자체가 deterministic 행동을 만드는 것은 아니다. 모델 eval 모드와 가중치 업데이트 여부도 각각 구분한다.
+확률적 정책을 배포하려면 그 샘플링 방식도 평가할 수 있으며 모든 추론이 deterministic이어야 하는 것은 아니다.
+
+### 최신 모델과 최선 모델은 다르다
+
+자동 탐색은 후보 폴더에서 iteration 숫자가 큰 체크포인트를 찾을 뿐 성능을 비교하지 않는다.
+선택용 평가로 모델을 비교하고 최종 보고는 별도 초기 상태·seed에서 확인한다.
+모델 구조뿐 아니라 관측 순서·단위·정규화·액션 scale도 학습 때의 계약과 맞춰야 한다.
+
+### 성공률은 정의와 분모를 함께 읽는다
+
+25번의 성공률은 실제로 **길이 ≥290 step** 비율이다. 환경 dt=1/60초에서 약 4.83초이므로 실패 없이 5초 전체를 채웠다는 판정과 다르다.
+엄밀한 balancing 성공은 task 실패 없이 timeout 도달 여부와 직립·중앙 오차 등을 함께 정해 측정한다.
+최대·최소는 범위이며 분산·표준편차는 별도로 계산해야 한다.
+
+제공 영상의 학습 정책은 64회·평균 보상 17.28·길이 300, 랜덤은 65회·평균 보상 1.61·길이 34.7이었다.
+랜덤의 65회는 동시 완료를 모두 추가한 결과이며 목표 64회와 구분한다. 코드는 실제 완료 수를 분모로 사용한다.
+같은 seed·초기 상태·표본 수·종료 규칙과 배포 행동 모드를 기록해 비교하고, 이 결과를 모든 조건의 성공률로 일반화하지 않는다.
+
+## 15. 20~25에서 완성한 기초 RL 흐름
+
+![환경 설계에서 학습·저장·평가까지](diagrams/15-rl-workflow.png)
+
+20 환경 기초 → 21 관측/보상 → 22 액션 → 23 완전한 환경·baseline → 24 PPO 학습·체크포인트 → 25 고정 정책 평가까지 연결했다.
+이후 26 보행 학습·27 평가·28 지형 생성·일반화 관찰·29 도메인 랜덤화에서 같은 흐름을 더 복잡한 조건으로 확장한다.
+이번 완성은 기초 end-to-end 학습·평가 실습이며 실제 로봇 배포 성능을 보장하는 단계는 아니다.
+
 ## 연결된 실습과 자료
 
 - [20번 결과·코드](../../20-base-env/README.md)
@@ -367,6 +405,8 @@ clip=0.2는 확률비 목적의 0.8~1.2 범위에 사용하며, 행동 ±0.2나 
 - [23번 코드 리뷰](../../23-custom-env-complete/code-review.md)
 - [24번 PPO 실제 학습·로그·모델](../../24-train-cartpole/README.md)
 - [24번 코드 리뷰](../../24-train-cartpole/code-review.md)
+- [25번 학습 정책 vs 랜덤 평가](../../25-evaluate-policy/README.md)
+- [25번 코드 리뷰](../../25-evaluate-policy/code-review.md)
 - [RSL-RL](https://github.com/leggedrobotics/rsl_rl)
 - [Isaac Lab v2.3.2 환경 step 구현](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/envs/manager_based_rl_env.py)
 - [Isaac Lab v2.3.2 보상 매니저](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/managers/reward_manager.py)

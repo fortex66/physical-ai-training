@@ -1,4 +1,4 @@
-# D2로 보는 강화학습과 20~24장 실행 구조
+# D2로 보는 강화학습과 20~25장 실행 구조
 
 20장은 환경을 테스트하며, 정책 가중치를 학습하는 코드는 아직 없다.
 흰 배경·진한 글자·파란 강조색을 사용한 D2 구성도로 실제 학습 구조와 현재 실행 구조를 구분한다.
@@ -94,6 +94,17 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 
 ![경험·GAE·정책/가치 손실·optimizer](13-ppo-update.png)
 
+## 14. 학습 정책과 랜덤 정책 평가
+
+![고정 Actor 평균 행동과 랜덤 행동 비교](14-lesson25-evaluation.png)
+
+모델 로드는 평가 시작 시 한 번 수행한다. 각 step에서는 같은 고정 Actor에 새 관측을 넣어 행동을 계산한다. 목표 에피소드 수에 도달하기 전에는 다음 관측으로 행동 선택을 반복하며 가중치는 업데이트하지 않는다.
+[25장 두 영상·결과](../../../25-evaluate-policy/README.md) · [코드 리뷰](../../../25-evaluate-policy/code-review.md)
+
+## 15. 20~25 기초 강화학습 워크플로우
+
+![환경 기초·설계·학습·저장·평가](15-rl-workflow.png)
+
 ## 사용 도구와 편집 가능한 원본
 
 [D2](https://github.com/d2lang/d2)의 ELK 레이아웃으로 생성했다.
@@ -115,6 +126,8 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 | 23장 환경 조립과 baseline | [SVG](11-lesson23-structure.svg) | [D2](11-lesson23-structure.d2) |
 | 24장 실제 PPO 학습 반복 | [SVG](12-lesson24-training.svg) | [D2](12-lesson24-training.d2) |
 | PPO 목표·가중치 업데이트 | [SVG](13-ppo-update.svg) | [D2](13-ppo-update.d2) |
+| 25장 고정 정책 평가 | [SVG](14-lesson25-evaluation.svg) | [D2](14-lesson25-evaluation.d2) |
+| 20~25 RL 워크플로우 | [SVG](15-rl-workflow.svg) | [D2](15-rl-workflow.d2) |
 
 다시 생성하려면 D2 v0.9.0과 Python의 `fonttools`, `resvg-py`가 필요하다.
 

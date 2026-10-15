@@ -1,0 +1,28 @@
+direction: down
+classes: {
+  box: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#172B45"; fill: "#FFFFFF"; stroke: "#CBD5E1"; stroke-width: 1; border-radius: 10}
+  }
+  focus: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#173C86"; fill: "#EFF5FF"; stroke: "#5D81D9"; stroke-width: 2; border-radius: 10}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#64748B"
+(* -> *)[*].style.stroke-width: 2
+cfg: "평가 환경 16개\n두 행동 모드"
+load: "고정 Actor 추론\n평균 행동 μ" {class: focus}
+random: "랜덤 행동\n정규 난수 clamp"
+step: "환경 step\n개별 종료 · 리셋"
+record: "완료 에피소드\n보상 · 길이 기록"
+stop: "목표 수 도달 시\n비교 통계 출력" {class: focus}
+cfg -> load: 학습 정책
+cfg -> random: 랜덤 정책
+load -> step
+random -> step
+step -> record -> stop

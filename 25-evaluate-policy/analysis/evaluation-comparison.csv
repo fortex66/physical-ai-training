@@ -1,0 +1,3 @@
+mode,video,num_envs,requested_episodes,completed_episodes,mean_reward,mean_length_steps,max_reward,min_reward,length_threshold_success_percent
+trained,25.webm,16,64,64,17.28,300.0,17.48,16.58,100.0
+random,25-2.webm,16,64,65,1.61,34.7,4.42,0.39,0.0
