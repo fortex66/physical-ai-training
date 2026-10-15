@@ -279,6 +279,13 @@ rollout은 새 경험 수집 구간, epoch는 그 경험 전체를 학습에 사
 
 [27번 결과](../../27-evaluate-locomotion/README.md) · [지표 검토](../../27-evaluate-locomotion/code-review.md)
 
+## 25. Domain Shift와 보행 정책 일반화
+
+학습한 평지와 평가하는 계단·불규칙 지면의 접촉 조건이 달라지면 같은 정책도 다른 상태·보상·종료를 만난다. 입출력 차원이 같아도 실제 관측 분포는 달라질 수 있다.
+28번은 가중치를 고정한 평가이며, 실패 경험을 PPO로 업데이트하는 코드는 없다. 다양 지형 학습·랜덤화·관측 보강·추가 학습으로 대응하고, 지형별 고정 표본과 여러 seed로 검증한다.
+
+[상세 개념·강화학습 연결](../domain-shift/README.md) · [28번 실습](../../28-terrain-generation/README.md)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

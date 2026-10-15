@@ -1,0 +1,82 @@
+{
+  "source": "User video 28.webm; final terminal at approximately 47 seconds",
+  "provenance": "Manually transcribed final displayed summary, rounded values; no per-episode raw log",
+  "policy_mode_displayed": "26강 학습",
+  "checkpoint_identity": "Full path and hash not confirmed from final summary",
+  "completed_episodes": 200,
+  "mean_reward_displayed": 2.12,
+  "mean_episode_length_steps": 392.8,
+  "env_dt_seconds": 0.02,
+  "max_observed_episode_length_steps": 1000,
+  "max_reward_displayed": 25.32,
+  "min_reward_displayed": -15.79,
+  "timeout_count": 21,
+  "timeout_percent": 10.5,
+  "fail_count": 179,
+  "fail_percent": 89.5,
+  "interpretation_limits": [
+    "First-completed-episode sampling can overrepresent short failures",
+    "Mixed terrain including flat; no terrain-specific results",
+    "Timeout may conceal simultaneous termination in original wrapper reconstruction",
+    "No raw per-episode log or paired flat evaluation provided"
+  ],
+  "original_video": {
+    "filename": "28.webm",
+    "duration_seconds": 49.518464,
+    "sha256": "f6ba86971b9c4af4fbd63793e96f146bc26956aae29ecb7ea562d36697745e5b",
+    "published": false
+  },
+  "published_video": {
+    "path": "videos/28-terrain-evaluation.webm",
+    "source_interval_seconds": [
+      0,
+      46
+    ],
+    "sha256": "05cbf6bedeb45a728f4d02c622de4f2efd815c70e48384e0b3b95d755101c2aa",
+    "processing": "Stream-copy trim; private ending excluded"
+  },
+  "captures": [
+    {
+      "path": "images/terrain-layout.png",
+      "time_seconds": 5,
+      "crop_xywh": [
+        92,
+        100,
+        1160,
+        615
+      ]
+    },
+    {
+      "path": "images/rough-locomotion.png",
+      "time_seconds": 42,
+      "crop_xywh": [
+        92,
+        100,
+        1160,
+        615
+      ]
+    },
+    {
+      "path": "images/evaluation-summary.png",
+      "time_seconds": 47,
+      "crop_xywh": [
+        1256,
+        466,
+        596,
+        220
+      ]
+    }
+  ],
+  "source_code_sha256": "37695c6957154470c10852f55b9f7d6a8810967c33887516e8329ca646a65f46",
+  "upstream_reference": "PinkWink/isaacsim_tutorials@14f85fc6edece7cbb1faa50aa9fe3adef205e87a",
+  "user_changes": {
+    "default_num_envs": [
+      16,
+      160
+    ],
+    "default_num_episodes": [
+      20,
+      200
+    ]
+  }
+}

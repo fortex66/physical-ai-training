@@ -1,0 +1,27 @@
+direction: right
+classes: {
+  box: {
+    width: 200
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 200
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+
+obs: "현재 관측\n같은 입력 규격"
+policy: "고정된 정책\n관절 행동" {class: focus}
+flat: "평탄 접촉면\n예상한 발 지지"
+rough: "계단 · 불규칙면\n접촉 높이 변화" {class: focus}
+next_flat: "다음 관측\n익숙한 몸 상태"
+next_rough: "다음 관측\n새 자세 · 속도" {class: focus}
+obs -> policy
+policy -> flat -> next_flat
+policy -> rough -> next_rough

@@ -666,6 +666,23 @@ num_learning_epochs = 5  # iteration당 optimizer 5회
 
 [27번 결과·추론 구조](../../27-evaluate-locomotion/README.md) · [생존률·환경 노이즈 코드 리뷰](../../27-evaluate-locomotion/code-review.md)
 
+<a id="domain-shift"></a>
+
+## 21. Domain Shift — 같은 정책도 다른 지형에서는 달라진다
+
+Domain Shift는 학습과 실행 조건의 분포가 달라지는 현상이다. 평지에서 배운 행동이 계단에서 다른 발 접촉을 만들면 다음 자세·관측이 바뀌고, 그 관측에 대한 행동이 다시 상태를 바꾸는 피드백이 이어진다.
+입력·출력 차원이 같아 checkpoint를 load할 수 있어도 관측값의 분포나 성능이 같다는 뜻은 아니다.
+
+28번은 Flat 정책 가중치를 고정하고 지형을 교체하는 평가다. 관측→행동→물리 step→새 관측·보상·종료는 반복하지만 PPO 업데이트는 없다. 보상을 계산하거나 episode를 reset한다고 실패를 학습하는 것은 아니다.
+26번의 49,152개 전이 수집·5 epoch를 반복할 때도 학습 경험의 조건이 중요하다. 환경 수와 반복 수만 늘려 평지 경험을 많이 모으는 것과 다양한 지형에서 학습하는 것은 다르다.
+
+대응에는 다양한 지형 학습·물리 랜덤화·실제 성공에 따른 난이도 curriculum·추가 관측·fine-tuning이 있다. 환경 변경이 반드시 재학습을 요구하거나 모든 분포 차이가 실패를 일으키는 것은 아니다.
+Rough task의 height scan처럼 관측을 늘리면 기존 입력층과 호환되지 않을 수 있어 별도 설계가 필요하다.
+
+28번 영상의 혼합 지형 timeout은 21/200(10.5%)다. 먼저 완료된 N회를 집계하는 방식은 짧은 실패가 더 포함될 수 있으므로, 지형·환경별 할당량과 여러 seed로 공정하게 평가해야 한다. timeout은 작업 성공이나 속도 추종 성공과도 구분한다.
+
+[Domain Shift 상세 개념·피드백 구조·PPO 연결·대응·평가 방법](../domain-shift/README.md) · [28번 결과](../../28-terrain-generation/README.md) · [코드 리뷰](../../28-terrain-generation/code-review.md)
+
 ## 연결된 실습과 자료
 
 - [20번 결과·코드](../../20-base-env/README.md)
@@ -687,3 +704,6 @@ num_learning_epochs = 5  # iteration당 optimizer 5회
 - [RSL-RL](https://github.com/leggedrobotics/rsl_rl)
 - [Isaac Lab v2.3.2 환경 step 구현](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/envs/manager_based_rl_env.py)
 - [Isaac Lab v2.3.2 보상 매니저](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/managers/reward_manager.py)
+
+- [28번 지형 생성·Domain Shift](../../28-terrain-generation/README.md)
+- [Domain Shift 상세 개념](../domain-shift/README.md)

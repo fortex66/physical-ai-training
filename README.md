@@ -72,6 +72,7 @@ source ~/isaac/env_isaaclab/bin/activate
 | 장애물 회피 · 19 | 장애물 거리로 목표 추적·회피 전환, 실제 우회 궤적 확인 | [반응형 회피](learning-notes/reactive-obstacle-avoidance/README.md) |
 | 강화학습 기초 · 20~29 | Policy·Critic·PPO, step 피드백·관측·보상·액션·종료 구분 | [강화학습 개념](learning-notes/reinforcement-learning/README.md) · [step 피드백](learning-notes/reinforcement-learning/README.md#step-feedback) · [학습 반복·미니배치](learning-notes/reinforcement-learning/README.md#ppo-training-cycle) · [구성도 모음](learning-notes/reinforcement-learning/diagrams/README.md) |
 | 다족 보행 · 26 | 지지·유각기, 속도 명령·관절 제어·접촉·보상 | [보행 개념](learning-notes/legged-locomotion/README.md) |
+| Domain Shift · 28 | 지형 변화·관측 분포·일반화·추가 학습·공정한 평가 | [Domain Shift와 강화학습](learning-notes/domain-shift/README.md) |
 
 ## 실습 기록
 
@@ -102,5 +103,6 @@ source ~/isaac/env_isaaclab/bin/activate
 | 25 | 학습 정책 vs 랜덤 평가 · deterministic 추론 · RL 워크플로우 마무리 | [실습 결과·비교](25-evaluate-policy/README.md) · [코드 리뷰](25-evaluate-policy/code-review.md) · [코드](25-evaluate-policy/25_evaluate_policy.py) |
 | 26 | ANYmal 보행 PPO · 속도 추적·지지/유각기·관절 목표·접촉 보상 | [실습 결과·보행 개념·학습 곡선](26-train-locomotion/README.md) · [코드 리뷰](26-train-locomotion/code-review.md) · [코드](26-train-locomotion/26_train_locomotion.py) |
 | 27 | 학습된 ANYmal 정책 평가 · 평균 행동·명령 추적·생존 지표 검토 | [실습 결과](27-evaluate-locomotion/README.md) · [코드 리뷰](27-evaluate-locomotion/code-review.md) · [코드](27-evaluate-locomotion/27_evaluate_locomotion.py) |
+| 28 | 혼합 지형 생성 · 고정 보행 정책 · Domain Shift와 일반화 | [실습 결과](28-terrain-generation/README.md) · [코드 리뷰](28-terrain-generation/code-review.md) · [코드](28-terrain-generation/28_terrain_generation.py) |
 
 [학습 기록 작성 기준](CONTRIBUTING.md)

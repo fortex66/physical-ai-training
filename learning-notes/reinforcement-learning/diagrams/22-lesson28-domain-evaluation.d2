@@ -1,0 +1,25 @@
+direction: down
+classes: {
+  box: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+
+cfg: "Flat 환경 설정\n관측 48 · 행동 12"
+terrain: "지형 생성 · 교체\n4종 · 난이도 4행" {class: focus}
+model: "26번 모델 로드\nActor 가중치 고정"
+step: "관측 → 행동 → step\n물리 진행 · 접촉"
+stats: "완료 episode 수집\n보상 · 길이 · 종료"
+review: "일반화 평가\n지형별 표본 확인" {class: focus}
+cfg -> terrain -> model -> step -> stats -> review
