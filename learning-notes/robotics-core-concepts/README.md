@@ -263,6 +263,14 @@ PPO clip은 정책 확률비 목적에 쓰이며 액션 범위나 가중치 변�
 
 [보행 개념](../legged-locomotion/README.md) · [26번 실습·두 영상](../../26-train-locomotion/README.md) · [코드 리뷰](../../26-train-locomotion/code-review.md)
 
+## 23. PPO의 학습 단위와 미니배치 선택
+
+rollout은 새 경험 수집 구간, epoch는 그 경험 전체를 학습에 사용하는 횟수, iteration은 수집과 학습을 묶은 반복이다.
+26번은 49,152개 전이를 네 미니배치로 나눠 5 epoch 사용하며 미니배치마다 가중치를 바꾼다. episode 완결과 학습 주기는 별개다.
+통배치 5회도 가능하다. 미니배치의 메모리·변동성·수정 빈도와 실제 정책 성능을 함께 비교한다.
+
+[상세 학습 시나리오](../reinforcement-learning/README.md#ppo-training-cycle) · [미니배치와 통배치](../reinforcement-learning/README.md#minibatch-vs-fullbatch)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

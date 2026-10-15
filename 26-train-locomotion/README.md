@@ -116,6 +116,30 @@ ANYmal-B는 하위 구동에 사전 학습된 LSTM actuator-net을 사용한다.
 
 <a id="training-curves"></a>
 
+## 24 step·미니배치·epoch·iteration을 연결해 이해하기
+
+2048개 환경을 정해진 초기화 범위에서 시작하고, 각 환경의 관측으로 행동을 고른다. 환경당 24 step 동안 현재 정책을 고정해 49,152개 전이를 모은다.
+관측·행동·보상·종료·가치·행동 확률 정보로 GAE/return을 계산한 뒤 학습한다.
+
+| 과정 | 이번 설정 |
+|---|---|
+| 경험 수집 | 2048 × 24 = 49,152 전이 |
+| 미니배치 분할 | 4개 · 각 12,288 전이 |
+| 1 epoch | 네 미니배치를 각각 학습 · 가중치 4회 수정 |
+| 5 epoch | 같은 rollout 재사용 · 기본 optimizer 20회 |
+| 1 iteration | 수집 + 목표 계산 + 5 epoch 학습 + 기록 |
+| 다음 iteration | 업데이트된 정책으로 새 24 step 수집 |
+| 전체 | 300 iteration · 새 전이 14,745,600개 |
+
+5 epoch가 끝난 뒤에만 가중치를 한 번 바꾸는 것이 아니라 **각 미니배치마다 업데이트**한다.
+에피소드 완료는 학습 시작 조건이 아니다. rollout 중 넘어진 환경만 리셋되며 최대 1000 step 에피소드의 일부 구간만으로도 학습할 수 있다.
+
+**통배치로 5번 업데이트하는 방식도 가능하다.** 현재의 미니배치 20회는 메모리·gradient 변동·수정 빈도를 조절하는 선택이며 무조건 더 좋은 성능을 보장하지 않는다.
+둘 다 같은 49,152개 경험을 5 epoch 사용하지만 미니배치는 이미 수정한 가중치에서 다음 gradient를 계산해 학습 경로가 달라진다.
+
+[초기화부터 300 iteration까지 상세 시나리오](../learning-notes/reinforcement-learning/README.md#ppo-training-cycle) ·
+[미니배치 20회와 통배치 5회 비교](../learning-notes/reinforcement-learning/README.md#minibatch-vs-fullbatch)
+
 ## 실제 학습 로그와 결과 그래프
 
 추가 제공된 zip에서 **TensorBoard 이벤트 1개·0~299의 300 iteration·체크포인트 7개**를 확인했다.
