@@ -1,0 +1,24 @@
+direction: down
+classes: {
+  box: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+env: "Flat 환경 생성\nWrapper · 초기화"
+model: "26번 모델 로드\n128 × 3층"
+policy: "고정 Actor 추론\n관측 → 평균 행동" {class: focus}
+step: "관절 목표 · 물리\n새 관측 · 종료"
+record: "완료 20회 수집\n보상 · 길이 기록"
+report: "평가 통계\n길이 기준 검토" {class: focus}
+env -> model -> policy -> step -> record -> report

@@ -653,6 +653,19 @@ num_learning_epochs = 5  # iteration당 optimizer 5회
 미니배치 수를 바꾸면 optimizer 횟수와 학습 경로가 달라지므로 같은 learning rate가 양쪽에 똑같이 적절하다고 가정하지 않는다. 여러 seed와 학습률을 비교해야 일반적인 우열을 말할 수 있다.
 `num_mini_batches=4`는 이번 코드가 선택한 기본 실험 설정으로 이해하며, 첨부된 한 run만으로 통배치보다 우수했다고 입증할 수는 없다.
 
+<a id="locomotion-evaluation"></a>
+
+## 20. 보행 정책 평가 — 평균 행동과 고정된 판정 기준
+
+27번은 26번 모델을 로드하고 Actor 평균으로 매 관측에 반응한다. 가중치를 업데이트하지 않지만 로봇·actuator 상태는 계속 진행된다.
+정책의 탐색 샘플링을 없애도 환경 노이즈·초기화·명령·외란까지 고정되는 것은 아니다. 기본 Flat 학습 Cfg를 평가에서도 사용한다는 점을 확인한다.
+
+생존 지표는 모든 모델에 같은 기준이어야 한다. `int(max(관측 episode 길이)*0.9)`처럼 평가 표본에서 기준을 다시 정하면 전부 일찍 실패한 정책도 높은 비율을 얻을 수 있다.
+고정 horizon·task 실패 없는 timeout과 명령 추적 오차 등을 함께 기록한다.
+제공 27번 영상은 20회 모두 길이 1000·timeout 표시, 평균 보상 23.99지만 이 표본을 모든 초기 상태·지형의 성공으로 일반화하지 않는다.
+
+[27번 결과·추론 구조](../../27-evaluate-locomotion/README.md) · [생존률·환경 노이즈 코드 리뷰](../../27-evaluate-locomotion/code-review.md)
+
 ## 연결된 실습과 자료
 
 - [20번 결과·코드](../../20-base-env/README.md)
@@ -669,6 +682,8 @@ num_learning_epochs = 5  # iteration당 optimizer 5회
 - [25번 코드 리뷰](../../25-evaluate-policy/code-review.md)
 - [26번 ANYmal 보행 학습](../../26-train-locomotion/README.md)
 - [26번 코드 리뷰](../../26-train-locomotion/code-review.md)
+- [27번 ANYmal 정책 평가](../../27-evaluate-locomotion/README.md)
+- [27번 코드 리뷰](../../27-evaluate-locomotion/code-review.md)
 - [RSL-RL](https://github.com/leggedrobotics/rsl_rl)
 - [Isaac Lab v2.3.2 환경 step 구현](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/envs/manager_based_rl_env.py)
 - [Isaac Lab v2.3.2 보상 매니저](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab/isaaclab/managers/reward_manager.py)

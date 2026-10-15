@@ -1,0 +1,20 @@
+{
+  "source": "Transcribed episode rows and final console summary from uploaded 27.webm; rewards are rounded displayed values, not raw scalar export",
+  "mode": "trained policy",
+  "num_envs": 16,
+  "episodes": 20,
+  "final_console": {
+    "mean_reward": 23.99,
+    "mean_length_steps": 1000.0,
+    "max_reward": 25.97,
+    "min_reward": 21.75,
+    "length_threshold": 900,
+    "reported_survival_percent": 100.0
+  },
+  "from_rounded_episode_rows": {
+    "mean_reward": 23.985500000000002,
+    "sample_reward_std": 0.9383158204716405
+  },
+  "interpretation": "Reported survival uses length >= int(max(observed_lengths)*0.9), not timeout count. All 20 displayed rows happen to have length 1000 and reason timeout. No random-policy video was supplied.",
+  "privacy": "Only 0-70 s published from 78.606 s source; final console screenshot is terminal-only."
+}

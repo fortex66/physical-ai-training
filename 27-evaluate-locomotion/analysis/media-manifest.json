@@ -1,0 +1,21 @@
+{
+  "source_name": "27.webm",
+  "source_sha256": "52b94e6412c8f79831a0574d5f98db1a589637ad3841949efeef47b87aa01008",
+  "published_path": "videos/27-walking.webm",
+  "published_sha256": "3e915c1a91aeeec5a4332d0cb2c7921c5f2fe4fa012acb6fcbb9decb95395a57",
+  "published_bytes": 21804361,
+  "processing": "First 70 seconds requested; encoded streams copied without re-encoding; final private desktop section excluded.",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "width": 1856,
+        "height": 1046
+      }
+    ],
+    "format": {
+      "duration": "69.998000"
+    }
+  }
+}

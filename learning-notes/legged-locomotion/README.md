@@ -53,3 +53,9 @@ Flat의 추적 결과만으로 계단·거친 지형 성능을 보장하지 않�
 [26번 전체 학습 곡선과 해석](../../26-train-locomotion/README.md#training-curves)
 
 [26번 결과·실행](../../26-train-locomotion/README.md) · [등록 환경 코드 리뷰](../../26-train-locomotion/code-review.md) · [PPO 공용 개념](../reinforcement-learning/README.md)
+
+## 보행 평가에서 고정해야 할 기준
+
+평가 표본의 최장 길이에 맞춰 생존 기준을 바꾸면 일찍 실패한 정책도 높은 비율이 나올 수 있다. 모든 모델에 같은 시간·실패·추적 오차 기준을 적용한다.
+Actor 평균 행동을 써도 환경 관측 노이즈·명령 재샘플링·외란은 남을 수 있으므로 평가 조건을 명시한다.
+[27번 평가 결과와 코드 리뷰](../../27-evaluate-locomotion/README.md)

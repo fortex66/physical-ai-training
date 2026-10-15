@@ -271,6 +271,14 @@ rollout은 새 경험 수집 구간, epoch는 그 경험 전체를 학습에 사
 
 [상세 학습 시나리오](../reinforcement-learning/README.md#ppo-training-cycle) · [미니배치와 통배치](../reinforcement-learning/README.md#minibatch-vs-fullbatch)
 
+## 24. 보행 추론과 생존 지표
+
+고정 Actor의 평균 행동으로 추론해도 환경 노이즈·초기 상태·명령은 달라질 수 있다.
+표본 최장 길이의 90% 비율은 timeout 비율과 다르며 모델마다 기준이 달라질 수 있다.
+공통 horizon·실패 플래그·명령 추적 품질로 평가한다.
+
+[27번 결과](../../27-evaluate-locomotion/README.md) · [지표 검토](../../27-evaluate-locomotion/code-review.md)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

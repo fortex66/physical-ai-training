@@ -1,4 +1,4 @@
-# D2로 보는 강화학습과 20~26장 실행 구조
+# D2로 보는 강화학습과 20~27장 실행 구조
 
 20장은 환경을 테스트하며, 정책 가중치를 학습하는 코드는 아직 없다.
 흰 배경·흑백 선·사각형·번호 캡션을 사용한 D2 구성도로 실제 학습 구조와 현재 실행 구조를 구분한다.
@@ -190,6 +190,16 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 
 다음 몸 상태로 같은 계산을 반복한다. 마지막 관측 외에 보상·종료 정보는 환경이 계산해 학습 경험에 기록한다.
 
+## 21. 고정된 ANYmal 정책 평가
+
+<p align="center">
+  <img src="21-lesson27-evaluation.png" alt="등록 환경·모델 로드·고정 추론·평가 통계" width="284">
+</p>
+<p align="center"><sub>그림 21. 등록 환경·모델 로드·고정 추론·평가 통계</sub></p>
+
+관측-행동 계산은 매 step 반복하며 완료한 episode만 통계에 추가한다. 이 흐름에서 PPO 가중치 업데이트는 없다.
+[27번 실습](../../../27-evaluate-locomotion/README.md)
+
 ## 사용 도구와 편집 가능한 원본
 
 [D2](https://github.com/d2lang/d2)의 ELK 레이아웃으로 생성했다.
@@ -218,6 +228,7 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 | Pick & Place 상태 전이 | [SVG](18-pick-place-states.svg) | [D2](18-pick-place-states.d2) |
 | 26장 등록 환경·학습 | [SVG](19-lesson26-training.svg) | [D2](19-lesson26-training.d2) |
 | 보행 명령과 접촉 제어 | [SVG](20-locomotion-control.svg) | [D2](20-locomotion-control.d2) |
+| 27장 보행 정책 평가 | [SVG](21-lesson27-evaluation.svg) | [D2](21-lesson27-evaluation.d2) |
 
 다시 생성하려면 D2 v0.9.0과 Python의 `fonttools`, `resvg-py`가 필요하다.
 
