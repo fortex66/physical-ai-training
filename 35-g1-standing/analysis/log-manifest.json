@@ -1,0 +1,94 @@
+{
+  "logs/rsl_rl/g1_standing_tutorial/events.out.tfevents.1791942323.rotic-Victus-by-HP-Gaming-Laptop-15-fa1xxx.12079.0": {
+    "bytes": 29582,
+    "sha256": "1876027614c207e87df9a685d09ef95b8448943c3fbe631cdce3fd1e6ce9497f"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/events.out.tfevents.1791942372.rotic-Victus-by-HP-Gaming-Laptop-15-fa1xxx.12469.0": {
+    "bytes": 1302426,
+    "sha256": "ca0766925daa94233aa27991b1a9e2543ecc18e356de147dd0d462c4a9c24956"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_0.pt": {
+    "bytes": 660735,
+    "sha256": "bf4abdbac3fcac13b88a1655585e03fd7f6f2355837797ec135584c8dd964733"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_100.pt": {
+    "bytes": 661347,
+    "sha256": "cdf9909b1b45e30e236743bf126a6835d294a53c60c3b09a9075e1698f924013"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_150.pt": {
+    "bytes": 661347,
+    "sha256": "556f741fe11514d36f29059e6156bea728b328b877df5bed59f2f436bc571474"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_200.pt": {
+    "bytes": 661347,
+    "sha256": "7636d9cad7d3959e76cb32e53574cfd355e923620a1ceda54aba1612ba965dce"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_250.pt": {
+    "bytes": 661347,
+    "sha256": "4f5b3682ca310c761fdd0a9429797f5f68a17bd4998241d2fdb13514416f63d0"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_300.pt": {
+    "bytes": 661347,
+    "sha256": "34f6010894179f4ab6f7368f538facb8b45727302f790daddab62d7525568184"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_350.pt": {
+    "bytes": 661347,
+    "sha256": "c494427e4cddbf34a08ed2ca1b003304965697f7d8d10a04f246c06251e062d5"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_400.pt": {
+    "bytes": 661347,
+    "sha256": "33f42d41c95bb2c00a61b452c986e0061a6eaa6ad7caafe7423f803de811a8e1"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_450.pt": {
+    "bytes": 661347,
+    "sha256": "ff008b4cfee188e6fc279130dadd060294a6d891022b32c8fe0e15676351c37a"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_50.pt": {
+    "bytes": 661265,
+    "sha256": "9009da579a36f491742347280f911baea7a118c79e4d45d2a02d5fe7d56b3d28"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_500.pt": {
+    "bytes": 661347,
+    "sha256": "0ddcefc24c0b99f49ef17f508c36a82950dd912d110d8550a0b1c16cc88d74e8"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_550.pt": {
+    "bytes": 661347,
+    "sha256": "f3c43ed3d16c4215f62e3a692ddedf4ae81875b107c527f5a7bc4ec743fc1e62"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_600.pt": {
+    "bytes": 661347,
+    "sha256": "b8660384a5f7d3db4eff4432d514176f7fb4e2be60b1896afd8415976ad64130"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_650.pt": {
+    "bytes": 661347,
+    "sha256": "6accaea425cd07f1420a73ead66666c41043add91b35bbdb38db6a4f1b2d3b3d"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_700.pt": {
+    "bytes": 661347,
+    "sha256": "fd3bb25a3b45bc2904c367533acc1d169a6bc77f9b68f8bc0877b196e1e447af"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_750.pt": {
+    "bytes": 661347,
+    "sha256": "a9398a01c06c5302a4f8581362a2e95403d9d8eae202ce536c60652096b4a7a4"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_800.pt": {
+    "bytes": 661347,
+    "sha256": "6b8ef7ee003aabe259b47f73b8486025cf603c4f3a2ae997ec68eca3dd045a8f"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_850.pt": {
+    "bytes": 661347,
+    "sha256": "8baa6eb63d96a5d25d30e8630a054bb9b288be2459235fad9d65cb18aad17f15"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_900.pt": {
+    "bytes": 661347,
+    "sha256": "ed7ea18b7ae3108556c3e644231c227b7c48f4b8842b55d4b090967e93f9a421"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_950.pt": {
+    "bytes": 661347,
+    "sha256": "aa9c90bf44940ad5db1a000c5069239f5e1d4750fbfc3cd258601915d9dcef16"
+  },
+  "logs/rsl_rl/g1_standing_tutorial/model_999.pt": {
+    "bytes": 661347,
+    "sha256": "dbb75e3af7f0849c55ff719eb7a8f3535eeeb51669b9e97a05b48300c5a62a53"
+  }
+}

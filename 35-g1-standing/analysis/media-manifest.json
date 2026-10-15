@@ -1,0 +1,154 @@
+{
+  "archive": {
+    "path": "artifacts/35_g1_standing.zip",
+    "sha256": "1a5936d7be4a3a921abafee7ea3716fbeaad0f488741972129cc8a829c707dda"
+  },
+  "videos": [
+    {
+      "source_filename": "35-1.webm",
+      "source_sha256": "f26c2b9bea3204a9461412768569a64840d538522ca84de90219513899f186a1",
+      "source_duration_seconds": 27.139065,
+      "published_path": "videos/35-1-random-actions.webm",
+      "published_sha256": "d292c6ad4861f22b436a434e34fde44c9a63e99e57389574d47e5aa0627f36a0",
+      "published_duration_seconds": 23.979,
+      "processing": "First 24 s stream-copy; private ending excluded"
+    },
+    {
+      "source_filename": "35-2.webm",
+      "source_sha256": "65add8521dc34390a33c7bda883c671cd5900f46ded6da787a2a9be238bd8a56",
+      "source_duration_seconds": 20.122854,
+      "published_path": "videos/35-2-training.webm",
+      "published_sha256": "65add8521dc34390a33c7bda883c671cd5900f46ded6da787a2a9be238bd8a56",
+      "published_duration_seconds": 20.122854,
+      "processing": "Original bytes; only simulation/terminal/plot windows"
+    },
+    {
+      "source_filename": "35-3.webm",
+      "source_sha256": "fd8d14d2e62f67885e56b2e5e08f71f05430d58f2ebef8de7413f3b26929d1ab",
+      "source_duration_seconds": 34.241054,
+      "published_path": "videos/35-3-trained-evaluation.webm",
+      "published_sha256": "fd8d14d2e62f67885e56b2e5e08f71f05430d58f2ebef8de7413f3b26929d1ab",
+      "published_duration_seconds": 34.241054,
+      "processing": "Original bytes; only simulation/terminal/plot windows"
+    },
+    {
+      "source_filename": "35-4.webm",
+      "source_sha256": "35f7a5e308eba11b5e64c9c9334e119b2f65f83dc2cdf577eaa0059df9aa7d4f",
+      "source_duration_seconds": 14.133203,
+      "published_path": "videos/35-4-random-evaluation.webm",
+      "published_sha256": "35f7a5e308eba11b5e64c9c9334e119b2f65f83dc2cdf577eaa0059df9aa7d4f",
+      "published_duration_seconds": 14.133203,
+      "processing": "Original bytes; only simulation/terminal/plot windows"
+    }
+  ],
+  "captures": [
+    {
+      "path": "images/random-initial.png",
+      "source": "35-1.webm",
+      "time_seconds": 3,
+      "crop_xywh": [
+        92,
+        100,
+        1110,
+        610
+      ]
+    },
+    {
+      "path": "images/random-fallen.png",
+      "source": "35-1.webm",
+      "time_seconds": 22,
+      "crop_xywh": [
+        92,
+        100,
+        1110,
+        610
+      ]
+    },
+    {
+      "path": "images/random-action-summary.png",
+      "source": "35-1.webm",
+      "time_seconds": 25,
+      "crop_xywh": [
+        1230,
+        810,
+        620,
+        155
+      ]
+    },
+    {
+      "path": "images/training-viewport.png",
+      "source": "35-2.webm",
+      "time_seconds": 17,
+      "crop_xywh": [
+        92,
+        100,
+        1110,
+        610
+      ]
+    },
+    {
+      "path": "images/trained-standing.png",
+      "source": "35-3.webm",
+      "time_seconds": 14,
+      "crop_xywh": [
+        92,
+        100,
+        760,
+        600
+      ]
+    },
+    {
+      "path": "images/trained-torque.png",
+      "source": "35-3.webm",
+      "time_seconds": 26,
+      "crop_xywh": [
+        928,
+        108,
+        928,
+        820
+      ]
+    },
+    {
+      "path": "images/trained-evaluation-summary.png",
+      "source": "35-3.webm",
+      "time_seconds": 33,
+      "crop_xywh": [
+        1230,
+        210,
+        620,
+        455
+      ]
+    },
+    {
+      "path": "images/random-evaluation-summary.png",
+      "source": "35-4.webm",
+      "time_seconds": 13.5,
+      "crop_xywh": [
+        1230,
+        515,
+        620,
+        160
+      ]
+    }
+  ],
+  "torque_png": {
+    "path": "images/random-torque-original.png",
+    "provenance": "Unmodified PNG in user ZIP; title identifies random policy",
+    "sha256": "ed7a22e1b00f4c4a4f9a1c2185f4bbf4be93e506fd1fc910b19eaff92f120a93"
+  },
+  "final_training_photo": {
+    "provenance": "Additional inline screenshot provided by user; values cross-checked against completed event file, not a generated terminal image",
+    "iteration": 999,
+    "max_iterations": 1000,
+    "total_timesteps": 12288000,
+    "mean_reward_displayed": 77.9,
+    "mean_length_displayed": 250.0,
+    "entropy_displayed": -19.7037,
+    "height_reward_displayed": 14.9859,
+    "joint_limit_term_displayed": -0.2006,
+    "fps_displayed": 7022,
+    "collection_seconds_displayed": 1.625,
+    "learning_seconds_displayed": 0.125,
+    "elapsed_displayed": "00:27:45"
+  }
+}

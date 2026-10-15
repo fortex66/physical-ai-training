@@ -1,0 +1,37 @@
+{
+  "provenance": "Transcribed rounded terminal values from 35-3.webm (~33 s) and 35-4.webm (~13.5 s)",
+  "trained": {
+    "episodes": 12,
+    "requested_episodes": 10,
+    "reward_displayed": 78.79,
+    "length_steps": 250,
+    "survival_percent_displayed": 100.0,
+    "torque_record_steps": 750
+  },
+  "random": {
+    "episodes": 10,
+    "reward_displayed": 5.12,
+    "length_steps": 40.5,
+    "survival_percent_displayed": 0.0,
+    "torque_record_steps": 120
+  },
+  "criterion": "length >= int(250 * .95) = 237; distinct from timeout-only success",
+  "limitations": [
+    "Trained episode count overshoots because all simultaneous done envs are collected",
+    "Fixed default starts; no external perturbation or domain randomization configured",
+    "Only env 0 left leg plus torso PD approximate torque; different durations 15 s vs 2.4 s",
+    "Rounded screen values; no original torque series data supplied"
+  ],
+  "random_action_demo": {
+    "num_envs": 100,
+    "steps": 500,
+    "fallen_count": 100,
+    "height_m_displayed": 0.082,
+    "displacement_directions": {
+      "front": 29,
+      "back": 7,
+      "left": 31,
+      "right": 33
+    }
+  }
+}

@@ -1,0 +1,25 @@
+direction: right
+classes: {
+  box: {
+    width: 210
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 210
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+
+shared: "G1 공유 모듈\n씬 · MDP · PPO"
+random: "35_1 랜덤 관찰\n빈 manager"
+train: "35_2 PPO 학습\n가중치 · 정규화" {class: focus}
+model: "모델 저장\n학습 로그"
+eval: "35_3 같은 환경\n학습 vs 랜덤"
+shared -> random
+shared -> train -> model -> eval

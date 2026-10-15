@@ -1,0 +1,25 @@
+direction: down
+classes: {
+  box: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+
+obs: "몸 · 관절 관측\n120개 값"
+policy: "Actor · 정규화\n행동 37개" {class: focus}
+target: "기본 자세 + 오프셋\n관절 목표 각도"
+pd: "Implicit PD\n구동 · 토크"
+physics: "중력 · 발 접촉\n새 몸 상태"
+repeat: "관측 · 보상 · 종료\n다음 step 반복"
+obs -> policy -> target -> pd -> physics -> repeat

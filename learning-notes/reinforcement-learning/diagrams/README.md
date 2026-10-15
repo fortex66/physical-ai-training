@@ -1,4 +1,4 @@
-# D2로 보는 강화학습과 20~29장 실행 구조
+# D2로 보는 강화학습과 20~29·35장 실행 구조
 
 20장은 환경을 테스트하며, 정책 가중치를 학습하는 코드는 아직 없다.
 흰 배경·흑백 선·사각형·번호 캡션을 사용한 D2 구성도로 실제 학습 구조와 현재 실행 구조를 구분한다.
@@ -238,6 +238,24 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 
 [상세 개념](../../domain-randomization/README.md)
 
+## 26. G1 서기 관찰·학습·평가
+
+<p align="center">
+  <img src="26-g1-standing-workflow.png" alt="공유 환경과 랜덤 관찰·PPO·평가의 분리" width="700">
+</p>
+<p align="center"><sub>그림 26. 공용 모듈에서 정의를 가져와 관찰·학습·평가를 수행한다. 빈 manager 관찰은 정량 평가와 다르다.</sub></p>
+
+[35번 실습](../../../35-g1-standing/README.md)
+
+## 27. 휴머노이드 관측·관절 목표·PD·접촉
+
+<p align="center">
+  <img src="27-humanoid-standing-control.png" alt="관측·Actor·목표 각도·implicit PD·접촉 물리" width="284">
+</p>
+<p align="center"><sub>그림 27. 제어 루프의 시간 순서를 요약했다. 학습 때는 전이를 모아 별도로 PPO 업데이트를 한다.</sub></p>
+
+[휴머노이드 서기 개념](../../humanoid-standing/README.md)
+
 ## 사용 도구와 편집 가능한 원본
 
 [D2](https://github.com/d2lang/d2)의 ELK 레이아웃으로 생성했다.
@@ -271,6 +289,8 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 | Domain Shift 피드백 | [SVG](23-domain-shift-feedback.svg) | [D2](23-domain-shift-feedback.d2) |
 | 29장 이벤트 실행 순서 | [SVG](24-lesson29-events.svg) | [D2](24-lesson29-events.d2) |
 | Domain Randomization과 PPO | [SVG](25-randomization-ppo.svg) | [D2](25-randomization-ppo.d2) |
+| 35장 G1 관찰·학습·평가 | [SVG](26-g1-standing-workflow.svg) | [D2](26-g1-standing-workflow.d2) |
+| 휴머노이드 관절 제어 | [SVG](27-humanoid-standing-control.svg) | [D2](27-humanoid-standing-control.d2) |
 
 다시 생성하려면 D2 v0.9.0과 Python의 `fonttools`, `resvg-py`가 필요하다.
 

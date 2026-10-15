@@ -1,0 +1,128 @@
+{
+  "scope": "Training scalars, not independent robustness evaluation",
+  "runs": [
+    {
+      "file": "logs/rsl_rl/g1_standing_tutorial/events.out.tfevents.1791942323.rotic-Victus-by-HP-Gaming-Laptop-15-fa1xxx.12079.0",
+      "points": 23,
+      "first_iteration": 0,
+      "last_iteration": 22,
+      "final_mean_reward": 10.825383186340332
+    },
+    {
+      "file": "logs/rsl_rl/g1_standing_tutorial/events.out.tfevents.1791942372.rotic-Victus-by-HP-Gaming-Laptop-15-fa1xxx.12469.0",
+      "points": 1000,
+      "first_iteration": 0,
+      "last_iteration": 999,
+      "final_mean_reward": 77.89715576171875
+    }
+  ],
+  "selected_run": "logs/rsl_rl/g1_standing_tutorial/events.out.tfevents.1791942372.rotic-Victus-by-HP-Gaming-Laptop-15-fa1xxx.12469.0",
+  "iterations": 1000,
+  "num_envs": 512,
+  "steps_per_env": 24,
+  "transitions_per_iteration": 12288,
+  "mini_batches": 8,
+  "samples_per_minibatch": 1536,
+  "epochs": 5,
+  "optimizer_steps_per_iteration": 40,
+  "total_transitions": 12288000,
+  "count_basis": "Supplied code defaults and final screenshot total; scalar file does not store environment count",
+  "event_wall_time_span_seconds": 1668.3117365837097,
+  "metrics": {
+    "Episode_Reward/alive_bonus": {
+      "first": 0.049666669219732285,
+      "last": 0.9999992251396179,
+      "last_20_iteration_mean": 0.9999992251396179
+    },
+    "Episode_Reward/height_reward": {
+      "first": 0.6547130346298218,
+      "last": 14.985949516296387,
+      "last_20_iteration_mean": 14.98660159111023
+    },
+    "Episode_Reward/flat_orientation": {
+      "first": -0.00166341383010149,
+      "last": -0.0008943906286731362,
+      "last_20_iteration_mean": -0.0010813256405526773
+    },
+    "Episode_Reward/joint_vel": {
+      "first": -0.02894415706396103,
+      "last": -0.03661644458770752,
+      "last_20_iteration_mean": -0.036901568062603474
+    },
+    "Episode_Reward/action_rate": {
+      "first": -0.08917699754238129,
+      "last": -0.16865119338035583,
+      "last_20_iteration_mean": -0.17006820440292358
+    },
+    "Episode_Reward/joint_limits": {
+      "first": -0.015420792624354362,
+      "last": -0.20064161717891693,
+      "last_20_iteration_mean": -0.19970481023192405
+    },
+    "Episode_Termination/time_out": {
+      "first": 0.0481770858168602,
+      "last": 1.0,
+      "last_20_iteration_mean": 1.0
+    },
+    "Episode_Termination/bad_orientation": {
+      "first": 0.0,
+      "last": 0.0,
+      "last_20_iteration_mean": 0.0
+    },
+    "Episode_Termination/base_height": {
+      "first": 0.0,
+      "last": 0.0,
+      "last_20_iteration_mean": 0.0
+    },
+    "Loss/value_function": {
+      "first": 3.6205201148986816,
+      "last": 0.0004677569668274373,
+      "last_20_iteration_mean": 0.0014046973417862318
+    },
+    "Loss/surrogate": {
+      "first": -0.0021816459484398365,
+      "last": -0.00908080954104662,
+      "last_20_iteration_mean": -0.00870725940912962
+    },
+    "Loss/entropy": {
+      "first": 26.917770385742188,
+      "last": -19.703739166259766,
+      "last_20_iteration_mean": -19.511104011535643
+    },
+    "Loss/learning_rate": {
+      "first": 9.999999747378752e-06,
+      "last": 3.3749998692655936e-05,
+      "last_20_iteration_mean": 5.0203125283587724e-05
+    },
+    "Policy/mean_noise_std": {
+      "first": 0.5009570717811584,
+      "last": 0.14878828823566437,
+      "last_20_iteration_mean": 0.1496177390217781
+    },
+    "Perf/total_fps": {
+      "first": 8031.0,
+      "last": 7022.0,
+      "last_20_iteration_mean": 7022.25
+    },
+    "Perf/collection time": {
+      "first": 1.2880444526672363,
+      "last": 1.6252200603485107,
+      "last_20_iteration_mean": 1.6327075481414794
+    },
+    "Perf/learning_time": {
+      "first": 0.24197745323181152,
+      "last": 0.12451624870300293,
+      "last_20_iteration_mean": 0.11780613660812378
+    },
+    "Train/mean_reward": {
+      "first": 2.6609010696411133,
+      "last": 77.89715576171875,
+      "last_20_iteration_mean": 77.89384002685547
+    },
+    "Train/mean_episode_length": {
+      "first": 11.545454978942871,
+      "last": 250.0,
+      "last_20_iteration_mean": 250.0
+    }
+  }
+}

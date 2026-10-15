@@ -74,6 +74,7 @@ source ~/isaac/env_isaaclab/bin/activate
 | 다족 보행 · 26 | 지지·유각기, 속도 명령·관절 제어·접촉·보상 | [보행 개념](learning-notes/legged-locomotion/README.md) |
 | Domain Shift · 28 | 지형 변화·관측 분포·일반화·추가 학습·공정한 평가 | [Domain Shift와 강화학습](learning-notes/domain-shift/README.md) |
 | Domain Randomization · 29 | 환경 조건의 다양화·이벤트 시점·PPO 연결·강건성 평가 | [도메인 랜덤화](learning-notes/domain-randomization/README.md) |
+| 휴머노이드 서기 · 35 | G1 균형·관절 목표와 PD·보상·PPO·학습/랜덤 평가 | [휴머노이드 서기](learning-notes/humanoid-standing/README.md) |
 
 ## 실습 기록
 
@@ -106,5 +107,6 @@ source ~/isaac/env_isaaclab/bin/activate
 | 27 | 학습된 ANYmal 정책 평가 · 평균 행동·명령 추적·생존 지표 검토 | [실습 결과](27-evaluate-locomotion/README.md) · [코드 리뷰](27-evaluate-locomotion/code-review.md) · [코드](27-evaluate-locomotion/27_evaluate_locomotion.py) |
 | 28 | 혼합 지형 생성 · 고정 보행 정책 · Domain Shift와 일반화 | [실습 결과](28-terrain-generation/README.md) · [코드 리뷰](28-terrain-generation/code-review.md) · [코드](28-terrain-generation/28_terrain_generation.py) |
 | 29 | Domain Randomization · 질량·초기 상태·이벤트 타이머 검토 | [실습 결과](29-domain-randomization/README.md) · [코드 리뷰](29-domain-randomization/code-review.md) · [코드](29-domain-randomization/29_domain_randomization.py) |
+| 35 | G1 휴머노이드 서기 · PPO·학습/랜덤 평가·PD 근사 토크 | [실습 결과·학습 곡선](35-g1-standing/README.md) · [코드 리뷰](35-g1-standing/code-review.md) · [공유 환경 코드](35-g1-standing/g1_standing_env.py) |
 
 [학습 기록 작성 기준](CONTRIBUTING.md)

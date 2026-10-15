@@ -1,0 +1,55 @@
+{
+  "file": "logs/rsl_rl/g1_standing_tutorial/model_999.pt",
+  "sha256": "dbb75e3af7f0849c55ff719eb7a8f3535eeeb51669b9e97a05b48300c5a62a53",
+  "inspection": "Static zipfile/pickletools inspection; no torch.load/pickle execution",
+  "weight_shapes": {
+    "actor.0.weight": [
+      128,
+      120
+    ],
+    "actor.2.weight": [
+      64,
+      128
+    ],
+    "actor.4.weight": [
+      32,
+      64
+    ],
+    "actor.6.weight": [
+      37,
+      32
+    ],
+    "critic.0.weight": [
+      128,
+      120
+    ],
+    "critic.2.weight": [
+      64,
+      128
+    ],
+    "critic.4.weight": [
+      32,
+      64
+    ],
+    "critic.6.weight": [
+      1,
+      32
+    ]
+  },
+  "normalizer_buffers": [
+    "actor_obs_normalizer._mean",
+    "actor_obs_normalizer._var",
+    "actor_obs_normalizer._std",
+    "actor_obs_normalizer.count",
+    "critic_obs_normalizer._mean",
+    "critic_obs_normalizer._var",
+    "critic_obs_normalizer._std",
+    "critic_obs_normalizer.count"
+  ],
+  "top_level_keys_found": [
+    "model_state_dict",
+    "optimizer_state_dict",
+    "iter",
+    "infos"
+  ]
+}

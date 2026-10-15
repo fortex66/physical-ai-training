@@ -1,0 +1,23 @@
+mode,episode,reward_displayed,length_steps,reason_displayed
+trained,1,78.79,250,survived 5 s
+trained,2,78.79,250,survived 5 s
+trained,3,78.79,250,survived 5 s
+trained,4,78.79,250,survived 5 s
+trained,5,78.79,250,survived 5 s
+trained,6,78.79,250,survived 5 s
+trained,7,78.79,250,survived 5 s
+trained,8,78.79,250,survived 5 s
+trained,9,78.79,250,survived 5 s
+trained,10,78.79,250,survived 5 s
+trained,11,78.79,250,survived 5 s
+trained,12,78.79,250,survived 5 s
+random,1,4.82,40,fall
+random,2,4.61,40,fall
+random,3,6.04,42,fall
+random,4,6.56,45,fall
+random,5,4.45,36,fall
+random,6,5.09,42,fall
+random,7,5.94,45,fall
+random,8,5.39,42,fall
+random,9,4.18,38,fall
+random,10,4.16,35,fall

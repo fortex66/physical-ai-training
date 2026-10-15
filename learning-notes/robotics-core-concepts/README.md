@@ -294,6 +294,13 @@ rollout은 새 경험 수집 구간, epoch는 그 경험 전체를 학습에 사
 
 [상세 개념](../domain-randomization/README.md) · [29번 실습](../../29-domain-randomization/README.md)
 
+## 27. 휴머노이드의 균형과 서기 학습
+
+G1은 몸·관절 상태를 관측해 목표 관절 각도를 내고, 하위 implicit PD와 지면 접촉으로 균형을 유지한다. CoM·지지 영역은 균형을 이해하는 개념이지만35번이 이를 직접 계산하는 것은 아니다.
+높이·기울기·움직임·한계 보상으로 기본 자세의 서기를 학습하며 get-up·걷기·외란 회복은 별도 과제다. 토크 그래프는 PD 근사값이고 실제 센서 토크와 구분한다.
+
+[휴머노이드 상세 개념](../humanoid-standing/README.md) · [35번 실습·학습곡선](../../35-g1-standing/README.md)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

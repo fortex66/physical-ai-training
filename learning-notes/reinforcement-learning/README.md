@@ -699,6 +699,19 @@ term 등록·요약 출력과 실제 이벤트 호출을 구분해야 한다.
 
 [상세 개념·PPO 연결·범위 설계·평가](../domain-randomization/README.md) · [29번 데모](../../29-domain-randomization/README.md) · [코드 리뷰](../../29-domain-randomization/code-review.md)
 
+<a id="humanoid-standing"></a>
+
+## 23. 휴머노이드 서기 — Policy·PD·접촉 물리의 역할
+
+35번은 G1의120관측에서37개 관절 목표 오프셋을 내고, implicit PD와 발 접촉 물리로 자세를 유지한다. 정책이 실제 토크를 직접 출력하거나 중력 보상 함수를 호출하는 구조는 아니다.
+root 높이·기울기·생존·움직임·한계를 보상으로 삼고 PPO로 학습한다. root 높이0.74m는 전체 신장이나 CoM 높이와 다르다.
+
+512환경×24step=12,288개 전이를 8미니배치×5epoch로 사용하므로 iteration당40회 optimizer 업데이트다. 정규화 통계도 checkpoint에 포함한다.
+추가 사진과 완주 event 로그의 마지막 평균 보상은77.90·길이250step이다. 별도 평가 영상은 학습12회 모두250step, 랜덤10회 평균40.5step이었다.
+이 결과는 기본 서기 자세·평면 조건의 성능이며 쓰러진 상태의 get-up·외란 회복·걷기까지 검증한 것은 아니다.
+
+[휴머노이드 균형·PD·보상·PPO 개념](../humanoid-standing/README.md) · [35번 실습·실제 곡선](../../35-g1-standing/README.md) · [코드 리뷰](../../35-g1-standing/code-review.md)
+
 ## 연결된 실습과 자료
 
 - [20번 결과·코드](../../20-base-env/README.md)
@@ -726,3 +739,6 @@ term 등록·요약 출력과 실제 이벤트 호출을 구분해야 한다.
 
 - [29번 Domain Randomization](../../29-domain-randomization/README.md)
 - [Domain Randomization 상세 개념](../domain-randomization/README.md)
+
+- [35번 G1 휴머노이드 서기](../../35-g1-standing/README.md)
+- [휴머노이드 서기 상세 개념](../humanoid-standing/README.md)
