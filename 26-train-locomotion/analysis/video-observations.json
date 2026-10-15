@@ -20,9 +20,11 @@
     "total_timesteps": 14745600,
     "time_elapsed_display": "00:08:02"
   },
-  "files_not_provided": [
-    "TensorBoard event files",
-    "trained checkpoints"
-  ],
-  "privacy": "Second video is a terminal-only crop; uploaded uncropped source is not published."
+  "privacy": "Second video is a terminal-only crop; uploaded uncropped source is not published.",
+  "additional_materials": {
+    "archive": "artifacts/logs.zip",
+    "raw_logs": "logs/rsl_rl/anymal_locomotion_tutorial",
+    "scalar_analysis": "analysis/training-summary.json",
+    "note": "Video transcriptions retained; subsequently supplied original events and checkpoints are now included."
+  }
 }

@@ -1,0 +1,162 @@
+{
+  "source": "logs/rsl_rl/anymal_locomotion_tutorial/events.out.tfevents.1791879116.rotic-Victus-by-HP-Gaming-Laptop-15-fa1xxx.26113.0",
+  "scope": "Training run scalar logs, not independent policy evaluation",
+  "iterations": 300,
+  "first_iteration": 0,
+  "last_iteration": 299,
+  "total_transitions": 14745600,
+  "transition_count_basis": "2048 environments and 24 rollout steps from code and video; event scalars do not directly store this count",
+  "event_wall_time_span_seconds": 481.5811347961426,
+  "metrics": {
+    "Episode_Reward/track_lin_vel_xy_exp": {
+      "first": 0.0020992974750697613,
+      "iteration_2": 0.01059909537434578,
+      "last": 0.8877782821655273,
+      "last_20_iteration_mean": 0.8906100153923034
+    },
+    "Episode_Reward/track_ang_vel_z_exp": {
+      "first": 0.0019347413908690214,
+      "iteration_2": 0.007635568734258413,
+      "last": 0.4170687198638916,
+      "last_20_iteration_mean": 0.41670444458723066
+    },
+    "Episode_Reward/lin_vel_z_l2": {
+      "first": -0.012758213095366955,
+      "iteration_2": -0.030713379383087158,
+      "last": -0.02777720056474209,
+      "last_20_iteration_mean": -0.02788650607690215
+    },
+    "Episode_Reward/ang_vel_xy_l2": {
+      "first": -0.0029524005949497223,
+      "iteration_2": -0.023065125569701195,
+      "last": -0.034003764390945435,
+      "last_20_iteration_mean": -0.033181992918252946
+    },
+    "Episode_Reward/dof_torques_l2": {
+      "first": -0.002644538413733244,
+      "iteration_2": -0.013155212625861168,
+      "last": -0.11601044237613678,
+      "last_20_iteration_mean": -0.11660633534193039
+    },
+    "Episode_Reward/dof_acc_l2": {
+      "first": -0.011545669287443161,
+      "iteration_2": -0.039103634655475616,
+      "last": -0.08332984149456024,
+      "last_20_iteration_mean": -0.08461578413844109
+    },
+    "Episode_Reward/action_rate_l2": {
+      "first": -0.0027431759517639875,
+      "iteration_2": -0.0142830740660429,
+      "last": -0.04262620210647583,
+      "last_20_iteration_mean": -0.042450408637523654
+    },
+    "Episode_Reward/feet_air_time": {
+      "first": -0.0007071355357766151,
+      "iteration_2": -0.004604337736964226,
+      "last": -0.04357180744409561,
+      "last_20_iteration_mean": -0.044191214442253116
+    },
+    "Episode_Reward/undesired_contacts": {
+      "first": -4.166666985838674e-05,
+      "iteration_2": -0.006198379211127758,
+      "last": -0.00790034793317318,
+      "last_20_iteration_mean": -0.006781985692214221
+    },
+    "Episode_Reward/flat_orientation_l2": {
+      "first": -0.0011468494776636362,
+      "iteration_2": -0.06320726126432419,
+      "last": -0.013813585042953491,
+      "last_20_iteration_mean": -0.012565277051180601
+    },
+    "Episode_Reward/dof_pos_limits": {
+      "first": 0.0,
+      "iteration_2": 0.0,
+      "last": 0.0,
+      "last_20_iteration_mean": 0.0
+    },
+    "Metrics/base_velocity/error_vel_xy": {
+      "first": 0.019751407206058502,
+      "iteration_2": 0.11211138963699341,
+      "last": 0.2547537386417389,
+      "last_20_iteration_mean": 0.25549778044223787
+    },
+    "Metrics/base_velocity/error_vel_yaw": {
+      "first": 0.01867537759244442,
+      "iteration_2": 0.12170612812042236,
+      "last": 0.32680994272232056,
+      "last_20_iteration_mean": 0.3328013986349106
+    },
+    "Episode_Termination/time_out": {
+      "first": 0.0133056640625,
+      "iteration_2": 0.04986572265625,
+      "last": 0.9581298828125,
+      "last_20_iteration_mean": 0.9596578150987625
+    },
+    "Episode_Termination/base_contact": {
+      "first": 0.0,
+      "iteration_2": 0.0386149100959301,
+      "last": 0.0418701171875,
+      "last_20_iteration_mean": 0.0403422050178051
+    },
+    "Loss/value_function": {
+      "first": 0.08092709630727768,
+      "iteration_2": 0.04515746980905533,
+      "last": 0.005345998331904411,
+      "last_20_iteration_mean": 0.0035171028226613998
+    },
+    "Loss/surrogate": {
+      "first": -0.003964611329138279,
+      "iteration_2": -0.007708744145929813,
+      "last": -0.005738663487136364,
+      "last_20_iteration_mean": -0.0057798887370154265
+    },
+    "Loss/entropy": {
+      "first": 16.98410415649414,
+      "iteration_2": 16.706729888916016,
+      "last": 3.30899977684021,
+      "last_20_iteration_mean": 3.2457520961761475
+    },
+    "Loss/learning_rate": {
+      "first": 0.0006666666595265269,
+      "iteration_2": 0.003375000087544322,
+      "last": 0.00019753086962737143,
+      "last_20_iteration_mean": 0.0002633744850754738
+    },
+    "Policy/mean_noise_std": {
+      "first": 0.9939049482345581,
+      "iteration_2": 0.9715431332588196,
+      "last": 0.3216278851032257,
+      "last_20_iteration_mean": 0.3196385383605957
+    },
+    "Perf/total_fps": {
+      "first": 16609.0,
+      "iteration_2": 32754.0,
+      "last": 30010.0,
+      "last_20_iteration_mean": 30983.7
+    },
+    "Perf/collection time": {
+      "first": 2.796626567840576,
+      "iteration_2": 1.402007818222046,
+      "last": 1.575962781906128,
+      "last_20_iteration_mean": 1.5238146424293517
+    },
+    "Perf/learning_time": {
+      "first": 0.1626579761505127,
+      "iteration_2": 0.09860777854919434,
+      "last": 0.06187295913696289,
+      "last_20_iteration_mean": 0.06470996141433716
+    },
+    "Train/mean_reward": {
+      "first": -0.5638161897659302,
+      "iteration_2": -3.6108200550079346,
+      "last": 18.93069076538086,
+      "last_20_iteration_mean": 18.810992908477782
+    },
+    "Train/mean_episode_length": {
+      "first": 10.782608985900879,
+      "iteration_2": 63.02000045776367,
+      "last": 978.219970703125,
+      "last_20_iteration_mean": 973.8569976806641
+    }
+  }
+}

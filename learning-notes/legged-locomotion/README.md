@@ -48,4 +48,8 @@ Flat의 Actor 입력에는 별도의 발 접촉 힘이나 보행 위상이 직�
 학습 중 timeout 집계는 독립 평가 성공률이 아니다. 고정 모델을 여러 초기 상태·명령·외란에서 평가해야 한다.
 Flat의 추적 결과만으로 계단·거친 지형 성능을 보장하지 않는다. 26번 Flat에는 지형 커리큘럼·height scan이 없으며, Rough 전환 시 관측과 학습 조건도 달라진다.
 
+26번의 실제 곡선에서는 초반에 유지 길이가 먼저 늘어도 총 보상이 낮아지는 구간이 있었다. 이후 속도 추적 보상이 오르고 누적 오차와 일부 구동·자세 비용이 완화된다.
+이처럼 생존·명령 추적·동작 비용을 함께 읽어야 하며, 순간 값·episode 누적·시간 정규화 로그를 구분한다.
+[26번 전체 학습 곡선과 해석](../../26-train-locomotion/README.md#training-curves)
+
 [26번 결과·실행](../../26-train-locomotion/README.md) · [등록 환경 코드 리뷰](../../26-train-locomotion/code-review.md) · [PPO 공용 개념](../reinforcement-learning/README.md)
