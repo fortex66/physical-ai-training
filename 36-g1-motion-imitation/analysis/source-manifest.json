@@ -1,0 +1,36 @@
+{
+  "source_kind": "Public tutorial reference, not extracted from user ZIP",
+  "repository": "PinkWink/isaacsim_tutorials",
+  "commit": "14f85fc6edece7cbb1faa50aa9fe3adef205e87a",
+  "user_zip_status": "36_g1_walking.zip exceeds 32 MiB executor transfer limit; contents and user changes unverified",
+  "files": {
+    "g1_walking_env.py": {
+      "sha256": "58c6196e85204ca6b1f69eb7e97eb64dfc66f0307cc09ee411f13ac37d6c32f9",
+      "bytes": 30529
+    },
+    "36_1_motion_playback.py": {
+      "sha256": "30d69046e0f8043f983a2dbbd473e9cfb16b140b21da985c32a9f030e8732249",
+      "bytes": 13799
+    },
+    "36_2_train_motion.py": {
+      "sha256": "2fee480a722a62a36e9e05c5662d082161756369354b460d5dd0feedd21f425f",
+      "bytes": 7310
+    },
+    "36_3_play_motion.py": {
+      "sha256": "786a5516689507a692ef286a3a831cdcb20460613d20625b72dda297139c996a",
+      "bytes": 15797
+    },
+    "g1_brucelee_env.py": {
+      "sha256": "85aaac487139d92d3cdde54e6fb98958e45e886b3d9cd0272b845a561e6d9084",
+      "bytes": 16996
+    },
+    "36_4_train_bruce_lee.py": {
+      "sha256": "3f2654c727576051d23d14f3873c15e3327e6fc31fe60ff8e3df3262b55ef49f",
+      "bytes": 6891
+    },
+    "36_5_play_bruce_lee.py": {
+      "sha256": "bf62f0695a55fb1660915341d02be6f2fc9ec7ecb6b912a0c587b1d2c4c59991",
+      "bytes": 9550
+    }
+  }
+}

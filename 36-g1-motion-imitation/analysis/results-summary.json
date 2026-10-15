@@ -1,0 +1,116 @@
+{
+  "provenance": "Manually transcribed rounded user screenshots and final video summaries; no raw event/checkpoint/motion data accessed",
+  "training_walking_final_photo": {
+    "iteration": 1999,
+    "max_iterations": 2000,
+    "mean_reward": 97.11,
+    "mean_episode_length": 500.0,
+    "total_timesteps": 98304000,
+    "mean_noise_std": 0.11,
+    "value_loss": 0.0002,
+    "surrogate_loss": -0.0043,
+    "entropy": -20.3587,
+    "episode_terms": {
+      "alive_bonus": 1.0,
+      "joint_tracking": 4.4464,
+      "arm_tracking": 1.9789,
+      "speed_tracking": 1.9532,
+      "height_reward": 1.4183,
+      "flat_orientation": -0.0068,
+      "feet_slide": -0.0263,
+      "joint_vel": -0.34,
+      "action_rate": -0.1475,
+      "joint_limits": -0.5678
+    },
+    "termination_terms": {
+      "time_out": 1.0,
+      "bad_orientation": 0.0,
+      "base_height": 0.0
+    },
+    "fps": 42690,
+    "iteration_seconds": 1.15,
+    "collection_seconds_displayed": 1.077,
+    "learning_seconds_displayed": 0.074,
+    "elapsed_displayed": "00:39:09"
+  },
+  "training_walking_early_photo": {
+    "iteration": 65,
+    "max_iterations": 2000,
+    "mean_reward": 3.2,
+    "mean_episode_length": 69.81,
+    "total_timesteps": 3244032,
+    "fps": 41486
+  },
+  "resource_snapshot_photo": {
+    "nvidia_driver": "580.178.04",
+    "nvidia_smi_cuda_version": "13.0 (driver-supported version, not toolkit verification)",
+    "memory_used_MiB": 3395,
+    "memory_total_MiB": 8188,
+    "gpu_utilization_percent": 62,
+    "temperature_C": 60,
+    "power_draw_W": 49,
+    "power_limit_W": 60,
+    "scope": "One instantaneous sample, not training averages or measured GPU capacity bottleneck"
+  },
+  "evaluations": {
+    "random_walking": {
+      "video": "36-3.webm",
+      "episodes": 10,
+      "mean_reward": 0.62,
+      "mean_length_steps": 27.5,
+      "joint_rms_rad": 0.275,
+      "forward_speed_m_s": 0.96,
+      "reference_speed_displayed": 1.07,
+      "survival_percent_displayed": 0.0
+    },
+    "trained_walking": {
+      "video": "36-4.webm",
+      "episodes": 12,
+      "mean_reward": 97.92,
+      "mean_length_steps": 500.0,
+      "joint_rms_rad": 0.071,
+      "forward_speed_m_s": 1.05,
+      "reference_speed_displayed": 1.07,
+      "survival_percent_displayed": 100.0
+    },
+    "post_kungfu_run": {
+      "video": "36-6.webm",
+      "episodes": 10,
+      "mean_reward": 2.85,
+      "mean_length_steps": 35.8,
+      "joint_rms_rad": 0.25,
+      "forward_speed_m_s": 0.69,
+      "reference_speed_displayed": 1.07,
+      "survival_percent_displayed": 0.0,
+      "identity_limit": "User reports evaluation after kungfu training. Motion filename and checkpoint identity not confirmed; displayed reference speed matches default walking."
+    }
+  },
+  "count_arithmetic": {
+    "envs_inferred_from_code_and_photo": 2048,
+    "rollout_steps": 24,
+    "transitions_per_iteration": 49152,
+    "mini_batches": 4,
+    "samples_per_minibatch": 12288,
+    "epochs": 5,
+    "optimizer_steps_per_iteration_configured": 20,
+    "total_transitions_2000": 98304000
+  },
+  "lecture_clip_analysis_only": {
+    "bruce_min_root_height_m": 0.306,
+    "fraction_frames_below_0_35_percent": 7.9,
+    "forward_velocity_range_m_s": [
+      -0.85,
+      0.9
+    ],
+    "yaw_range_approx_deg": 100,
+    "max_yaw_rate_approx_deg_s": 247,
+    "source": "Lecture PDF p33, not recomputed from user dataset"
+  },
+  "limitations": [
+    "User ZIP exceeds 32 MiB executor transfer limit; original code changes, motions, models, event logs unverified",
+    "No interpolated training curves generated from screenshots",
+    "Default source code and user executed code identity not established",
+    "No supplied successful evaluation of the 107-input adapted Bruce environment",
+    "Evaluation survival uses >=475 steps, not timeout-only; episode RMS can include reset-boundary samples"
+  ]
+}

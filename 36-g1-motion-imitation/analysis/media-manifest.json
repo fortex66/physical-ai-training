@@ -1,0 +1,141 @@
+{
+  "videos": [
+    {
+      "filename": "36-2.webm",
+      "bytes": 6517319,
+      "sha256": "f82d8c28fc30975d3fefb20892018977fdabcb6c126d0cd1cb7a6ebcc2230d8a",
+      "duration_seconds": 26.466867,
+      "processing": "Unmodified original; inspected for private content"
+    },
+    {
+      "filename": "36-3.webm",
+      "bytes": 6059966,
+      "sha256": "070e19fbfc24367c7335ab184204e2bc3929d01dc20304b3e4a884603d1c6840",
+      "duration_seconds": 12.511395,
+      "processing": "Unmodified original; inspected for private content"
+    },
+    {
+      "filename": "36-4.webm",
+      "bytes": 25120962,
+      "sha256": "00d9a1458794a94978632e648092156d9bd6649251d41a62bcba23e852c05bdd",
+      "duration_seconds": 85.814579,
+      "processing": "Unmodified original; inspected for private content"
+    },
+    {
+      "filename": "36-5.webm",
+      "bytes": 4439547,
+      "sha256": "4feb1afc83ec1fd145bc0c3faa916b21e9e4ec4499309722b2c4adc507aeba32",
+      "duration_seconds": 28.313623,
+      "processing": "Unmodified original; inspected for private content"
+    },
+    {
+      "filename": "36-6.webm",
+      "bytes": 4265818,
+      "sha256": "156ff76bef90db503c70120b8c05bc8f6ddfe4cc425dc1c505c10eebcf86482f",
+      "duration_seconds": 17.88409,
+      "processing": "Unmodified original; inspected for private content"
+    }
+  ],
+  "captures": [
+    {
+      "path": "images/training-viewport.png",
+      "source": "36-2.webm",
+      "time_seconds": 16,
+      "crop_xywh": [
+        92,
+        100,
+        1080,
+        610
+      ]
+    },
+    {
+      "path": "images/random-evaluation-summary.png",
+      "source": "36-3.webm",
+      "time_seconds": 12.3,
+      "crop_xywh": [
+        1184,
+        470,
+        660,
+        230
+      ]
+    },
+    {
+      "path": "images/walking-evaluation-summary.png",
+      "source": "36-4.webm",
+      "time_seconds": 85.5,
+      "crop_xywh": [
+        1184,
+        497,
+        660,
+        220
+      ]
+    },
+    {
+      "path": "images/walking-viewport.png",
+      "source": "36-4.webm",
+      "time_seconds": 12,
+      "crop_xywh": [
+        92,
+        100,
+        1080,
+        550
+      ]
+    },
+    {
+      "path": "images/walking-torque.png",
+      "source": "36-4.webm",
+      "time_seconds": 85.5,
+      "crop_xywh": [
+        279,
+        134,
+        900,
+        820
+      ]
+    },
+    {
+      "path": "images/kungfu-reference-comparison.png",
+      "source": "36-5.webm",
+      "time_seconds": 9,
+      "crop_xywh": [
+        92,
+        170,
+        1030,
+        555
+      ]
+    },
+    {
+      "path": "images/kungfu-comparison-log.png",
+      "source": "36-5.webm",
+      "time_seconds": 27.9,
+      "crop_xywh": [
+        1143,
+        565,
+        710,
+        480
+      ]
+    },
+    {
+      "path": "images/kungfu-evaluation-summary.png",
+      "source": "36-6.webm",
+      "time_seconds": 17.6,
+      "crop_xywh": [
+        1036,
+        542,
+        798,
+        190
+      ]
+    },
+    {
+      "path": "images/kungfu-falling.png",
+      "source": "36-6.webm",
+      "time_seconds": 10,
+      "crop_xywh": [
+        92,
+        135,
+        930,
+        580
+      ]
+    }
+  ],
+  "inline_photos": "Values transcribed into results-summary.json; source screenshots were inline user images without downloadable file pointers"
+}

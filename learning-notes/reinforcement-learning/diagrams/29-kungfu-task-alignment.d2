@@ -1,0 +1,30 @@
+direction: right
+classes: {
+  box: {
+    width: 210
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 210
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+
+low: "낮은 자세\n고정 높이와 충돌"
+back: "후진 · 횡이동\n속도 방향 손실"
+turn: "몸 회전\n목표 yaw 누락"
+fast: "빠른 동작\n감점과 경쟁"
+height_rule: "참조 높이 편차\n실패 판정 조정"
+vel: "속도 벡터 추종\n좌표계 일치"
+yaw: "yaw 관측 · 보상\n회전 RSI"
+penalty: "패널티 완화\n동작 목표와 정렬"
+low -> height_rule
+back -> vel
+turn -> yaw
+fast -> penalty

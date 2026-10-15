@@ -712,6 +712,19 @@ root 높이·기울기·생존·움직임·한계를 보상으로 삼고 PPO로 
 
 [휴머노이드 균형·PD·보상·PPO 개념](../humanoid-standing/README.md) · [35번 실습·실제 곡선](../../35-g1-standing/README.md) · [코드 리뷰](../../35-g1-standing/code-review.md)
 
+<a id="motion-imitation"></a>
+
+## 24. 모션 모방 강화학습 — 레퍼런스·RSI·PPO
+
+36번은 리타게팅된 모션을 관측의 목표·추종 보상·RSI 초기화에 사용한다. 기록된 자세를 그대로 재생하거나 행동 라벨을 회귀하는 Behavior Cloning과 다르다.
+기본 관측 103개·행동 23개의 정책이 물리 안에서 동작을 만들고 PPO로 학습한다. RSI는 클립의 임의 위상에서 자세·속도를 맞추며 episode 카운터와 목표 위상이 일치해야 한다.
+
+보행 가중치에 쿵푸 목표를 주는 것과 쿵푸로 다시 학습하는 것은 다르다. 재학습해도 낮은 자세·후진·회전·빠른 동작과 보상·종료가 충돌하면 태스크 정의를 수정해야 한다.
+전용 환경은 속도 벡터·yaw·높이 편차와 RSI를 보완해 107관측이 되므로 기본 103모델과 그대로 호환되지 않는다.
+학습·평가에서 모델과 모션을 함께 명시하고 생존율뿐 아니라 추종 오차·방향·접촉을 평가한다.
+
+[모션 모방 상세 개념](../motion-imitation/README.md) · [36번 결과·쿵푸 실패 분석](../../36-g1-motion-imitation/README.md) · [기준 코드 리뷰](../../36-g1-motion-imitation/code-review.md)
+
 ## 연결된 실습과 자료
 
 - [20번 결과·코드](../../20-base-env/README.md)
@@ -742,3 +755,6 @@ root 높이·기울기·생존·움직임·한계를 보상으로 삼고 PPO로 
 
 - [35번 G1 휴머노이드 서기](../../35-g1-standing/README.md)
 - [휴머노이드 서기 상세 개념](../humanoid-standing/README.md)
+
+- [36번 G1 모션 모방](../../36-g1-motion-imitation/README.md)
+- [모션 모방·RSI 상세 개념](../motion-imitation/README.md)

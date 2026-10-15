@@ -19,7 +19,7 @@ Isaac Sim / Isaac Lab 강의를 따라 실습하면서 결과물과 배운 내�
 | 모델 | HP Victus by HP Gaming Laptop 15-fa1xxx |
 | CPU | 13th Gen Intel Core i7-13620H · 논리 프로세서 16개 표시 |
 | 메모리 | 32.0 GiB |
-| NVIDIA GPU | NVIDIA GeForce RTX 4060 Laptop GPU |
+| NVIDIA GPU | NVIDIA GeForce RTX 4060 Laptop GPU · nvidia-smi 총메모리 8188MiB 표시 |
 | 내장 GPU | Intel Graphics (RPL-P) |
 | 디스크 용량 | 1.0 TB |
 | 펌웨어 | F.18 |
@@ -31,12 +31,15 @@ Isaac Sim / Isaac Lab 강의를 따라 실습하면서 결과물과 배운 내�
 | OS | Ubuntu 24.04.5 LTS · 64-bit |
 | 커널 | Linux 7.0.0-38-generic |
 | 데스크톱 | GNOME 46 · X11 |
+| NVIDIA 드라이버 | 580.178.04 |
 | Isaac Sim | 5.1.0 |
 | Isaac Lab | 2.3.2 |
 | Python | 3.11 |
 | 가상환경 | `~/isaac/env_isaaclab` |
 | 튜토리얼 경로 | `~/isaac/isaacsim_tutorials` |
 | 그래프 표시 | matplotlib · TkAgg |
+
+`nvidia-smi`의 CUDA Version 13.0 표시는 드라이버의 지원 수준이며, 설치된 CUDA Toolkit·PyTorch CUDA 런타임 버전을 확인한 값은 아닙니다.
 
 ### 공통 실행 준비
 
@@ -75,6 +78,7 @@ source ~/isaac/env_isaaclab/bin/activate
 | Domain Shift · 28 | 지형 변화·관측 분포·일반화·추가 학습·공정한 평가 | [Domain Shift와 강화학습](learning-notes/domain-shift/README.md) |
 | Domain Randomization · 29 | 환경 조건의 다양화·이벤트 시점·PPO 연결·강건성 평가 | [도메인 랜덤화](learning-notes/domain-randomization/README.md) |
 | 휴머노이드 서기 · 35 | G1 균형·관절 목표와 PD·보상·PPO·학습/랜덤 평가 | [휴머노이드 서기](learning-notes/humanoid-standing/README.md) |
+| 모션 모방 · 36 | 레퍼런스·RSI·위상·PPO·쿵푸와 환경 규칙의 충돌 | [모션 모방 개념](learning-notes/motion-imitation/README.md) |
 
 ## 실습 기록
 
@@ -108,5 +112,6 @@ source ~/isaac/env_isaaclab/bin/activate
 | 28 | 혼합 지형 생성 · 고정 보행 정책 · Domain Shift와 일반화 | [실습 결과](28-terrain-generation/README.md) · [코드 리뷰](28-terrain-generation/code-review.md) · [코드](28-terrain-generation/28_terrain_generation.py) |
 | 29 | Domain Randomization · 질량·초기 상태·이벤트 타이머 검토 | [실습 결과](29-domain-randomization/README.md) · [코드 리뷰](29-domain-randomization/code-review.md) · [코드](29-domain-randomization/29_domain_randomization.py) |
 | 35 | G1 휴머노이드 서기 · PPO·학습/랜덤 평가·PD 근사 토크 | [실습 결과·학습 곡선](35-g1-standing/README.md) · [코드 리뷰](35-g1-standing/code-review.md) · [공유 환경 코드](35-g1-standing/g1_standing_env.py) |
+| 36 | G1 보행 모션 모방 · RSI·쿵푸 실패·전용 환경 설계 | [실습 결과·쿵푸 분석](36-g1-motion-imitation/README.md) · [기준 코드 리뷰](36-g1-motion-imitation/code-review.md) · [공유 환경 코드](36-g1-motion-imitation/g1_walking_env.py) |
 
 [학습 기록 작성 기준](CONTRIBUTING.md)

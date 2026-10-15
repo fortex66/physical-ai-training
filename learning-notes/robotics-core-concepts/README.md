@@ -301,6 +301,13 @@ G1은 몸·관절 상태를 관측해 목표 관절 각도를 내고, 하위 imp
 
 [휴머노이드 상세 개념](../humanoid-standing/README.md) · [35번 실습·학습곡선](../../35-g1-standing/README.md)
 
+## 28. 모션 모방·RSI와 태스크 정렬
+
+레퍼런스는 목표 관측·추종 보상·초기화를 제공하고 PPO가 물리 제어를 학습한다. 재생 로봇의 자세가 가능해 보여도 중력·접촉 안에서 추종할 수 있다는 뜻은 아니다.
+모션을 바꿀 때는 높이 종료·속도 방향·root 회전·패널티·주기 연결을 재검토한다. 모델·모션 조합과 관측 계약을 함께 기록한다.
+
+[모션 모방 개념](../motion-imitation/README.md) · [36번 실습](../../36-g1-motion-imitation/README.md)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

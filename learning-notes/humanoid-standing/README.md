@@ -104,3 +104,5 @@ G1 `applied_torque`는 implicit PD의 **근사값**이며 실제 토크 센서 �
 36번의 기준 모션 추종은35번과 다른 목표·보상·초기화·입력 계약을 가진 별도 학습으로 확인한다. 관절 수나 모델 이름만 같다고 서기 가중치를 그대로 쓰면 된다고 가정하지 않는다.
 
 [35번 원문 코드·그래프·실습 영상](../../35-g1-standing/README.md) · [G1 자산 정의](https://github.com/isaac-sim/IsaacLab/blob/v2.3.2/source/isaaclab_assets/isaaclab_assets/robots/unitree.py)
+
+[36번 모션 모방·쿵푸 확장 결과](../../36-g1-motion-imitation/README.md) · [RSI·위상·태스크 정렬](../motion-imitation/README.md)

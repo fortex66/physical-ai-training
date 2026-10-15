@@ -1,4 +1,4 @@
-# D2로 보는 강화학습과 20~29·35장 실행 구조
+# D2로 보는 강화학습과 20~29·35~36장 실행 구조
 
 20장은 환경을 테스트하며, 정책 가중치를 학습하는 코드는 아직 없다.
 흰 배경·흑백 선·사각형·번호 캡션을 사용한 D2 구성도로 실제 학습 구조와 현재 실행 구조를 구분한다.
@@ -256,6 +256,24 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 
 [휴머노이드 서기 개념](../../humanoid-standing/README.md)
 
+## 28. 레퍼런스 모션과 PPO
+
+<p align="center">
+  <img src="28-motion-reference-ppo.png" alt="레퍼런스의 관측·보상·RSI 세 사용처와 물리 경험 학습" width="700">
+</p>
+<p align="center"><sub>그림28. 실제 학습에서 같은 데이터가 목표·보상·초기화에 사용된다. 물리 경험 수집과 가중치 업데이트를 반복한다.</sub></p>
+
+[36번 실습](../../../36-g1-motion-imitation/README.md)
+
+## 29. 쿵푸 모션과 태스크 규칙 정렬
+
+<p align="center">
+  <img src="29-kungfu-task-alignment.png" alt="네 가지 모션·환경 충돌과 수정 방향" width="700">
+</p>
+<p align="center"><sub>그림29. 강의가 제시한 개선 방향이며 이번 사용자 영상에서 전용판 성공이 확인된 것은 아니다.</sub></p>
+
+[모션 모방 개념](../../motion-imitation/README.md)
+
 ## 사용 도구와 편집 가능한 원본
 
 [D2](https://github.com/d2lang/d2)의 ELK 레이아웃으로 생성했다.
@@ -291,6 +309,8 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 | Domain Randomization과 PPO | [SVG](25-randomization-ppo.svg) | [D2](25-randomization-ppo.d2) |
 | 35장 G1 관찰·학습·평가 | [SVG](26-g1-standing-workflow.svg) | [D2](26-g1-standing-workflow.d2) |
 | 휴머노이드 관절 제어 | [SVG](27-humanoid-standing-control.svg) | [D2](27-humanoid-standing-control.d2) |
+| 36장 레퍼런스와 PPO | [SVG](28-motion-reference-ppo.svg) | [D2](28-motion-reference-ppo.d2) |
+| 쿵푸 태스크 정렬 | [SVG](29-kungfu-task-alignment.svg) | [D2](29-kungfu-task-alignment.d2) |
 
 다시 생성하려면 D2 v0.9.0과 Python의 `fonttools`, `resvg-py`가 필요하다.
 

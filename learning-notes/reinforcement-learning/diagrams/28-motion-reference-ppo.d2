@@ -1,0 +1,28 @@
+direction: right
+classes: {
+  box: {
+    width: 210
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 210
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+
+ref: "레퍼런스 모션\n관절 · root · fps"
+obs: "관측 · 위상\n정책의 목표 정보"
+reward: "추종 보상\n목표와 오차 비교"
+rsi: "RSI 초기화\n자세 · 속도 · 위상"
+rollout: "물리 경험 수집\n관측 · 행동 · 보상"
+ppo: "PPO 업데이트\n상태 의존 제어" {class: focus}
+ref -> obs -> rollout
+ref -> reward -> rollout
+ref -> rsi -> rollout
+rollout -> ppo
