@@ -1,0 +1,23 @@
+direction: right
+classes: {
+  box: {
+    width: 210
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 210
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+
+conditions: "조건 샘플링\n질량 · 외란"
+rollout: "정책 경험 수집\n관측 · 행동 · 보상"
+ppo: "PPO 업데이트\n가중치 갱신" {class: focus}
+eval: "새 조건 평가\n기준 정책 비교"
+conditions -> rollout -> ppo -> eval

@@ -1,0 +1,134 @@
+{
+  "provenance": "Video 29.webm, displayed startup/reset at ~3 s; final terminal at ~17 s. Rounded screen values, not raw logs.",
+  "mode": "Random actions, environment demonstration; no PPO optimization or checkpoint",
+  "observed_num_envs": 16,
+  "completed_environment_steps": 500,
+  "simulation_time_displayed_seconds": 8.3,
+  "simulation_time_from_config_seconds": 8.333333333333334,
+  "completed_episodes": 24,
+  "completed_episodes_by_env": [
+    1,
+    1,
+    2,
+    1,
+    2,
+    2,
+    2,
+    1,
+    1,
+    1,
+    2,
+    1,
+    1,
+    2,
+    2,
+    2
+  ],
+  "last_step_environment_mean_reward_displayed": -0.0358,
+  "startup_masses_kg_first_four_envs_displayed": [
+    [
+      7.646,
+      1.042,
+      0.875
+    ],
+    [
+      6.983,
+      1.04,
+      1.112
+    ],
+    [
+      7.55,
+      1.331,
+      1.208
+    ],
+    [
+      7.046,
+      1.07,
+      1.025
+    ]
+  ],
+  "mass_column_labels": "Body indices 0,1,2; printed output does not name bodies",
+  "registered_terms": {
+    "startup": [
+      "randomize_mass"
+    ],
+    "reset": [
+      "reset_cart",
+      "reset_pole"
+    ],
+    "interval": [
+      "push_robot",
+      "apply_force"
+    ]
+  },
+  "interval_analysis": {
+    "source_reference": "Isaac Lab v2.3.2 EventManager.reset/apply and ManagerBasedRLEnv.step",
+    "episode_horizon_seconds": 5,
+    "is_global_time_default": false,
+    "push_interval_seconds": [
+      10,
+      15
+    ],
+    "force_interval_seconds": [
+      5,
+      10
+    ],
+    "conclusion": "Neither interval term can trigger before reset under supplied configuration. Source-based analysis, not measured callback counters."
+  },
+  "interpretation_limits": [
+    "No learned robustness or sim-to-real evaluation",
+    "Registration and fixed summary strings are not event invocation records",
+    "Initial printed joint velocity columns are zero; sampled velocity application not established by this screenshot",
+    "No policy training curve or per-event invocation log supplied"
+  ],
+  "original_video": {
+    "filename": "29.webm",
+    "duration_seconds": 17.920774,
+    "sha256": "7587a4425c8e7810605300c63bf283cbcdc52db67e97f39094dd9a3ba6a7c461",
+    "published": false
+  },
+  "published_video": {
+    "path": "videos/29-randomization-demo.webm",
+    "source_interval_seconds": [
+      0,
+      15
+    ],
+    "sha256": "0981f9ee2542fe60b836ffaf38375926e25f00962ee017e8f3d9915d3c97db17",
+    "processing": "Stream-copy trim; private ending excluded"
+  },
+  "captures": [
+    {
+      "path": "images/events-mass-reset.png",
+      "time_seconds": 3,
+      "crop_xywh": [
+        1230,
+        340,
+        622,
+        490
+      ]
+    },
+    {
+      "path": "images/cartpole-demo.png",
+      "time_seconds": 11,
+      "crop_xywh": [
+        92,
+        100,
+        1130,
+        615
+      ]
+    },
+    {
+      "path": "images/run-summary.png",
+      "time_seconds": 17,
+      "crop_xywh": [
+        1230,
+        470,
+        622,
+        230
+      ]
+    }
+  ],
+  "source_code_sha256": "7277b3317089d65f29d0663d07e41a539943699b5d55be83d7a448f71acc23ce",
+  "upstream_reference": "PinkWink/isaacsim_tutorials@14f85fc6edece7cbb1faa50aa9fe3adef205e87a",
+  "user_source_changes": []
+}

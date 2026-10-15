@@ -286,6 +286,14 @@ rollout은 새 경험 수집 구간, epoch는 그 경험 전체를 학습에 사
 
 [상세 개념·강화학습 연결](../domain-shift/README.md) · [28번 실습](../../28-terrain-generation/README.md)
 
+## 26. Domain Randomization과 이벤트
+
+질량·초기 상태·외란 등을 바꿔 정책에 다양한 환경 경험을 제공하는 방법이다. startup/reset/interval의 호출 시점과 실제 적용 효과를 구분한다.
+환경 조건을 바꾸는 것, 정책이 행동을 탐색하는 것, PPO가 가중치를 바꾸는 것은 다른 동작이다.
+29번은 랜덤 행동 데모이며 학습은 없다. 기본 episode·타이머 설정에서는 interval 외란이 발동하지 않아 관찰용 설정을 별도로 검토해야 한다.
+
+[상세 개념](../domain-randomization/README.md) · [29번 실습](../../29-domain-randomization/README.md)
+
 ## 함께 볼 개념
 
 [PD·PID 제어와 중력 보상](../pd-pid-gravity-compensation/README.md) ·

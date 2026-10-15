@@ -683,6 +683,22 @@ Rough task의 height scan처럼 관측을 늘리면 기존 입력층과 호환�
 
 [Domain Shift 상세 개념·피드백 구조·PPO 연결·대응·평가 방법](../domain-shift/README.md) · [28번 결과](../../28-terrain-generation/README.md) · [코드 리뷰](../../28-terrain-generation/code-review.md)
 
+<a id="domain-randomization"></a>
+
+## 22. Domain Randomization — 정책의 행동과 환경 조건의 랜덤성을 구분한다
+
+학습할 환경의 질량·마찰·초기 상태·센서·외란 등을 범위 안에서 바꿔 여러 조건의 경험을 제공한다.
+행동 탐색은 policy의 action 샘플링이고, Domain Randomization은 환경 조건 설계이며, PPO optimizer는 가중치 수정이다. 세 동작은 서로 다르다.
+같은 rollout·미니배치·epoch 구조를 유지하더라도 경험이 생성되는 조건을 바꾸면 정책이 다양한 반응을 학습하게 할 수 있다.
+
+`startup`은 환경 생성 때 한 번, `reset`은 초기화 때, `interval`은 타이머 조건을 만족할 때 실행한다. 랜덤화한 조건을 모두 Actor에 직접 주는 것은 아니므로 숨은 물성으로 인한 부분 관측도 고려한다.
+현실적인 범위를 선택하고 미사용 조건의 동일 평가로 효과를 확인한다. 랜덤화 자체가 일반화나 sim-to-real 성공을 보장하지 않는다.
+
+29번은 이벤트를 구성한 뒤 랜덤 행동으로 500 step 실행하는 데모이며 PPO 학습은 없다. 또한 최대5초 episode가 interval 타이머를 reset하므로 5~10초·10~15초 외란은 현재 설정에서 발동하지 않는다.
+term 등록·요약 출력과 실제 이벤트 호출을 구분해야 한다.
+
+[상세 개념·PPO 연결·범위 설계·평가](../domain-randomization/README.md) · [29번 데모](../../29-domain-randomization/README.md) · [코드 리뷰](../../29-domain-randomization/code-review.md)
+
 ## 연결된 실습과 자료
 
 - [20번 결과·코드](../../20-base-env/README.md)
@@ -707,3 +723,6 @@ Rough task의 height scan처럼 관측을 늘리면 기존 입력층과 호환�
 
 - [28번 지형 생성·Domain Shift](../../28-terrain-generation/README.md)
 - [Domain Shift 상세 개념](../domain-shift/README.md)
+
+- [29번 Domain Randomization](../../29-domain-randomization/README.md)
+- [Domain Randomization 상세 개념](../domain-randomization/README.md)

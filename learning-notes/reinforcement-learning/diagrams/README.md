@@ -1,4 +1,4 @@
-# D2로 보는 강화학습과 20~28장 실행 구조
+# D2로 보는 강화학습과 20~29장 실행 구조
 
 20장은 환경을 테스트하며, 정책 가중치를 학습하는 코드는 아직 없다.
 흰 배경·흑백 선·사각형·번호 캡션을 사용한 D2 구성도로 실제 학습 구조와 현재 실행 구조를 구분한다.
@@ -219,6 +219,25 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 두 경로의 현재 관측을 같게 가정해 첫 접촉 차이를 설명했다. 이후 실제 관측은 달라질 수 있으며 두 domain이 계속 같은 행동을 낸다는 뜻은 아니다.
 [Domain Shift 개념](../../domain-shift/README.md)
 
+## 24. Domain Randomization 이벤트 실행 순서
+
+<p align="center">
+  <img src="24-lesson29-events.png" alt="startup·reset·물리 진행·interval·관측의 순서" width="284">
+</p>
+<p align="center"><sub>그림 24. step 안에서는 종료 환경만 reset하고 interval 조건을 검사한다. 등록 자체가 호출을 의미하지 않는다.</sub></p>
+
+29번의 최대5초 episode와 기본 interval 간격에서는 두 interval term이 발동하지 않는다.
+[29번 데모·타이머 검토](../../../29-domain-randomization/README.md)
+
+## 25. Domain Randomization과 PPO 학습
+
+<p align="center">
+  <img src="25-randomization-ppo.png" alt="조건 다양화·경험 수집·PPO·미사용 조건 평가" width="700">
+</p>
+<p align="center"><sub>그림 25. 실제 학습에 연결할 때의 개념도. 학습 반복과 정책의 행동 선택은 본문에서 설명하며 29번 데모에는 PPO가 없다.</sub></p>
+
+[상세 개념](../../domain-randomization/README.md)
+
 ## 사용 도구와 편집 가능한 원본
 
 [D2](https://github.com/d2lang/d2)의 ELK 레이아웃으로 생성했다.
@@ -250,6 +269,8 @@ GitHub에서는 이미지를 바로 표시하고, 벡터 SVG와 편집용 D2 소
 | 27장 보행 정책 평가 | [SVG](21-lesson27-evaluation.svg) | [D2](21-lesson27-evaluation.d2) |
 | 28장 지형 교체 평가 | [SVG](22-lesson28-domain-evaluation.svg) | [D2](22-lesson28-domain-evaluation.d2) |
 | Domain Shift 피드백 | [SVG](23-domain-shift-feedback.svg) | [D2](23-domain-shift-feedback.d2) |
+| 29장 이벤트 실행 순서 | [SVG](24-lesson29-events.svg) | [D2](24-lesson29-events.d2) |
+| Domain Randomization과 PPO | [SVG](25-randomization-ppo.svg) | [D2](25-randomization-ppo.d2) |
 
 다시 생성하려면 D2 v0.9.0과 Python의 `fonttools`, `resvg-py`가 필요하다.
 

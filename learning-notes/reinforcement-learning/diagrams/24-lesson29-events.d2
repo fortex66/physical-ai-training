@@ -1,0 +1,25 @@
+direction: down
+classes: {
+  box: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#FFFFFF"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+  focus: {
+    width: 250
+    height: 78
+    style: {font-size: 21; font-color: "#111111"; fill: "#F2F2F2"; stroke: "#333333"; stroke-width: 1; border-radius: 0}
+  }
+}
+*.class: box
+*.style.font-size: 21
+(* -> *)[*].style.stroke: "#333333"
+(* -> *)[*].style.stroke-width: 1
+
+create: "환경 생성\nstartup · 질량"
+reset: "첫 reset\n관절 초기 상태"
+physics: "행동 → 물리 진행\n종료 · 보상 계산"
+done: "종료 환경 reset\n초기 상태 · 타이머"
+interval: "interval 타이머\n조건 만족 시 호출" {class: focus}
+obs: "다음 관측 반환\n다음 step 반복"
+create -> reset -> physics -> done -> interval -> obs
